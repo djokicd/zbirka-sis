@@ -75,11 +75,6 @@ __Issues__ систем (при чему и тада треба ставити
 ## Лиценцирање
 
 Збирка се објављује под лиценцом
-[Creative Commons Attribution 4.0 ауторство, делити под истим условима ].
-
-Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
-
-Збирка се објављује под лиценцом
 [*Creative Commons* 4.0 Ауторство - делити под истим условима ](https://creativecommons.org/licenses/by-sa/4.0/deed.sr-latn).
 
 [![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
