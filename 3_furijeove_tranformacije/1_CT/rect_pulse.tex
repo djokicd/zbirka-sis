@@ -1,0 +1,22 @@
+\begin{slikaDesno}{fig/rect_pulse_0_T.pdf}
+\textbf{\ID.} 
+\label{ID:rect_pulse_spectrum}
+На слици \ID.1 приказан је правоугаони импулс јединичне амплитуде 
+ширине $T$, са почетком у нули. Одредити Фуријеову трансформацију тог сигнала. \\
+
+\hspace{4mm}
+\textsc{\underline{Решење}:} Дати сгинал се може записати у облику 
+$x(t) = \uu(t) - \uu(t - T)$. Применом особине померања у времену Фуријеове трансформације\footnotemark
+и табличног резултата $\mathcal{FT}\{\uu(t)\} = \dfrac{1}{\jj\upomega} + \uppi\updelta(\upomega)$,
+има се резултат
+$X(\jj\upomega) = \dfrac{1}{\jj\upomega} + \uppi \updelta(\upomega) - 
+        \dfrac{\ee^{-\jj\upomega T}}{\jj\upomega} - \uppi \ee^{-\jj\upomega T}\updelta(\upomega) 
+        =\dfrac{1 - \ee^{-\jj\upomega T} }{\jj\upomega} + 
+        \cancelto{0}{
+        \uppi(\underbrace{1 - \ee^{-\jj\upomega T}}_{=0 \text{ за } \upomega = 0}) \updelta(\upomega)
+        }$, где је у последњем кораку примењено својство еквиваленције Дираковог импулса. 
+Коначно је $X(\jj\upomega) = \dfrac{1 - \ee^{-\jj\upomega T} }{\jj\upomega}$
+\end{slikaDesno}
+\footnotetext{Својство померања ФТ је $\mathcal{FT}\{x(t-T)\} = \mathcal{FT}\{x(t)\}\cdot\ee^{-\jj\upomega T}$.}
+
+

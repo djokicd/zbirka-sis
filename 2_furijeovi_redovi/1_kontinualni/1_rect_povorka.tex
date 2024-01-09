@@ -1,0 +1,44 @@
+\begin{slikaDesno}{fig/rect-per15.pdf}
+    \textbf{\ID.}\label{ID:rect_pulse_train_FS} 
+    Дат jе напонски сигнал $v = v(t)$ облика периодичне поворке униполарних правоугаоних 
+    импулса амплитуде ${V_{\rm m} = 5\unit{V}}$, као на слици. Трајање импулса је $DT$ где је 
+$D = 25\%$ (тзв. \textit{фактор испуне}), а учестаност jе $f = 1\unit{kHz}$. 
+Одредити развоj овог сигнала у комплексан Фуриjеов ред, $V[k]$, на основном периоду $T$.
+\end{slikaDesno} \\
+
+\textsc{\underline{Решење}}: Развој у Фуријеов ред се може потражити по дефиницији применом 
+аналитичке релације 
+$\DS V[k] = \int_{\langle T \rangle} v(t) \ee^{-\jj k \upomega_{\rm F} t} \, \de t$, 
+поступком\footnote{Користи се резултат $\int e^{kx} \, \de x = \frac{1}{k} e^x + C$}
+\begin{align}
+    V[k] = \int_{0}^T v(t) \ee^{-\jj k \upomega_{\rm 0} t} \, \de t 
+         = \int_{0}^{DT}  V_{\rm m} \ee^{-\jj k \frac{2\uppi}{T} t} \, \de t
+         = -\dfrac{V_{\rm m}}{\jj k \frac{2\uppi}{T}} 
+         \ee^{-\jj k \frac{2\uppi}{T} t}\bigg|_{t = 0}^{t = DT}
+         = V_{\rm m}\dfrac{
+            1
+            -
+            \ee^{-\jj k 2\uppi D}
+         }{\jj k \frac{2\uppi}{T}} 
+\end{align}
+Добијени облик може се поједноставити примедбом 
+$\sin(x) = \dfrac{\ee^{\jj x} - \ee^{-\jj x}}{\jj 2} = \ee^{\jj x} \dfrac{1 - \ee^{-\jj 2x}}{\jj 2}$,
+односно, 
+$\dfrac{1 - \ee^{-\jj 2x}}{\jj 2} = \ee^{-\jj x} \sin(x) $,
+одакле се може писати
+\begin{align}
+    V[k] = V_{\rm m}DT 
+     \underbrace{
+     \dfrac{
+        1
+        -
+        \ee^{-\jj 2 (k \uppi D) }
+     }{\jj 2 }}_{ = \ee^{-\jj k \uppi D/2} \sin(k\uppi D) }
+     \cdot 
+     \dfrac{1}{k \uppi D} 
+     = V_{\rm m} D T \dfrac{\sin(k\uppi D)}{k\uppi D} \ee^{-\jj k \uppi D/2} 
+     = V_{\rm m} D T \sinc(k \uppi D) \ee^{-\jj k \uppi D/2}.
+\end{align}
+Добијени резултат може се одредити и таблично којом приликом ће се члан 
+$\ee^{-\jj k \uppi D/2}$ појавити услед кашењења у времену периодичне поворке правоугаоних 
+импулса симетричне око ординате. 

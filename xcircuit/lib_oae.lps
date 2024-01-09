@@ -1,0 +1,232 @@
+%! PostScript set of library objects for XCircuit
+%  Version: 3.9
+%  Library name is: (user)
+%  Author: Danilo Djokic,,, <djokicd@102g-kanc>
+%
+
+% Depend ::right_vs_latex analog::source
+% Depend ::left_ems_latex analog::source
+% Depend ::down_ems_latex analog::source
+% Depend ::up_ems_latex analog::source
+% Depend ::right_ig_latex analog::isource
+% Depend ::left_ig_latex analog::isource
+% Depend ::down_ig_latex analog::isource
+% Depend ::top_ig_latex analog::isource
+
+% XCircuitLib library objects
+/analog::source {
+% hidden
+begingate
+1 1.000 0 0 32 0.000 360.000 xcarc
+1 1.000 0 32 0 64 2 polygon
+1 1.000 0 -32 0 -64 2 polygon
+endgate
+} def
+
+/::right_vs_latex {
+<</@VG ($v_\\rm{G}$) >> begingate
+1.000 0.000 -96 0 analog::source
+(+) {/Symbol cf} 2 5 0.000 1.000 -132 34 label
+mark @VG {/Helvetica cf} ctmk 148 0.000 1.000 -56 0 label
+endgate
+} def
+
+/::left_ems_latex {
+<</@VG ($V_\\mr{G}$) >> begingate
+1.000 360.000 112 0 analog::source
+(+) {/Symbol cf} 2 5 360.000 1.000 148 34 label
+mark @VG {/Helvetica cf} ctmk 151 0.000 1.000 72 0 label
+{/Helvetica cf} 1 151 0.000 1.000 528 -160 label
+endgate
+} def
+
+/::down_ems_latex {
+<</@VG ($V_\\mr{G}$) >> begingate
+1.000 90.000 0 16 analog::source
+(+) {/Symbol cf} 2 5 360.000 1.000 36 50 label
+mark @VG {/Helvetica cf} ctmk 157 0.000 1.000 0 -24 label
+endgate
+} def
+
+/::up_ems_latex {
+<</@VG ($V_\\mr{G}$) >> begingate
+1.000 90.000 0 -16 analog::source
+mark @VG {/Helvetica cf} ctmk 145 0.000 1.000 0 32 label
+(+) {/Symbol cf} 2 5 360.000 1.000 36 -54 label
+endgate
+} def
+
+/generic::arrowhead {
+% nonetwork
+begingate
+8 -28 beginpath
+3 -18 3 -15 0 0 curveto
+-3 -15 -3 -18 -8 -28 curveto
+-2 -26 2 -26 8 -28 curveto
+249 
+1.000 endpath
+endgate
+} def
+
+/analog::isource {
+begingate
+1.000 0.000 0 0 analog::source
+1 0.750 0 20 0 -8 2 polygon
+0.800 /sv 180.000 0 -20 generic::arrowhead
+1.000 0.000 0.000 scb
+(i.p) {/Times-Roman cf} 2 9 0.000 1.000 0 64 pinlabel
+(i.m) {/Times-Roman cf} 2 13 0.000 1.000 0 -64 pinlabel
+endgate
+} def
+
+/::right_ig_latex {
+<</@IG ($i_\\mr{G}$) >> begingate
+1.000 180.000 -96 0 analog::isource
+mark @IG {/Helvetica cf} ctmk 148 0.000 1.000 -56 0 label
+endgate
+} def
+
+/::left_ig_latex {
+<</@IG ($i_\\mr{G}$) >> begingate
+mark @IG {/Helvetica cf} ctmk 151 0.000 1.000 64 0 label
+1.000 180.000 104 0 analog::isource
+endgate
+} def
+
+/::down_ig_latex {
+<</@IG ($i_\\mr{G}$) >> begingate
+mark @IG {/Helvetica cf} ctmk 157 0.000 1.000 0 -16 label
+1.000 270.000 0 24 analog::isource
+endgate
+} def
+
+/::top_ig_latex {
+<</@IG ($i_\\mr{G}$) >> begingate
+mark @IG {/Helvetica cf} ctmk 145 0.000 1.000 0 32 label
+1.000 270.000 0 -16 analog::isource
+endgate
+} def
+
+/::right_vdc_latex {
+<</@VDC ($V_\\mr{G}$) >> begingate
+1 1.000 -112 64 -112 32 2 polygon
+1 1.000 -112 -64 -112 -32 2 polygon
+1 2.000 -144 8 -80 8 2 polygon
+1 4.000 -128 -8 -96 -8 2 polygon
+1 1.000 -112 -8 -112 -32 2 polygon
+1 1.000 -112 8 -112 32 2 polygon
+1 1.000 -96 24 -80 24 2 polygon
+1 1.000 -88 32 -88 16 2 polygon
+mark @VDC {/Helvetica cf} ctmk 148 0.000 1.000 -72 0 label
+endgate
+} def
+
+/::left_vdc_latex {
+<</@VDC ($V_\\mr{G}$) >> begingate
+mark @VDC {/Helvetica cf} ctmk 151 0.000 1.000 72 8 label
+1 2.000 80 8 144 8 2 polygon
+1 1.000 88 32 88 16 2 polygon
+1 1.000 112 64 112 32 2 polygon
+1 1.000 112 -64 112 -32 2 polygon
+1 4.000 96 -8 128 -8 2 polygon
+1 1.000 112 -8 112 -32 2 polygon
+1 1.000 112 8 112 32 2 polygon
+1 1.000 80 24 96 24 2 polygon
+endgate
+} def
+
+/::down_vdc_latex {
+<</@VDC ($V_\\mr{G}$) >> begingate
+1 1.000 -72 24 -8 24 2 polygon
+1 4.000 -8 40 -8 8 2 polygon
+1 1.000 16 48 32 48 2 polygon
+1 2.000 8 56 8 -8 2 polygon
+1 1.000 24 56 24 40 2 polygon
+1 1.000 8 24 64 24 2 polygon
+mark @VDC {/Helvetica cf} ctmk 157 0.000 1.000 0 -16 label
+endgate
+} def
+
+/::up_vdc_latex {
+<</@VDC ($V_\\mr{G}$) >> begingate
+mark @VDC {/Helvetica cf} ctmk 145 0.000 1.000 0 32 label
+1 1.000 -72 -16 -8 -16 2 polygon
+1 4.000 -8 0 -8 -32 2 polygon
+1 1.000 16 -40 32 -40 2 polygon
+1 2.000 8 16 8 -48 2 polygon
+1 1.000 24 -32 24 -48 2 polygon
+1 1.000 8 -16 64 -16 2 polygon
+endgate
+} def
+
+/::right_d_latex {
+<</@D ($D$) >> begingate
+1 1.000 -40 16 -56 -16 -24 -16 -40 16 4 polygon
+1 1.000 -40 -48 -40 -16 2 polygon
+1 1.000 -40 48 -40 16 2 polygon
+1 1.000 -24 16 -56 16 2 polygon
+mark @D {/Helvetica cf} ctmk 148 0.000 1.000 -16 0 label
+endgate
+} def
+
+/::left_d_latex {
+<</@D ($D$) >> begingate
+1 1.000 40 16 24 -16 56 -16 40 16 4 polygon
+1 1.000 40 -48 40 -16 2 polygon
+1 1.000 40 48 40 16 2 polygon
+1 1.000 56 16 24 16 2 polygon
+mark @D {/Helvetica cf} ctmk 151 0.000 1.000 16 0 label
+endgate
+} def
+
+/::up_d_latex {
+<</@D ($D$) >> begingate
+1 1.000 -16 0 -16 -32 16 -16 -16 0 4 polygon
+1 1.000 16 0 16 -32 2 polygon
+1 1.000 16 -16 48 -16 2 polygon
+1 1.000 -16 -16 -48 -16 2 polygon
+mark @D {/Helvetica cf} ctmk 145 0.000 1.000 0 8 label
+endgate
+} def
+
+/::down_d_latex {
+<</@D ($D$) >> begingate
+1 1.000 -16 40 -16 8 16 24 -16 40 4 polygon
+1 1.000 16 40 16 8 2 polygon
+1 1.000 16 24 48 24 2 polygon
+1 1.000 -16 24 -48 24 2 polygon
+($D$) {/Helvetica cf} 2 157 0.000 1.000 0 0 label
+endgate
+} def
+
+/::open_right {
+begingate
+1 1.000 -12 0 -4 0 2 polygon
+1 1.000 0 0 0 4 8 4 8 -4 0 -4 0 0 6 polygon
+1 1.000 -4 0 0 0 2 polygon
+endgate
+} def
+
+/::open_up {
+begingate
+1 1.000 -4 8 -4 12 4 12 4 4 -4 4 -4 8 6 polygon
+1 1.000 0 -8 0 4 2 polygon
+endgate
+} def
+
+/::up_left {
+begingate
+1 1.000 -12 0 -12 4 -4 4 -4 -4 -12 -4 -12 0 6 polygon
+1 1.000 8 0 -4 0 2 polygon
+endgate
+} def
+
+/::down_open {
+begingate
+1 1.000 0 12 0 0 2 polygon
+1 1.000 -4 -4 -4 0 4 0 4 -8 -4 -8 -4 -4 6 polygon
+endgate
+} def
+
+
+% EndLib

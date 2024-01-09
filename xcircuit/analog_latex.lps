@@ -1,0 +1,641 @@
+%! PostScript set of library objects for XCircuit
+%  Version: 3.9
+%  Library name is: (analog_latex)
+%  Author: Dusan Grujic,,, <dusan.grujic@etf.bg.ac.rs>
+%
+
+% XCircuitLib library objects
+
+/::arrow1u {
+<</@Label ($Z_\\mr{in}$) >> begingate
+1 1.000 64 -32 -48 -32 -48 0 -64 0 -32 32 0 0 -16 0 -16 -32 8 polygon
+mark @Label {/Helvetica cf} ctmk 144 0.000 1.000 33 -19 label
+endgate
+} def
+
+/::arrow1d {
+<</@Label ($Z_\\mr{in}$) >> begingate
+1 1.000 64 -32 -48 -32 -48 -64 -64 -64 -32 -96 0 -64 -16 -64 -16 -32 8 polygon
+mark @Label {/Helvetica cf} ctmk 156 0.000 1.000 33 -35 label
+endgate
+} def
+
+/::arrow1r {
+<</@Label ($Z_\\mr{in}$) >> begingate
+1 1.000 -224 -64 -224 48 -192 48 -192 64 -160 32 -192 0 -192 16 -224 16 8 
+polygon
+mark @Label {/Helvetica cf} ctmk 144 360.000 1.000 -219 -65 label
+endgate
+} def
+
+/::arrow1l {
+<</@Label ($Z_\\mr{in}$) >> begingate
+1 1.000 -224 -64 -224 48 -256 48 -256 64 -288 32 -256 0 -256 16 -224 16 8 
+polygon
+mark @Label {/Helvetica cf} ctmk 147 360.000 1.000 -235 -65 label
+endgate
+} def
+
+/::arrow_open {
+begingate
+1 1.000 -16 -32 -16 -32 -16 0 -32 0 0 32 32 0 16 0 16 -32 8 polygon
+endgate
+} def
+
+/::resr_latex {
+<</@Rname ($R$) >> begingate
+1 1.000 -48 64 -48 36 2 polygon
+1 1.000 -48 -64 -48 -36 2 polygon
+1 1.000 -48 -36 -34 -30 -62 -18 -34 -6 -62 6 -34 18 -62 30 -48 36 8 polygon
+mark @Rname {/Helvetica cf} ctmk 144 0 1.000 -27 -11 label
+endgate
+} def
+
+/::resl_latex {
+<</@R ($R$) >> begingate
+1 1.000 0 64 0 36 2 polygon
+1 1.000 0 -64 0 -36 2 polygon
+1 1.000 0 -36 14 -30 -14 -18 14 -6 -14 6 14 18 -14 30 0 36 8 polygon
+mark @R {/Times-Roman cf} ctmk 151 0 1.000 -24 0 label
+endgate
+} def
+
+/::resu_latex {
+<</@R ($R$) >> begingate
+1 1.000 64 -16 37 -16 2 polygon
+1 1.000 -64 -16 -35 -16 2 polygon
+1 1.000 -35 -16 -28 -29 -17 -2 -4 -31 8 -2 19 -31 31 -2 37 -16 8 polygon
+mark @R {/Times-Roman cf} ctmk 145 0 1.000 1 6 label
+endgate
+} def
+
+/::resd_latex {
+<</@R ($R$) >> begingate
+1 1.000 64 -16 37 -16 2 polygon
+1 1.000 -64 -16 -35 -16 2 polygon
+1 1.000 -35 -16 -28 -29 -17 -2 -4 -31 8 -2 19 -31 31 -2 37 -16 8 polygon
+mark @R {/Times-Roman cf} ctmk 157 0.000 1.000 1 -42 label
+endgate
+} def
+
+/::capr_latex {
+<</@Cname ($C$) >> begingate
+1 1.000 -32 -64 -32 -6 2 polygon
+1 1.000 -32 64 -32 6 2 polygon
+1 1.000 -64 6 0 6 2 polygon
+1 1.000 -64 -6 0 -6 2 polygon
+mark @Cname {/Helvetica cf} ctmk 144 0 1.000 5 -11 label
+endgate
+} def
+
+/::capl_latex {
+<</@C ($C$) >> begingate
+1 1.000 0 -64 0 -6 2 polygon
+1 1.000 0 64 0 6 2 polygon
+1 1.000 -32 6 32 6 2 polygon
+1 1.000 -32 -6 32 -6 2 polygon
+mark @C {/Times-Roman cf} ctmk 151 0 1.000 -40 0 label
+endgate
+} def
+
+/::capu_latex {
+<</@Cname ($C$) >> begingate
+1 1.000 -64 -16 -6 -16 2 polygon
+1 1.000 64 -16 6 -16 2 polygon
+1 1.000 6 16 6 -48 2 polygon
+1 1.000 -6 16 -6 -48 2 polygon
+mark @Cname {/Times-Roman cf} ctmk 145 0 1.000 -1 24 label
+endgate
+} def
+
+/::capd_latex {
+<</@Cname ($C$) >> begingate
+1 1.000 -64 -16 -6 -16 2 polygon
+1 1.000 64 -16 6 -16 2 polygon
+1 1.000 6 16 6 -48 2 polygon
+1 1.000 -6 16 -6 -48 2 polygon
+mark @Cname {/Times-Roman cf} ctmk 157 0.000 1.000 -1 -56 label
+endgate
+} def
+
+/::indr_latex {
+<</@Lname ($L$) >> begingate
+1 1.000 -12 -22 -12 -38 -32 -42 -32 -18 spline
+1 1.000 -52 -14 -52 -26 -32 -22 -32 -18 spline
+1 1.000 -12 38 -12 22 -32 18 -32 42 spline
+1 1.000 -12 18 -12 2 -32 -2 -32 22 spline
+1 1.000 -12 -2 -12 -18 -32 -22 -32 2 spline
+1 1.000 -52 26 -52 14 -32 18 -32 22 spline
+1 1.000 -52 6 -52 -6 -32 -2 -32 2 spline
+1 1.000 -32 -42 -32 -64 2 polygon
+1 1.000 -32 42 -32 64 2 polygon
+mark @Lname {/Helvetica cf} ctmk 144 0 1.000 -8 -11 label
+endgate
+} def
+
+/::indl_latex {
+<</@L ($L$) >> begingate
+1 1.000 -20 -22 -20 -38 0 -42 0 -18 spline
+1 1.000 20 -14 20 -26 0 -22 0 -18 spline
+1 1.000 -20 38 -20 22 0 18 0 42 spline
+1 1.000 -20 18 -20 2 0 -2 0 22 spline
+1 1.000 -20 -2 -20 -18 0 -22 0 2 spline
+1 1.000 20 26 20 14 0 18 0 22 spline
+1 1.000 20 6 20 -6 0 -2 0 2 spline
+1 1.000 0 -42 0 -64 2 polygon
+1 1.000 0 42 0 64 2 polygon
+mark @L {/Times-Roman cf} ctmk 151 0.000 1.000 -24 0 label
+endgate
+} def
+
+/::indu_latex {
+<</@L ($L$) >> begingate
+1 1.000 -38 3 -23 5 -18 -16 -42 -16 spline
+1 1.000 -25 -36 -15 -36 -18 -16 -22 -16 spline
+1 1.000 42 -16 64 -16 2 polygon
+1 1.000 -42 -16 -64 -16 2 polygon
+1 1.000 -18 3 -3 5 2 -16 -22 -16 spline
+1 1.000 2 3 17 5 22 -16 -2 -16 spline
+1 1.000 22 3 37 5 42 -16 18 -16 spline
+1 1.000 -5 -36 5 -36 2 -16 -2 -16 spline
+1 1.000 15 -36 25 -36 22 -16 18 -16 spline
+mark @L {/Times-Roman cf} ctmk 145 0 1.000 0 10 label
+endgate
+} def
+
+/::indd_latex {
+<</@L ($L$) >> begingate
+1 1.000 -38 -35 -23 -37 -18 -16 -42 -16 spline
+1 1.000 -25 4 -15 4 -18 -16 -22 -16 spline
+1 1.000 42 -16 64 -16 2 polygon
+1 1.000 -42 -16 -64 -16 2 polygon
+1 1.000 -18 -35 -3 -37 2 -16 -22 -16 spline
+1 1.000 2 -35 17 -37 22 -16 -2 -16 spline
+1 1.000 22 -35 37 -37 42 -16 18 -16 spline
+1 1.000 -5 4 5 4 2 -16 -2 -16 spline
+1 1.000 15 4 25 4 22 -16 18 -16 spline
+mark @L {/Times-Roman cf} ctmk 157 0.000 1.000 0 -38 label
+endgate
+} def
+
+/::impr_latex {
+<</@Zname ($Z$) >> begingate
+1 1.000 -32 64 -32 36 2 polygon
+1 1.000 -32 -64 -32 -36 2 polygon
+0 1.000 -42 36 -42 -36 -22 -36 -22 36 4 polygon
+mark @Zname {/Helvetica cf} ctmk 144 0 1.000 -14 -13 label
+endgate
+} def
+
+/::impl_latex {
+<</@Zname ($Z$) >> begingate
+1 1.000 -32 64 -32 36 2 polygon
+1 1.000 -32 -64 -32 -36 2 polygon
+0 1.000 -42 36 -42 -36 -22 -36 -22 36 4 polygon
+mark @Zname {/Helvetica cf} ctmk 147 0 1.000 -46 -13 label
+endgate
+} def
+
+/::impu_latex {
+<</@Name ($Z$) >> begingate
+1 1.000 -64 0 -36 0 2 polygon
+1 1.000 64 0 36 0 2 polygon
+0 1.000 -36 10 -36 -10 36 -10 36 10 4 polygon
+mark @Name {/Helvetica cf} ctmk 145 0 1.000 0 20 label
+endgate
+} def
+
+/::impd_latex {
+<</@Name ($Z$) >> begingate
+1 1.000 -64 0 -36 0 2 polygon
+1 1.000 64 0 36 0 2 polygon
+0 1.000 -36 10 -36 -10 36 -10 36 10 4 polygon
+mark @Name {/Helvetica cf} ctmk 157 0.000 1.000 0 -20 label
+endgate
+} def
+
+/::psource_latex {
+<</@Name ($V_1$) >> begingate
+1 1.000 0 -64 0 -52 2 polygon
+1 1.000 0 -32 20 0.000 360.000 xcarc
+1 1.000 -10 44 0 48 2 polygon
+1 1.000 0 0 10 4 2 polygon
+1 1.000 -10 12 10 4 2 polygon
+1 1.000 -10 12 10 20 2 polygon
+1 1.000 -10 28 10 20 2 polygon
+1 1.000 -10 28 10 36 2 polygon
+1 1.000 -10 44 10 36 2 polygon
+1 1.000 0 48 0 64 2 polygon
+1 1.000 0 -12 0 0 2 polygon
+1 1.000 0 -18 0 -46 14 -32 -14 -32 spline
+mark @Name {/Helvetica cf} ctmk 148 0.000 1.000 27 -32 label
+endgate
+} def
+
+/::vnsource_latex {
+begingate
+1.000 0 0 0 analog::source
+1 1.000 -23 -9 -18 10 -13 -3 -7 13 -3 -16 0 3 5 -9 10 11 16 -6 20 1 25 -8 
+11 polygon
+endgate
+} def
+
+/::disource_latex {
+<</@gm ($g_\\mr{m} v_\\mr{x}$) >> begingate
+1 0.750 0 20 0 -8 2 polygon
+0.800 /sv 180.000 0 -20 generic::arrowhead
+1 1.000 0 32 -32 0 0 -32 32 0 0 32 5 polygon
+1 1.000 0 32 0 64 2 polygon
+1 1.000 0 -32 0 -64 2 polygon
+mark @gm {/Helvetica cf} ctmk 148 0.000 1.000 40 0 label
+endgate
+} def
+
+/::disource2_latex {
+<</@vx ($v_\\mr{x}$) /@gm ($g_\\mr{m} v_\\mr{x}$) >> begingate
+1 0.750 0 20 0 -8 2 polygon
+0.800 /sv 180.000 0 -20 generic::arrowhead
+1 1.000 0 32 -32 0 0 -32 32 0 0 32 5 polygon
+1 1.000 0 32 0 64 2 polygon
+1 1.000 0 -32 0 -64 2 polygon
+mark @gm {/Helvetica cf} ctmk 148 0.000 1.000 40 0 label
+1 1.000 -90 -64 -138 -64 2 polygon
+1 1.000 -90 64 -138 64 2 polygon
+1 1.000 -144 -64 6 0.000 360.000 xcarc
+1 1.000 -144 64 6 0.000 360.000 xcarc
+1 1.000 -152 46 -136 46 2 polygon
+1 1.000 -144 54 -144 38 2 polygon
+1 1.000 -152 -50 -136 -50 2 polygon
+mark @vx {/Helvetica cf} ctmk 149 0.000 1.000 -142 0 label
+endgate
+} def
+
+/::vctrl_latex {
+<</@vx ($v_\\mr{x}$) >> begingate
+1 1.000 -90 -64 -138 -64 2 polygon
+1 1.000 -90 64 -138 64 2 polygon
+1 1.000 -144 -64 6 0.000 360.000 xcarc
+1 1.000 -144 64 6 0.000 360.000 xcarc
+1 1.000 -152 46 -136 46 2 polygon
+1 1.000 -144 54 -144 38 2 polygon
+1 1.000 -152 -50 -136 -50 2 polygon
+mark @vx {/Helvetica cf} ctmk 149 0.000 1.000 -142 0 label
+endgate
+} def
+
+
+/::gm_diff_latex {
+<</@gm ($g_\\mr{m}$) >> begingate
+0 1.000 -80 -80 -80 80 32 32 32 -32 4 polygon
+1 1.000 -5 48 32 48 2 polygon
+(-) {/Symbol cf} 2 5 0.000 1.000 -61 42 label
+(+) {/Symbol cf} 2 5 0.000 1.000 -61 -50 label
+1 1.000 32 48 64 48 2 polygon
+1 1.000 -5 -48 64 -48 2 polygon
+(+) {/Symbol cf} 2 5 0.000 1.000 -16 37 label
+(-) {/Symbol cf} 2 5 0.000 1.000 -16 -47 label
+1 1.000 -80 48 -112 48 2 polygon
+1 1.000 -80 -48 -112 -48 2 polygon
+mark @gm {/Helvetica cf} ctmk 1173 0.000 1.000 -24 0 label
+endgate
+} def
+
+/::gm_se_latex {
+<</@gm ($g_\\mr{m}$) >> begingate
+0 1.000 -80 -80 -80 80 32 32 32 -32 4 polygon
+(-) {/Symbol cf} 2 5 0.000 1.000 -61 42 label
+(+) {/Symbol cf} 2 5 0.000 1.000 -61 -50 label
+1 1.000 32 0 64 0 2 polygon
+1 1.000 -80 48 -112 48 2 polygon
+1 1.000 -80 -48 -112 -48 2 polygon
+mark @gm {/Helvetica cf} ctmk 149 0.000 1.000 -24 0 label
+endgate
+} def
+
+/::xfmr1_latex {
+<</@N ($1:N$) /@L1 ($L_1$) /@L2 ($L_2$) >> begingate
+mark @N {/Times-Roman cf} ctmk 145 0.000 0.650 0 64 label
+mark @L1 {/Times-Roman cf} ctmk 151 0.000 0.650 -56 0 label
+mark @L2 {/Times-Roman cf} ctmk 148 0.000 0.650 56 0 label
+1 1.000 -12 -22 -12 -38 -32 -42 -32 -18 spline
+1 1.000 -52 -14 -52 -26 -32 -22 -32 -18 spline
+1 1.000 -12 38 -12 22 -32 18 -32 42 spline
+1 1.000 -12 18 -12 2 -32 -2 -32 22 spline
+1 1.000 -12 -2 -12 -18 -32 -22 -32 2 spline
+1 1.000 -52 26 -52 14 -32 18 -32 22 spline
+1 1.000 -52 6 -52 -6 -32 -2 -32 2 spline
+1 1.000 -32 -42 -32 -64 2 polygon
+1 1.000 -32 42 -32 64 2 polygon
+1 1.000 12 -22 12 -38 32 -42 32 -18 spline
+1 1.000 52 -14 52 -26 32 -22 32 -18 spline
+1 1.000 12 38 12 22 32 18 32 42 spline
+1 1.000 12 18 12 2 32 -2 32 22 spline
+1 1.000 12 -2 12 -18 32 -22 32 2 spline
+1 1.000 52 26 52 14 32 18 32 22 spline
+1 1.000 52 6 52 -6 32 -2 32 2 spline
+1 1.000 32 -42 32 -64 2 polygon
+1 1.000 32 42 32 64 2 polygon
+1.000 0.000 -16 48 generic::dot
+1.000 0.000 16 48 generic::dot
+endgate
+} def
+
+/::xfmr1_core_latex {
+<</@N ($1:N$) /@L1 ($L_1$) /@L2 ($L_2$) >> begingate
+mark @N {/Times-Roman cf} ctmk 145 0.000 0.650 0 64 label
+mark @L1 {/Times-Roman cf} ctmk 151 0.000 0.650 -56 0 label
+mark @L2 {/Times-Roman cf} ctmk 148 0.000 0.650 56 0 label
+1 1.000 -12 -22 -12 -38 -32 -42 -32 -18 spline
+1 1.000 -52 -14 -52 -26 -32 -22 -32 -18 spline
+1 1.000 -12 38 -12 22 -32 18 -32 42 spline
+1 1.000 -12 18 -12 2 -32 -2 -32 22 spline
+1 1.000 -12 -2 -12 -18 -32 -22 -32 2 spline
+1 1.000 -52 26 -52 14 -32 18 -32 22 spline
+1 1.000 -52 6 -52 -6 -32 -2 -32 2 spline
+1 1.000 -32 -42 -32 -64 2 polygon
+1 1.000 -32 42 -32 64 2 polygon
+1 1.000 12 -22 12 -38 32 -42 32 -18 spline
+1 1.000 52 -14 52 -26 32 -22 32 -18 spline
+1 1.000 12 38 12 22 32 18 32 42 spline
+1 1.000 12 18 12 2 32 -2 32 22 spline
+1 1.000 12 -2 12 -18 32 -22 32 2 spline
+1 1.000 52 26 52 14 32 18 32 22 spline
+1 1.000 52 6 52 -6 32 -2 32 2 spline
+1 1.000 32 -42 32 -64 2 polygon
+1 1.000 32 42 32 64 2 polygon
+1.000 0.000 -16 48 generic::dot
+1.000 0.000 16 48 generic::dot
+1 1.000 -4 40 -4 -40 2 polygon
+1 1.000 4 40 4 -40 2 polygon
+endgate
+} def
+
+/::xfmr1k_latex {
+<</@k ($k$) /@L1 ($L_1$) /@L2 ($L_2$) >> begingate
+mark @k {/Times-Roman cf} ctmk 145 0.000 0.650 0 72 label
+mark @L1 {/Times-Roman cf} ctmk 151 0.000 0.650 -56 0 label
+mark @L2 {/Times-Roman cf} ctmk 148 0.000 0.650 56 0 label
+1 1.000 -12 -22 -12 -38 -32 -42 -32 -18 spline
+1 1.000 -52 -14 -52 -26 -32 -22 -32 -18 spline
+1 1.000 -12 38 -12 22 -32 18 -32 42 spline
+1 1.000 -12 18 -12 2 -32 -2 -32 22 spline
+1 1.000 -12 -2 -12 -18 -32 -22 -32 2 spline
+1 1.000 -52 26 -52 14 -32 18 -32 22 spline
+1 1.000 -52 6 -52 -6 -32 -2 -32 2 spline
+1 1.000 -32 -42 -32 -64 2 polygon
+1 1.000 -32 42 -32 64 2 polygon
+1 1.000 12 -22 12 -38 32 -42 32 -18 spline
+1 1.000 52 -14 52 -26 32 -22 32 -18 spline
+1 1.000 12 38 12 22 32 18 32 42 spline
+1 1.000 12 18 12 2 32 -2 32 22 spline
+1 1.000 12 -2 12 -18 32 -22 32 2 spline
+1 1.000 52 26 52 14 32 18 32 22 spline
+1 1.000 52 6 52 -6 32 -2 32 2 spline
+1 1.000 32 -42 32 -64 2 polygon
+1 1.000 32 42 32 64 2 polygon
+1.000 0.000 -16 48 generic::dot
+1.000 0.000 16 48 generic::dot
+1 1.000 -11 72 13 72 17 57 -15 57 spline
+1 1.000 -15 57 -12 59 2 polygon
+1 1.000 -15 57 -16 60 2 polygon
+1 1.000 17 57 14 59 2 polygon
+1 1.000 17 57 18 60 2 polygon
+endgate
+} def
+
+/::xfmr1k_core_latex {
+<</@k ($k$) /@L1 ($L_1$) /@L2 ($L_2$) >> begingate
+mark @k {/Times-Roman cf} ctmk 145 0.000 0.650 0 72 label
+mark @L1 {/Times-Roman cf} ctmk 151 0.000 0.650 -56 0 label
+mark @L2 {/Times-Roman cf} ctmk 148 0.000 0.650 56 0 label
+1 1.000 -12 -22 -12 -38 -32 -42 -32 -18 spline
+1 1.000 -52 -14 -52 -26 -32 -22 -32 -18 spline
+1 1.000 -12 38 -12 22 -32 18 -32 42 spline
+1 1.000 -12 18 -12 2 -32 -2 -32 22 spline
+1 1.000 -12 -2 -12 -18 -32 -22 -32 2 spline
+1 1.000 -52 26 -52 14 -32 18 -32 22 spline
+1 1.000 -52 6 -52 -6 -32 -2 -32 2 spline
+1 1.000 -32 -42 -32 -64 2 polygon
+1 1.000 -32 42 -32 64 2 polygon
+1 1.000 12 -22 12 -38 32 -42 32 -18 spline
+1 1.000 52 -14 52 -26 32 -22 32 -18 spline
+1 1.000 12 38 12 22 32 18 32 42 spline
+1 1.000 12 18 12 2 32 -2 32 22 spline
+1 1.000 12 -2 12 -18 32 -22 32 2 spline
+1 1.000 52 26 52 14 32 18 32 22 spline
+1 1.000 52 6 52 -6 32 -2 32 2 spline
+1 1.000 32 -42 32 -64 2 polygon
+1 1.000 32 42 32 64 2 polygon
+1.000 0.000 -16 48 generic::dot
+1.000 0.000 16 48 generic::dot
+1 1.000 -11 72 13 72 17 57 -15 57 spline
+1 1.000 -15 57 -12 59 2 polygon
+1 1.000 -15 57 -16 60 2 polygon
+1 1.000 17 57 14 59 2 polygon
+1 1.000 17 57 18 60 2 polygon
+1 1.000 -4 40 -4 -40 2 polygon
+1 1.000 4 40 4 -40 2 polygon
+endgate
+} def
+
+
+/::xfmr2_latex {
+<</@N ($1:N$) /@L1 ($L_1$) /@L2 ($L_2$) >> begingate
+mark @N {/Times-Roman cf} ctmk 145 0.000 0.650 0 64 label
+mark @L1 {/Times-Roman cf} ctmk 151 0.000 0.650 -56 0 label
+mark @L2 {/Times-Roman cf} ctmk 148 0.000 0.650 56 0 label
+1 1.000 -12 -22 -12 -38 -32 -42 -32 -18 spline
+1 1.000 -52 -14 -52 -26 -32 -22 -32 -18 spline
+1 1.000 -12 38 -12 22 -32 18 -32 42 spline
+1 1.000 -12 18 -12 2 -32 -2 -32 22 spline
+1 1.000 -12 -2 -12 -18 -32 -22 -32 2 spline
+1 1.000 -52 26 -52 14 -32 18 -32 22 spline
+1 1.000 -52 6 -52 -6 -32 -2 -32 2 spline
+1 1.000 -32 -42 -32 -64 2 polygon
+1 1.000 -32 42 -32 64 2 polygon
+1 1.000 10 -22 10 -38 30 -42 30 -18 spline
+1 1.000 50 -14 50 -26 30 -22 30 -18 spline
+1 1.000 10 38 10 22 30 18 30 42 spline
+1 1.000 10 18 10 2 30 -2 30 22 spline
+1 1.000 10 -2 10 -18 30 -22 30 2 spline
+1 1.000 50 26 50 14 30 18 30 22 spline
+1 1.000 50 6 50 -6 30 -2 30 2 spline
+1 1.000 30 -42 30 -64 2 polygon
+1 1.000 30 42 30 64 2 polygon
+1.000 0.000 -16 48 generic::dot
+1.000 0.000 16 -48 generic::dot
+endgate
+} def
+
+/::xfmr2_core_latex {
+<</@N ($1:N$) /@L1 ($L_1$) /@L2 ($L_2$) >> begingate
+mark @N {/Times-Roman cf} ctmk 145 0.000 0.650 0 64 label
+mark @L1 {/Times-Roman cf} ctmk 151 0.000 0.650 -56 0 label
+mark @L2 {/Times-Roman cf} ctmk 148 0.000 0.650 56 0 label
+1 1.000 -12 -22 -12 -38 -32 -42 -32 -18 spline
+1 1.000 -52 -14 -52 -26 -32 -22 -32 -18 spline
+1 1.000 -12 38 -12 22 -32 18 -32 42 spline
+1 1.000 -12 18 -12 2 -32 -2 -32 22 spline
+1 1.000 -12 -2 -12 -18 -32 -22 -32 2 spline
+1 1.000 -52 26 -52 14 -32 18 -32 22 spline
+1 1.000 -52 6 -52 -6 -32 -2 -32 2 spline
+1 1.000 -32 -42 -32 -64 2 polygon
+1 1.000 -32 42 -32 64 2 polygon
+1 1.000 10 -22 10 -38 30 -42 30 -18 spline
+1 1.000 50 -14 50 -26 30 -22 30 -18 spline
+1 1.000 10 38 10 22 30 18 30 42 spline
+1 1.000 10 18 10 2 30 -2 30 22 spline
+1 1.000 10 -2 10 -18 30 -22 30 2 spline
+1 1.000 50 26 50 14 30 18 30 22 spline
+1 1.000 50 6 50 -6 30 -2 30 2 spline
+1 1.000 30 -42 30 -64 2 polygon
+1 1.000 30 42 30 64 2 polygon
+1.000 0.000 -16 48 generic::dot
+1.000 0.000 16 -48 generic::dot
+1 1.000 -4 40 -4 -40 2 polygon
+1 1.000 4 40 4 -40 2 polygon
+endgate
+} def
+
+/::xfmr2k_latex {
+<</@k ($k$) /@L1 ($L_1$) /@L2 ($L_2$) >> begingate
+mark @k {/Times-Roman cf} ctmk 145 0.000 0.650 0 72 label
+mark @L1 {/Times-Roman cf} ctmk 151 0.000 0.650 -56 0 label
+mark @L2 {/Times-Roman cf} ctmk 148 0.000 0.650 56 0 label
+1 1.000 -12 -22 -12 -38 -32 -42 -32 -18 spline
+1 1.000 -52 -14 -52 -26 -32 -22 -32 -18 spline
+1 1.000 -12 38 -12 22 -32 18 -32 42 spline
+1 1.000 -12 18 -12 2 -32 -2 -32 22 spline
+1 1.000 -12 -2 -12 -18 -32 -22 -32 2 spline
+1 1.000 -52 26 -52 14 -32 18 -32 22 spline
+1 1.000 -52 6 -52 -6 -32 -2 -32 2 spline
+1 1.000 -32 -42 -32 -64 2 polygon
+1 1.000 -32 42 -32 64 2 polygon
+1 1.000 12 -22 12 -38 32 -42 32 -18 spline
+1 1.000 52 -14 52 -26 32 -22 32 -18 spline
+1 1.000 12 38 12 22 32 18 32 42 spline
+1 1.000 12 18 12 2 32 -2 32 22 spline
+1 1.000 12 -2 12 -18 32 -22 32 2 spline
+1 1.000 52 26 52 14 32 18 32 22 spline
+1 1.000 52 6 52 -6 32 -2 32 2 spline
+1 1.000 32 -42 32 -64 2 polygon
+1 1.000 32 42 32 64 2 polygon
+1.000 0.000 -16 48 generic::dot
+1.000 0.000 16 -48 generic::dot
+1 1.000 -11 72 13 72 17 57 -15 57 spline
+1 1.000 -15 57 -12 59 2 polygon
+1 1.000 -15 57 -16 60 2 polygon
+1 1.000 17 57 14 59 2 polygon
+1 1.000 17 57 18 60 2 polygon
+endgate
+} def
+
+/::xfmr2k_core_latex {
+<</@k ($k$) /@L1 ($L_1$) /@L2 ($L_2$) >> begingate
+mark @k {/Times-Roman cf} ctmk 145 0.000 0.650 0 72 label
+mark @L1 {/Times-Roman cf} ctmk 151 0.000 0.650 -56 0 label
+mark @L2 {/Times-Roman cf} ctmk 148 0.000 0.650 56 0 label
+1 1.000 -12 -22 -12 -38 -32 -42 -32 -18 spline
+1 1.000 -52 -14 -52 -26 -32 -22 -32 -18 spline
+1 1.000 -12 38 -12 22 -32 18 -32 42 spline
+1 1.000 -12 18 -12 2 -32 -2 -32 22 spline
+1 1.000 -12 -2 -12 -18 -32 -22 -32 2 spline
+1 1.000 -52 26 -52 14 -32 18 -32 22 spline
+1 1.000 -52 6 -52 -6 -32 -2 -32 2 spline
+1 1.000 -32 -42 -32 -64 2 polygon
+1 1.000 -32 42 -32 64 2 polygon
+1 1.000 12 -22 12 -38 32 -42 32 -18 spline
+1 1.000 52 -14 52 -26 32 -22 32 -18 spline
+1 1.000 12 38 12 22 32 18 32 42 spline
+1 1.000 12 18 12 2 32 -2 32 22 spline
+1 1.000 12 -2 12 -18 32 -22 32 2 spline
+1 1.000 52 26 52 14 32 18 32 22 spline
+1 1.000 52 6 52 -6 32 -2 32 2 spline
+1 1.000 32 -42 32 -64 2 polygon
+1 1.000 32 42 32 64 2 polygon
+1.000 0.000 -16 48 generic::dot
+1.000 0.000 16 -48 generic::dot
+1 1.000 -11 72 13 72 17 57 -15 57 spline
+1 1.000 -15 57 -12 59 2 polygon
+1 1.000 -15 57 -16 60 2 polygon
+1 1.000 17 57 14 59 2 polygon
+1 1.000 17 57 18 60 2 polygon
+1 1.000 -4 40 -4 -40 2 polygon
+1 1.000 4 40 4 -40 2 polygon
+endgate
+} def
+
+/::nmos2r_latex {
+<</@Name ($M_0$) /@WL ($\\frac{W}{L}$) >> begingate
+1.000 0 32 0 analog::nmos2
+mark @WL {/Helvetica cf} ctmk 148 0 1.000 36 0 label
+mark @Name {/Helvetica cf} ctmk 144 0 1.000 36 -64 label
+endgate
+} def
+
+/::nmos2l_latex {
+<</@Name ($M_0$) /@WL ($\\frac{W}{L}$) >> begingate
+-1.000 0 -32 0 analog::nmos2
+mark @WL {/Helvetica cf} ctmk 151 0 1.000 -36 0 label
+mark @Name {/Helvetica cf} ctmk 147 0 1.000 -36 -64 label
+endgate
+} def
+
+/::pmos2r_latex {
+<</@Name ($M_0$) /@WL ($\\frac{W}{L}$) >> begingate
+1.000 0.000 32 0 analog::pmos2
+mark @WL {/Helvetica cf} ctmk 148 0.000 1.000 36 0 label
+mark @Name {/Helvetica cf} ctmk 144 0.000 1.000 36 -64 label
+endgate
+} def
+
+/::pmos2l_latex {
+<</@Name ($M_0$) /@WL ($\\frac{W}{L}$) >> begingate
+-1.000 0.000 -32 0 analog::pmos2
+mark @WL {/Helvetica cf} ctmk 151 0.000 1.000 -36 0 label
+mark @Name {/Helvetica cf} ctmk 147 0.000 1.000 -36 -64 label
+endgate
+} def
+
+/::nmos2hvr_latex {
+<</@Name ($M_0$) /@WL ($\\frac{W}{L}$) >> begingate
+1.000 0 32 0 analog::nmos2
+mark @WL {/Helvetica cf} ctmk 148 0 1.000 36 0 label
+mark @Name {/Helvetica cf} ctmk 144 0 1.000 36 -64 label
+1 5.000 -12 26 -12 -26 2 polygon
+endgate
+} def
+
+
+/::nmos2hvl_latex {
+<</@Name ($M_0$) /@WL ($\\frac{W}{L}$) >> begingate
+-1.000 0 -32 0 analog::nmos2
+mark @WL {/Helvetica cf} ctmk 151 0 1.000 -36 0 label
+mark @Name {/Helvetica cf} ctmk 147 0 1.000 -36 -64 label
+1 5.000 12 24 12 -24 2 polygon
+endgate
+} def
+
+/::pmos2hvr_latex {
+<</@Name ($M_0$) /@WL ($\\frac{W}{L}$) >> begingate
+1.000 0.000 32 0 analog::pmos2
+mark @WL {/Helvetica cf} ctmk 148 0.000 1.000 36 0 label
+mark @Name {/Helvetica cf} ctmk 144 0.000 1.000 36 -64 label
+1 5.000 -12 26 -12 -26 2 polygon
+endgate
+} def
+
+/::pmos2hvl_latex {
+<</@Name ($M_0$) /@WL ($\\frac{W}{L}$) >> begingate
+-1.000 0.000 -32 0 analog::pmos2
+mark @WL {/Helvetica cf} ctmk 151 0.000 1.000 -36 0 label
+mark @Name {/Helvetica cf} ctmk 147 0.000 1.000 -36 -64 label
+1 5.000 12 24 12 -24 2 polygon
+endgate
+} def
+
+
+
+% EndLib
+
+

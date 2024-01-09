@@ -1,0 +1,16 @@
+%! PostScript set of library objects for XCircuit
+%  Version: 3.9
+%  Library name is: (analog_latex)
+%  Author: Danilo Djokic,,, <djokicd@102g-kanc>
+%
+
+
+% XCircuitLib library objects
+/\050analog_latex\051::open {
+begingate
+1 1.000 -12 0 0 0 0 -6 12 -6 12 6 0 6 0 0 7 polygon
+endgate
+} def
+
+
+% EndLib

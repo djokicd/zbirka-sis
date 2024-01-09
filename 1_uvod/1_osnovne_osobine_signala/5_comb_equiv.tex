@@ -1,0 +1,24 @@
+\textbf{\ID.} Изразити периодичну поворку Диракових импулса $\text{Ш}_T(t)$ 
+сложеном трансформацијом 
+јединичне периодичне поворке Диракових импулса $\text{Ш}(t) = \text{Ш}_1(t)$.
+
+\indent 
+\textsc{\underline{Решење}}: Период тражене поворке једнак је $T$ док је период јединичне поворке једнак
+јединици. Јасно је потребно онда прво обавити скалирање временске осе тако да се од јединичног 
+импулса добије импулс одговарајуће ширине. Том приликом је потребно обавити скалирање 
+временске осе појединчаног Делта импулса\footnote{Користи се резултат 
+$\updelta\bigl(a(t-t_0)\bigr) = \dfrac{1}{|a|} \updelta(t - t_0)$} па се има:
+\begin{equation}
+    \III\left(\dfrac tT\right) = 
+    \sum_{k = -\infty}^{\infty} 
+    \updelta \left( \dfrac tT - k \right)
+    =
+    \sum_{k = -\infty}^{\infty} 
+    \updelta \left( \dfrac{t - kT}{T} \right) 
+    = 
+    \sum_{k = -\infty}^{\infty} 
+    T \updelta \left( t - kT \right) 
+    = T \III_T(t)
+\end{equation}
+Коначно, из добијеног резултата је тражени израз $\III_T(t) = \dfrac1T \III\left(\dfrac tT\right)$.
+\vfill

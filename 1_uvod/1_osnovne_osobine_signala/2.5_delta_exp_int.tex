@@ -1,0 +1,78 @@
+\textbf{\ID.} 
+Нека је дат
+континуалан сигнал
+$
+\DS x(t) = {\rm e}^{\upsigma t} \,
+%\sum_{k = -\infty}^\infty \updelta(t - kT)$ 
+\text{Ш}_T(t)
+\,\uu(t + \upepsilon)$, где је  $0 < \upepsilon < T$.
+(а) Одредити услов које треба да задовољава параметар $\upsigma\in\mathbb R$ тако да интеграл
+$\DS \int_{-\infty}^{\infty} \hspace*{-0.5em} x(t)\,\de t$ конвергира, 
+и у том случају (б) израчунати  тај интеграл.
+\vspace{5mm}
+
+\textsc{\underline{Решење}}: (а) Дата поворка Делта импулса се може расписати по дефиницији, а 
+затим се може применити особина еквиваленције\footnote{Особина \textit{еквиваленције} је 
+$x(t) \updelta(t - t_0) = x(t_0) \updelta(x - t_0)$. } Делта импулса према
+\begin{equation}
+    x(t) = {\rm e}^{\upsigma t} \,
+    \underbrace{ \sum_{k = -\infty}^\infty \updelta(t - kT) }_{\text{Ш}_T(t)}
+    \,\uu(t + \upepsilon) = 
+    \sum_{k = -\infty}^\infty \underbrace{ {\rm e}^{\upsigma t} \updelta(t - kT) }_{\text{особина екв.}}
+    \,\uu(t + \upepsilon)
+    =
+    \sum_{k = -\infty}^\infty {\rm e}^{\upsigma kT} \updelta(t - kT)   
+    \,\uu(t + \upepsilon).
+\end{equation}
+Интеграл датог израза се онда може израчунати заменом редоследа интеграције и 
+сумирања\footnote{Строго оправдање замене интеграла и суме је сложено. Ипак, у инжењерским применама, 
+користимо то без оправдања будући да се \textit{патолошки} случајеви где то није оправдано у пракси 
+практично не јављају. Практично сматрамо да је $\sum\int \equiv \int\sum$.} према поступку:
+\begin{equation}
+    \int_{-\infty}^{\infty} \hspace*{-0.5em} x(t)\,\de t 
+    = 
+    \underbrace{
+    \int_{-\infty}^{\infty}
+    \sum_{k = -\infty}^\infty}_{\text{замена}} {\rm e}^{\upsigma kT} \updelta(t - kT)   
+    \,\uu(t + \upepsilon)
+    \,\de t 
+    =
+    \sum_{k = -\infty}^\infty
+    \underbrace{{\rm e}^{\upsigma kT} }_{\const}
+    \int_{-\infty}^{\infty} 
+    \updelta(t - kT)   
+    \,\uu(t + \upepsilon)
+    \,\de t.
+    \label{eq:\ID.2}
+\end{equation} 
+У последњем написаном интегралу, члан $\uu(t + \upepsilon)$ ограничава интеграл са леве стране 
+чиме се онда интеграл решава провером да ли Делта импулс $\updelta(t - kT)$ постоји у домену 
+инетеграције $t \in (-\upepsilon, \infty)$. као 
+\begin{equation} 
+    \int_{-\infty}^{\infty} 
+    \updelta(t - kT)   
+    \,\uu(t + \upepsilon)
+    \,\de t = 
+    \int_{-\upepsilon}^{\infty} \updelta(t - kT) \de t = 
+    \begin{cases}
+        0 &, k < 0 \\
+        1 &, k \geq 0
+    \end{cases}
+    = \uu[k]\text{\quad(дискретан јединични низ)}
+\end{equation}
+Сменом добијеног резултата у \eqref{eq:\ID.2} добија се геометријски 
+ред\footnote{Сума геометријског реда је облика
+$\DS \sum_{k = -\infty}^{\infty} q^k = \dfrac{1}{1-q}$, под условом да је $|q| < 1$. }
+ограничен са леве стране 
+\begin{equation}
+    \sum_{k = -\infty}^{\infty} {\rm e}^{\upsigma k T} \uu[k]
+    =
+    \sum_{k = 0}^{\infty} (\ee^{\upsigma T})^k 
+    = 
+    \dfrac{1}{1 - \ee^{\upsigma T}},\quad \text{под условом конвергеције: } \bigl|e^{\upsigma T}\bigr|< 1.
+    \label{eq:\ID.3}
+\end{equation}
+Добијени услов конвергеције последица је суме геометријског реда и даје услов па је
+тражени услов $\upsigma < 0$, а тражени интеграл дат је резултатом у изразу \eqref{eq:\ID.3}
+
+Читаоцу се препоручује да понови задатак у случају да је $\upsigma \in \mathbb C$.

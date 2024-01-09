@@ -1,0 +1,172 @@
+\usepackage[math]{cmsrb}
+\usepackage{graphicx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[T1, T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin = 15mm]{geometry}
+\usepackage[serbianc]{babel}
+\usepackage{amsmath, amsfonts}
+\usepackage[Symbolsmallscale]{upgreek}
+
+%% Uredjenje prikaza, poglavlja, podpoglavlja, headeri
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % clear all fields
+\fancyhead[L]{\rightmark}
+\fancyhead[R]{\thepage}
+
+\renewcommand{\subsectionmark}[1]{%
+  \markright{{\thesubsection.\ #1}}
+  }%
+
+
+\counterwithout{section}{chapter}
+
+
+\usepackage{multicol}
+
+\usepackage{icomma}
+
+\usepackage{enumitem}
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{cancel}
+
+\renewcommand{\figurename}{Слика}
+\newcommand{\mr}[1]{{\rm #1}}
+\usepackage{calc}
+
+\usepackage{xcolor}
+
+
+\usepackage{fancybox}
+
+\newcommand{\unit}[1]{\,\left[\mathrm{#1}\right]}
+\newcommand{\uu}{{\rm u}}
+\newcommand{\jj}{{\rm j}}
+\newcommand{\ee}{{\rm e}}
+\newcommand{\de}{{\rm d}}
+\newcommand{\III}{\text{Ш}}
+\newcommand{\const}{{\rm const}}
+\newcommand{\rect}{\operatorname{rect}}
+\newcommand{\sinc}{\operatorname{sinc}}
+\newcommand{\DS}{\displaystyle}
+
+\newcommand{\FS}[1]{\mathcal{FS}\left\{#1\right\}}
+\newcommand{\FT}[1]{\mathcal{FT}\left\{#1\right\}}
+\newcommand{\LT}[1]{\mathcal{L}\left\{#1\right\}}
+\newcommand{\ZT}[1]{\mathcal{Z}\left\{#1\right\}}
+
+
+\usepackage[bottom]{footmisc}
+
+
+\usepackage{draftwatermark}
+
+\SetWatermarkText{{\bf Сигнали и системи у инжењерству \\ \bf Збирка задатака,\bf Радна верзија: \\ \today}}
+\SetWatermarkColor[gray]{0.9}
+\SetWatermarkFontSize{1.25cm}
+\SetWatermarkAngle{60}
+\SetWatermarkHorCenter{9cm}
+
+\newlength\sirinaSlike
+
+\raggedbottom
+
+\usepackage{xparse}
+
+% Brojac zadataka
+
+
+%% RAZMAK IZMEDJU ZADATAKA
+
+\newcommand{\ProblemSep}{5mm}
+
+
+%% BROJACI 
+
+\newcounter{ID} % Brojac zadataka
+\newcounter{fid}
+
+\newcommand{\fid}{\stepcounter{fid}\thefid}
+\newcommand{\ID}{\theID}
+
+\counterwithin{equation}{ID}
+\counterwithin{figure}{ID}
+
+%% SLIKA PORED TEKSTA
+
+\NewDocumentEnvironment{slikaDesno}{oomo}
+{
+    \IfNoValueTF{#1}
+        { \def\slika{\includegraphics[scale=1]{#3}} }
+        { \def\slika{\includegraphics[scale=#1]{#3}} }
+    \setlength\sirinaSlike{\widthof{\slika}}
+    \hspace*{-19pt}
+    \begin{minipage}[t]{\textwidth - \sirinaSlike - 20pt}
+}{
+    \end{minipage}
+    %
+    \hfill
+    %
+    \begin{minipage}[t]{\sirinaSlike}
+        \vspace*{-10pt}
+        \begin{center}
+            \slika \\[2pt]
+            % Слика \ID.\fid.
+            \IfNoValueTF{#2}
+            {\captionof{figure}{}}
+            {\captionof{figure}{#2}}
+            \IfNoValueTF{#4}
+            {}
+            {
+                \includegraphics[scale=1]{#4}
+                \captionof{figure}{}
+            }
+        \end{center}
+    \end{minipage}
+}
+
+
+%% CRTICE
+
+\usepackage{environ}
+\usepackage{tikz}
+
+\NewEnviron{crtice}{
+\par
+\noindent
+\begin{tikzpicture}
+\node[rectangle,minimum width=0.99\textwidth] (m) {\begin{minipage}{0.99\textwidth}\BODY\end{minipage}};
+\draw[dashed] (m.south west) -- (m.north west);
+\draw[dashed] (m.south east) -- (m.north east);
+\end{tikzpicture}
+}
+
+
+%% UNDERLINE
+
+\usepackage{soulutf8}
+\usepackage{color}
+\makeatletter
+\newcommand*{\whiten}[1]{\llap{\textcolor{white}{{\the\SOUL@token}}\hspace{#1pt}}}
+\DeclareRobustCommand*\myul{%
+    \def\SOUL@everyspace{\underline{\space}\kern\z@}%
+    \def\SOUL@everytoken{%
+     \setbox0=\hbox{\the\SOUL@token}%
+     \ifdim\dp0>\z@
+        \raisebox{\dp0}{\underline{\phantom{\the\SOUL@token}}}%
+        \whiten{1}\whiten{0}%
+        \whiten{-1}\whiten{-2}%
+        \llap{\the\SOUL@token}%
+     \else
+        \underline{\the\SOUL@token}%
+     \fi}%
+\SOUL@}
+\makeatother
+
+
