@@ -48,6 +48,7 @@ def set_problem(directory, problem):
 sections = sorted ( [ f.path for f in os.scandir(".") if f.is_dir() ], key=cmp_to_key(compare_strs) )
 
 for section in sections:
+    if ".git" in section: continue
     if "xcircuit" in section: continue
     if ".vscode" in section: continue
     if "appendix" in section: continue
