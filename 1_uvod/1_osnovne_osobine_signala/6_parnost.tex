@@ -1,0 +1,52 @@
+\newpage
+\subsubsection{\textit{Парност сигнала}}
+\noindent
+\textbf{\ID}. \label{z:parnost}.
+Одредити парну и непарну компоненту 
+континуалних сигнала $x =x(t)$ за:
+\begin{multicols}{3}
+\begin{enumerate}
+\item[(а)] $x(t) = {\rm e}^{kt}$;
+\item[(б)] $x(t) = {\rm e}^{{\rm j}\upomega_0 t}$;
+\end{enumerate}
+\end{multicols}
+\noindent
+где су $k$ и $\upomega_0,$ познате реалне константе. \\[2mm]
+
+\textsc{\underline{Решење}}: 
+Сваки континуални сигнал $x(t)$ може се, на \textit{јединствен} начин, представити преко његове парне и непарне компоненте, $x_{\rm e}(t) = {\rm Ev}\,x(t)$ и 
+$x_{\rm o}(t) = {\rm Od}\,x(t)$ редом, као 
+\begin{eqnarray}
+    x(t) = x_{\rm e}(t) + x_{\rm o}(t).
+    \label{eq:\ID.1}
+\end{eqnarray}
+Парна и непарна компонента сигнала могу се одредити
+разматрањем израза за $x(-t)$ као и његове парне и непарне компоненте. Наиме,
+\begin{equation}
+    x(-t) = x_{\rm e}(-t) + x_{\rm o}(-t) \Rightarrow x(-t) = x_{\rm e}(t) - x_{\rm o}(t),
+    \label{eq:\ID.2}
+\end{equation}
+при чему су искоришћени $x_{\rm e}(-t) = x_{\rm e}(t)$ и $x_{\rm o}(t) = -x_{\rm o}(-t)$, 
+према дефиницији перне и непарне компоненте. Одатле се онда из система једначина 
+\eqref{eq:\ID.1} и \eqref{eq:\ID.2} налазе изрази за парну и напарну компоненту сигнала датог као $x(t)$:
+\begin{eqnarray}
+    & x_{\rm e}(t) = \dfrac{ x(t) + x(-t) }{2},& \text{ и } \\
+    & x_{\rm o}(t) = \dfrac{ x(t) - x(-t) }{2}.&
+    \label{eq:\ID.3}
+\end{eqnarray}
+
+
+На основу добијеног резултата \eqref{eq:\ID.3}, онда се могу непосредно одредити парна и непарна компонента датих израза
+\begin{enumerate}
+    \item[(а)] ${\rm Ev} \{ {\rm e}^{kt} \} = \dfrac{ {\rm e}^{kt} + {\rm e}^{-kt} }{2} = \cosh(x)$, 
+    и ${\rm Od}\{{\rm e}^{kt}\} =  \dfrac{ {\rm e}^{kt} - {\rm e}^{-kt} }{2} = \sinh(x)$;
+    \item[(б)] ${\rm Ev}\{ {\rm e}^{{\rm j}\upomega_0 t}\} = \dfrac{ {\rm e}^{{\rm j}\upomega_0 t} + {\rm e}^{-{\rm j}\upomega_0 t} }{2} = \cos(\upomega_0 t)$,
+    и ${\rm Od} \{ {\rm e}^{{\rm j}\upomega_0 t} \} =  \dfrac{ {\rm e}^{{\rm j}\upomega_0 t} - {\rm e}^{-{\rm j}\upomega_0 t} }{2} =\jj \sin(\upomega_0 t)$;
+\end{enumerate}
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+\noindent
+\textbf{\ID}. 
+Одредити парну и непарну компоненту 
+континуалног простопериодичног сигнала, облика 
+$x(t) = \sin \left(\upomega_0 t + \uptheta \right)$, где су $\upomega_0$ и $\uptheta$ позанте константе. 
+\\[2mm]
+
+\textsc{\underline{Решење}}: Решење се може потражити поступком описаним у задатку 
+\ref{z:parnost}, ипак, у случају овог задатка, али и разних других сродних примера, резултат се може пронаћи 
+\textit{идентификацијом} парног и непарног дела сигнала, трансформацијом полазног израза. Применимо израз за 
+синус збира\footnote{Синус збира углова 
+$\sin(\upalpha + \upbeta) = \sin\upalpha \cos\upbeta + \cos\upalpha \sin\upbeta$} чиме се добија 
+\begin{equation}
+    x(t) = \sin \left(\upomega_0 t + \uptheta \right) 
+    = \underbrace{\cos \uptheta}_{\rm const} \cdot \sin \upomega_0 t + \underbrace{\sin \uptheta}_{\rm const} \cdot \cos \upomega_0 t.
+\end{equation}
+Пошто је познато да су $\sin(\upomega_0 t)$ и $\cos(\upomega_0 t)$ непаран и паран сигнал редом, а знамо да се 
+сигнал $x(t)$ може на јединствен начин представити као збир његових парних и непарних компоненти, онда 
+морају бити
+\begin{eqnarray}
+    {\rm Od} \{ x(t) \} = \cos \uptheta \cdot \sin \upomega_0 t,& \text{ и } \\
+    {\rm Ev} \{ x(t) \}  = \sin \uptheta \cdot \cos \upomega_0 t.&
+\end{eqnarray}
+
+Овакав поступак идентификације компоненти сигнала, често може брже довести до резултата од поступка описаног у задаку 
+\ref{z:parnost}.
