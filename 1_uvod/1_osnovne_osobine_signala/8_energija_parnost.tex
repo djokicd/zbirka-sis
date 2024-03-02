@@ -1,0 +1,33 @@
+\noindent
+\textbf{\ID}. \label{z:zbirP}
+Познато је да су енергије реалних 
+сигнала $x = x(t)$ и $y = y(t)$, $W_x$ и $W_y$ редом, коначне. 
+Одредити (а) услов, који треба да задовољавају сигнали $x$ и $y$, под 
+којим је снага сигнала $z(t) = x(t) + y(t)$ једнака 
+$W_z = W_x + W_y$. На основу резултата из претходне тачке 
+(б) доказати једнакост:
+$$
+W\{x\} =  W\{ {\rm Ev}\{x\} \} + 
+W\{ {\rm Od}\{x\} \},
+$$
+где $W\{x\}$ означава енергију сигнала $x$.
+\\[2mm]
+
+\textsc{\underline{Решење}}:
+(а) Снага сигнала $z(t) = x(t) + y(t)$ може се изразити као 
+\begin{equation}
+    \underbrace{ \int_{-\infty}^{\infty} (x(t) + y(t))^2 \, {\rm d}t }_{W_z}
+    = \underbrace{ \int_{-\infty}^{\infty} x(t)^2 \, {\rm d}t }_{W_x} +
+    \underbrace{ \int_{-\infty}^{\infty} y(t)^2 \, {\rm d}t }_{W_y} +
+    2 \int_{-\infty}^{\infty} x(t)y(t) \, {\rm d}t.
+    \label{eq:\ID.1}
+\end{equation}
+Да би се остварио услов $W_z = W_x + W_y$, потребно је да буде 
+$\displaystyle \int_{-\infty}^{\infty} x(t)y(t) \, {\rm d}t = 0$.
+
+(б) На основу резултата претходне тачке, једнакост коју треба доказати је тачна, 
+будући да је услов интеграл непарне функције у симетричним границама,  
+$\displaystyle    
+    \int_{-\infty}^{\infty} \underbrace{ {\rm Ev}\{x\} \cdot {\rm Od}\{x\} }_{\text{Непарна фукција}}   \, {\rm d}t = 0.
+    \label{eq:\ID.2}
+$

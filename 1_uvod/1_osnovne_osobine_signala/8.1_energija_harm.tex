@@ -1,0 +1,48 @@
+\noindent 
+\textbf{\ID}.
+Извести израз за снагу сигнала: 
+$$
+x(t) = a_0 + a_1\cos(\upomega_0 t) +
+a_2 \cos(2\upomega_0 t) + \cdots 
++ a_n \cos(n\upomega_0 t), \qquad (n\in\mathbb N)
+$$
+где су $a_1, a_2, \ldots, a_n$ познате реалне
+константе.
+\\[2mm]
+
+\textsc{\underline{Решење}}:
+Периоди сигнала $x(t)$ су $T_0 = \dfrac{2\uppi}{\upomega_0}$ и $T_k = \dfrac{T_0}{k}$, где је $k \in \{2,3,\ldots,n\}$, 
+па је укупни период сигнала $x(t)$ једнак $T_0$. Снага сигнала $x(t)$ може се изразити као 
+\begin{equation}
+P_x = \dfrac{1}{T_0}\int_{T_0} x^2(t) \, dt =  \dfrac{1}{T_0} \int_{T_0} \left( a_0 + a_1\cos(\upomega_0 t) +
+a_2 \cos(2\upomega_0 t) + \cdots
++ a_n \cos(n\upomega_0 t) \right)^2 \, \de t \\
+\end{equation}
+Подинтегрална величина се може поделити на чланове у две различите врсте, квадрат сваког члана у изразу, и производ различитих
+чланова у изразу, чиме се добија израз
+\begin{eqnarray}
+T_0 P_x = \int_{T_0} a_0^2 \, \de t + \int_{T_0} a_1^2\cos^2(\upomega_0 t) \, \de t   \label{eq:\ID.1}
++ \int_{T_0} a_2^2 \cos^2(2\upomega_0 t) \, \de t + \cdots + \int_{T_0} a_n^2 \cos^2(n\upomega_0 t) \, \de t + \\
++ 2a_0a_1\int_{T_0} \cos(\upomega_0 t) \, \de t + 
+2a_0a_2\int_{T_0} \cos(2\upomega_0 t) \, \de t + \cdots + \label{eq:\ID.2}
+2a_0a_n\int_{T_0} \cos(n\upomega_0 t) \, \de t + \\
++ 2a_1a_2\int_{T_0} \cos(\upomega_0 t)\cos(2\upomega_0 t) \, \de t + \cdots + 
+2a_{n-1}a_n\int_{T_0} \cos((n-1)\upomega_0 t)\cos(n\upomega_0 t) \, \de t + \cdots   \label{eq:\ID.3}
+\end{eqnarray}
+Интеграли у изразу \eqref{eq:\ID.1} су квадрати простопериодичних величина\footnote{
+За сигнале $\cos^2(n\upomega t)$, са периодом $T$, средња вредност је $\dfrac{1}{2}$ па је 
+$\int_{T_0} \cos^n(t) \de t = \dfrac{T}{2}$.
+}, па је њихова вредност једнака $T_0/2$. У реду \eqref{eq:\ID.2} су интеграли 
+простопериодичних функција па су они сви равни нули, док су у реду \eqref{eq:\ID.3} сви интеграли типа 
+$\displaystyle\int_T \cos(n\upomega t) \cos(m\upomega t) \de t$, за $n \neq m$ равни нули. На основу тога, 
+коначно се има
+\begin{eqnarray}
+    P_x = a_0^2 + \dfrac{ a_1^2 + a_2^2 + \cdots + a_n^2 }{2}
+\end{eqnarray}
+
+Резултат се може добити и уопштењем става из задатка \ref{z:zbirP}. Будући да су сабирци израза у задатку облика 
+да је, интеграл на периоду производа свака два од њих раван нули, то је снага тог сигнала једнака збиру снага сваког 
+од сигнала понаособ. Сигнал $а_0$ је константни сигнал, па је његова снага једнака квадрату амплитуде 
+$a_0^2$, док је снага сигнала $a_n \cos(n\upomega_0 t)$, $n \in \mathbb N$, једнака $a_n^2/2$ (квадрат ефективне вредности
+$a_n/\sqrt 2$). Сабирањем таквих снага, добија се исти коначан резултат.
+ 
