@@ -1,0 +1,50 @@
+\textbf{\ID}. 
+Применом својстава парних и непарних 
+сигнала
+израчунати вредности 
+одређених интеграла 
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item[(а)]
+$\displaystyle 
+I_1 = 
+\int_{-\uppi/2}^{\uppi/2}
+\dfrac{\cos t}{1 + {\rm e}^{\sin 2t}}
+ \de t;
+$
+
+\item[(б)]
+$\displaystyle
+I_2 = \int\limits_{-\uppi/3}^{\uppi/3}
+\dfrac{1 - t + 2t^3 - t^5 + 2t^7}{\cos^2 (t)}\,{\rm d} t$.
+\end{enumerate}
+\end{multicols}
+
+\textsc{\underline{Решење}}:
+Пошто су границе интеграла парне, може се користити својство да је 
+\begin{equation}
+\displaystyle \int_{-a}^{a} f(t) \de t = 2\int_{0}^{a} {\rm Ev}\{f(t)\} \de t, \label{eq:\ID.1}
+\end{equation}
+односно, потребно је потражити парне компоненте датих подинтегралних величина. 
+
+(а) Парна компоненте подинтегралне величине налази се применом особина парности простопериодичних функција, 
+применом поступка из задатка \ref{z:parnost}, као 
+\begin{eqnarray}
+    {\rm Ev}\left\{  
+        \dfrac{\cos t}{1 + {\rm e}^{\sin 2t}}
+    \right\}
+    &= \dfrac{
+        \dfrac{\cos t}{1 + {\rm e}^{\sin 2t}} + \dfrac{\cos (-t)}{1 + {\rm e}^{\sin 2(-t)}}
+    }{2}
+    =
+    \dfrac{
+        \dfrac{\cos t}{1 + {\rm e}^{\sin 2t}} + \dfrac{\cos t}{1 + {\rm e}^{-\sin 2t}}
+    }{2}
+    =  \\
+    &= \dfrac{ \dfrac{\cos(t) \cancel{( 2 + \ee^{\sin 2t} + \ee^{-\sin 2t} )} } { \cancel{2 + \ee^{\sin 2t} + \ee^{-\sin 2t}} } }{2}
+    = \dfrac{1}{2} \cos(t).
+\end{eqnarray}
+Заменом добијеног резултата у \eqref{eq:\ID.1}, коначно се налази, $I_1 = 1$.
+
+(б) Сличним поступком се налази резултат $I_2 = 2\sqrt 3$.
