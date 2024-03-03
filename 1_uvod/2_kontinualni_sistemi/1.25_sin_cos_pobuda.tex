@@ -4,15 +4,35 @@ $\DS
 P({\rm D})\,y(t) = x(t)$, где су $x(t)$ и $y(t)$ побуда и одзив тог система редом, а 
 $P({\rm D})$ је оператор дат полиномом са реалним коефицијентима по оператору диференцирања 
 ${\rm D} = \dfrac{\de }{\de t}$. Полазећи од формуле одзива за експоненцијалну побуду, 
-облика $y_{\rm p} = \dfrac{ \ee^{at} }{P(a)}$
-, одредити 
+облика $y_{\rm p} = \dfrac{ \ee^{at} }{P(a)}$, одредити 
 партикуларни део одзива на нерезонантну побуду када је она простопериодична, облика 
 (а) $x(t) = \cos(\upomega_0 t)$ и 
 (б) $x(t) = \sin(\upomega_0 t)$.
 
 \underline{\sc Решење:} Приметимо да је 
-$\ee^{\jj\upomega_0 t} = \cos(\upomega_0 t) + \jj \sin(\upomega_0 t)$. Одзив на ту 
-
+$\ee^{\jj\upomega_0 t} = \cos(\upomega_0 t) + \jj \sin(\upomega_0 t)$.
 Мотивисани том примедбом, 
 размотримо побуду комплексним сигналом облика: 
-$\underline{x}(t) = x_{\rm r}(t) + \jj x_{\rm i}(t)$ 
+$\underline{x}(t) = x_{\rm r}(t) + \jj x_{\rm i}(t)$. Заменом је одзив на такву 
+побуду у облику: $\underline{y}(t) = P(\DD) \underline{x} = P(\DD) x_{\rm r}(t) + \jj P(\DD) x_{\rm i}(t)$, односно, може се 
+тврдити да је $\Re{\underline{y}(t)} = \Re{ P(\DD) \underline{x}}$, односно, 
+$\Im{ \underline{y}(t)} = \Im{ P(\DD) \underline{x}}$. Другим речима, реални део побуде побуђује само реални део озива, док 
+имагинарни део побуде побуђује само имагинарни део одзива. 
+
+На овом резултату можемо да темељимо поступак одређивања одзива на побуде облика $\cos(\upomega_0 t)$ и $\sin(\upomega_0 t)$, полазећи
+од одзива на експоненцијалну побуду  $\ee^{\underline s t}$, $\underline s = \jj\upomega$, користећи резултат да је 
+$\underline{y}_{\rm p}(t) =  \dfrac{\ee^{\underline s t}}{P(\underline s)} =  \dfrac{\ee^{\jj\upomega_0 t}}{P(\jj\upomega_0)}$, 
+одакле се налазе партикуларни делови одзива за побуде облика $\cos(\upomega_0 t)$ и $\sin(\upomega_0 t)$ као: 
+\begin{align}
+    &y_{\rm p}^{(\cos)}(t) 
+    = \Re{\dfrac{\ee^{\jj\upomega_0 t}}{P(\jj\upomega_0)}} 
+    = \Re{\dfrac{\ee^{\jj\upomega_0 t}}{|P(\jj\upomega_0)| \ee^{ \jj \arg P(\jj\upomega_0) } }} 
+    = \dfrac{\cos\bigl(\upomega_0 t - \arg P(\jj\upomega_0)\bigr)}{|P(\jj\upomega_0)|}; \text{и} \label{eq:cos_pobuda} \\[2mm]
+    &y_{\rm p}^{(\sin)}(t) 
+    = \Im{\dfrac{\ee^{\jj\upomega_0 t}}{P(\jj\upomega_0)}} 
+    = \Im{\dfrac{\ee^{\jj\upomega_0 t}}{|P(\jj\upomega_0)| \ee^{ \jj \arg P(\jj\upomega_0) } }} 
+    = \dfrac{\sin\bigl(\upomega_0 t - \arg P(\jj\upomega_0)\bigr)}{|P(\jj\upomega_0)|}, \label{eq:sin_pobuda} 
+\end{align}
+којом приликом је расписан карактеристични полином у комплексном поларном облику, 
+$P(\jj\upomega_0) = |P(\jj\upomega_0)| \ee^{ \jj \arg P(\jj\upomega_0) }$, а коришћено је и 
+$\ee^{\jj\upomega_0 t} / \ee^{ \jj \arg P(\jj\upomega_0)} = \ee^{\jj\bigl(\upomega_0 t - \arg P(\jj\upomega_0)\bigr)}$. 
