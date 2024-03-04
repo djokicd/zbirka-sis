@@ -1,0 +1,56 @@
+{\color{red}*}\PID \label{z:konv_sin}
+Посматра се систем првог реда чији је импулсни одзив дат изразом 
+$h(t) = \ee^{-at} \uu(t)$, где је $a>0$ позната константа. 
+Одредити принудни одзив овог система на простопериодичну побуду 
+облика (а) $x(t) = \cos(\upomega_0 t)\uu(t)$, односно (б) 
+$x(t) = \sin(\upomega_0 t) \uu(t)$.\\[2mm]
+
+\textsc{\myul{Решење:}}
+(а) Слична идеја се може искористити као у задатку \ref{z:sin_cos_pobuda}, потраживањем одзива на комплексну 
+експоненцијалну побуду $\underline{x}(t) = \cos(\upomega_0 t) + \jj\sin(\upomega_0 t) = \ee^{\jj\upomega_0 t}$,
+помоћу конволуције
+$
+    \underline{y}(t) = \underline{x}(t) \ast h(t) = \ee^{\jj \upomega_0 t} \ast \ee^{-at}  
+$
+Добијена конволуција експоненцијалних сигнала одређују се као у задатку \ref{z:exp_konv}б, одакле се има 
+$\ee^{\jj \upomega_0 t} \ast  \ee^{-at} = 
+\dfrac{\ee^{\jj \upomega_0 t} -  \ee^{-at}}{\jj\upomega_0 + a}$, па се онда појединачни одзиви простопериодичне 
+побуде одређују растављањем овог израза до реалног и имагинарног дела. Израз у именоцу запишимо у поларном
+облику
+\footnote{Користи се растављање комплексног броја
+у поларни облик $a + \jj b = \sqrt{a^2 + b^2}\,\exp(b/a)$, за $a, b > 0$.} као 
+$\jj\upomega_0 + a = \sqrt{ \upomega_0^2 + a^2 } \exp\left( \jj \uppsi \right)$, где је 
+$\uppsi = \arctg \dfrac{\upomega_0}{a}$. Заменом и даљим сређивањем добија се коначно
+
+\begin{align}
+    \underline{y}(t) =&
+    \dfrac{\ee^{\jj \upomega_0 t} -  \ee^{-at}}{\jj\upomega_0 + a}
+    =
+    \dfrac{\ee^{\jj \upomega_0 t} -  \ee^{-at}}{\sqrt{ \upomega_0^2 + a^2 } \exp\left( \jj \uppsi \right) }
+    = \dfrac{
+    \cos\left( \upomega_0 t +  \uppsi \right)
+    + 
+    \jj
+    \sin\left( \upomega_0 t +  \uppsi \right)
+    - \ee^{-at} \exp\left( -\jj \uppsi \right)
+    }{ \sqrt{ \upomega_0^2 + a^2 } } \\
+    =&
+    \underbrace{
+    \dfrac{
+    \cos\left( \upomega_0 t +  \uppsi \right)
+    - \ee^{-at} \cos(\uppsi)
+    }{ \sqrt{ \upomega_0^2 + a^2 } }
+    }_{\text{Реални део, Одзив на $\cos$}}
+    + \jj
+    \underbrace{
+    \dfrac{
+    \sin\left( \upomega_0 t +  \uppsi \right)
+    + \ee^{-at} \sin(\uppsi)
+    }{ \sqrt{ \upomega_0^2 + a^2 } }
+    }_{\text{Имагинарни део, Одзив на $\sin$}}, \qquad\uppsi = \arctg \dfrac{\upomega_0}{a}.
+\end{align}
+
+Уколико за тиме постоји потреба, члан уз $\ee^{-at}$ може се даље расписати применом тригонометријских идентитета
+$\cos(\arctg x) = \dfrac{1}{\sqrt{1 + x^2}}$ и $\sin(\arctg x) = \dfrac{x}{\sqrt{1 + x^2}}$. Преостало сређивање 
+израза препушта се читаоцу.
+
