@@ -3,4 +3,5 @@
 **/*.toc
 **/*.out
 content.tex
+**/*.bak
 
