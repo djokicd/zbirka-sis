@@ -4,16 +4,16 @@
 линеарни, временски инваријантни, 
 са меморијом и каузални: 
 \begin{multicols}{3}
-\begin{enumerate}
-\item[(а)] $y(t) = \sum_{k = 0}^{\infty} x(t-kT)$, 
-\item[(б)] $y(t) = \sqrt{2} x(t)$,
-\item[(в)] $y(t) = t x(t-1)^2$,
-\item[(г)] $y(t) = \int_{\uptau = -\infty}^{t}
+\begin{enumerate}[label=(\alph*)]
+\item $y(t) = \sum_{k = 0}^{\infty} x(t-kT)$, 
+\item $y(t) = \sqrt{2} x(t)$,
+\item $y(t) = t x(t-1)^2$,
+\item $y(t) = \int_{\uptau = -\infty}^{t}
 \hspace{-0.99em}
 x(\uptau) \sin(\uptau) \,\de\tau$,
-\item[(д)] $y(t) = \dfrac{\de x(t)}{\de t}
+\item $y(t) = \dfrac{\de x(t)}{\de t}
 $,
-\item[(ђ)] $y(t) =t {\rm e}^{x(t) - t}$,
+\item $y(t) =t {\rm e}^{x(t) - t}$,
 \end{enumerate}
 \end{multicols}\noindent
 где је $y(t) = {\rm O}\{x(t)\}$ одзив посматраног система.
@@ -60,8 +60,8 @@ $,
     Сваки систем који постоји у природи, или који може да се реализује, је каузалан.
 \end{itemize}
 
-\begin{enumerate}
-    \item[(а)] 
+\begin{enumerate}[label=(\alph*)]
+    \item
     \begin{itemize}
     \item Линеарност испитујемо испитивањем суперпозиције
     ${\rm O}\{ a x_1(t) + b x_2(t) \} = \sum_{k = 0}^{\infty} ax_1(t-kT) + bx_2(t-kT) = 
@@ -78,7 +78,7 @@ $,
     последица одабира доње границе сумирања.  \hfill $\checkmark$
     \end{itemize}
 
-    \item[(б)]
+    \item
     \begin{itemize}
         \item Испитивањем суперпозиције, ${\rm O}\{ a x_1(t) + b x_2(t) \} = \sqrt2 (ax_1(t) + bx_2(t)) = 
         a \sqrt 2 x_1(t) + b \sqrt 2 x_2(t)
@@ -94,7 +94,7 @@ $,
         \item Пошто систем за рачунање тренутне вредности одзива „види“ само тренутну вредност побуде, он је каузалан. \hfill $\checkmark$
     \end{itemize} 
 
-    \item[(в)] 
+    \item 
     \begin{itemize}
         \item Линеарност система не важи, будући да постоји квадрирање сигнала, што је нити адитивна нити хомогена операција.
         \hfill $\times$
