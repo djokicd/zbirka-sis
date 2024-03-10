@@ -95,5 +95,45 @@ $, одакле је оператор система непосредно $\math
 \end{figure}
 У случају када је $A < 0$ такође раздвајамо ова три случаја, али онда су импулсни на непарним местима усмерени наниже.
 
-\filbreak
+(б) Стабилност датог система може се испитати на начин описан у задатку \ref{z:h_stab}, испитивањем конвергенције  
+интеграла апсолутне вредности импулсног одзива, односно,
+\begin{equation}
+    \int_{-\infty}^{\infty} |h(t)| \, \de t
+    = 
+    \int_{-\infty}^{\infty} \left\lvert 
+    \sum_{k = 1}^{\infty} A^{k} \updelta(t - (k-1)\uptau)
+    \right\rvert \, \de t 
+    = 
+     \sum_{k = 1}^{\infty} |A|^{k} \cancelto{1}{\int_{-\infty}^{\infty} \updelta(t - (k-1)\uptau) t} \, \de t
+\end{equation}
+Систем је бибо стабилан дакле у случају да је израз $\sum_{k = 1}^{\infty} |A|^{k}$ конвергентан, што је 
+сума геометријског реда, па је услов конвергеције да је $|A| < 1$. Закључујемо, систем је стабилан у BIBO смислу ако је $|A| < 1$,
+а нестабилан уколико је $|A| \geq 1$.   
+
+(в) 
+У случају када је $A = 1$, оператор таквог система има облик 
+$\textrm{L} = \sum_{k = 0}^{\infty} T_{\uptau}^{k}$, па се одзив на побуду $x(t) = \sin(2\uppi t/\uptau)\,\uu(t)$ може 
+добити као:
+\begin{align}
+    y(t) =& \textrm{L} x(t) =  \sum_{k = 0}^{\infty} T_{\uptau}^{k} \sin(2\uppi t/\uptau)\,\uu(t) 
+         =  \sum_{k = 0}^{\infty} \sin(2\uppi (t - k\uptau) /\uptau)\,\uu(t - k\uptau) 
+         \\
+        =& \sum_{k = 0}^{\infty} \underbrace{ \sin(2\uppi t/\uptau - 2\uppi k) }_{\text{Периодичност $\sin$}} \, \uu(t - k\uptau) 
+        = \sin(2\uppi t/\uptau) \sum_{k = 0}^{\infty} \uu(t - k\uptau).
+    \end{align}
+Добијени члан који представља амплитду синусоиде, периоде $\uptau$, мења се степенасто у тренуцима $k\uptau$, тако да се график одзива може скицирати
+као што је приказано на слици \ref{fig:\ID.2}. На слици је сивом бојом приказан сигнал 
+$\sum_{k = 0}^{\infty} \uu(t - k\uptau)$ који представља степенасто мењање амплитуде синусоиде.
+
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[scale=1]{fig/delay_resp.pdf}
+    \caption{}
+    \label{fig:\ID.2}
+\end{figure}
+
+
+    \filbreak
+
 
