@@ -1,0 +1,40 @@
+\PID 
+Полазећи од дефиниције 
+конволуције два континуална сигнала, $x = x(t)$ и 
+$y = y(t)$, доказати да је 
+$\int_{-\infty}^{\infty} \hspace*{-0.5em} 
+(x \ast y) \, \de t = 
+\left( \int_{-\infty}^{\infty} \hspace*{-0.5em}
+x \, \de  t \right)
+\left( \int_{-\infty}^{\infty} \hspace*{-0.5em}
+ y \, \de t \right)$, 
+ под условом да оба интеграла
+ са десне стране конвергирају.
+\\[2mm]
+
+\textsc{\underline{Решење:}} Конволуција по дефиницији је 
+$x\ast y (t)  = \int_{-\infty}^{\infty} x(\uptau) y(t-\uptau) \de \uptau$, па 
+се заменом у дати интеграл има:
+$
+    \int_{-\infty}^{\infty} \hspace*{-0.5em} 
+    \int_{-\infty}^{\infty} x(\uptau) y(t-\uptau) \de \uptau \, \de t
+$. Добијени двојни интеграл може се решити техником раздвајања променњивих 
+будући да су $\uptau$ и $t$ међусобно независни, чиме се има 
+\begin{equation}
+    \int_{-\infty}^{\infty} \hspace*{-0.5em} 
+    (x \ast y) \, \de t = 
+    \int_{\uptau = -\infty}^{\infty} x(\uptau)  \de \uptau \ 
+    \int_{\uptau = -\infty}^{\infty} y(t-\uptau) \de t 
+    = 
+    \int_{\uptau = -\infty}^{\infty} x(\uptau)  \de \uptau \ 
+    \int_{t = -\infty}^{\infty} y(t-\uptau) \de ({t - \uptau})
+\end{equation}
+У првом интегралу у добијеном изразу може се извршити преименовање променљиве $\uptau \mapsto t$, док је други интеграл 
+заправо исказ смене $u = t - \uptau$ чиме се не мењају границе интеграције па се добија коначно: 
+\begin{equation}
+    \int_{-\infty}^{\infty} \hspace*{-0.5em} 
+    (x \ast y) \, \de t = 
+    \int_{-\infty}^{\infty} x(t)  \de t \ 
+    \int_{-\infty}^{\infty} y(t) \de t,
+\end{equation}
+што је и требало доказати.
