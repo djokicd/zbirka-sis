@@ -6,9 +6,16 @@
 \textsc{\underline{Решење}}: Одзив LTI система на произвољну побуду $x(t)$ може се изразити 
 помоћу конволуције као 
 $y(t) = x(t) \ast h(t) = \int_{-\infty}^{\infty} x(\uptau) h(t - \uptau )\, \de \uptau$. Претпоставимо да је 
-побудни сигнал апсолутно ограничен као $|x(t)| \leq B_{x}$, за неко ограничење $B_x$, онда се има 
+побудни сигнал апсолутно ограничен као $|x(t)| \leq B_{x}$, за неко ограничење $B_x$, онда се 
+има\footnote{Примењује се и \textit{неједнакост троугла} у интегралној форми 
+$\left\lvert \int_I f(x) \de x \right\rvert \leq \int_I |f(x)| \de x$.
+} 
 \begin{equation}
-    |y(t)| = \int_{-\infty}^{\infty} |x(\uptau)| |h(t - \uptau )|\, \de \uptau \leq 
+    |y(t)| = 
+    \left\lvert
+    \int_{-\infty}^{\infty} x(\uptau) h(t - \uptau )\, \de \uptau 
+    \right\rvert \leq
+    \int_{-\infty}^{\infty} |x(\uptau)| |h(t - \uptau )|\, \de \uptau \leq 
     B_{\rm x} \int_{-\infty}^{\infty} |h(t - \uptau )|\, \de \uptau = B_{y}.
 \end{equation}
 Одатле се има да је потребан и довољан услов да је и одзив ограничен $B_y < \infty$, дат у облику
