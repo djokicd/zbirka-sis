@@ -30,9 +30,9 @@ $y_{\rm h}(t) = A \ee^{at}$, за произвољну вредност конс
 и заменимо у резултат \ref{eq:\ID.1}, одатле се сређивањем даље има
 \begin{equation}
     y(t) = \dfrac{\ee^{(a + \upepsilon)t} - \ee^{at}}{\cancel{a} + \upepsilon - \cancel{a}} = 
-    \ee^{at} \dfrac{1 -\ee^{\upepsilon t}}{\upepsilon}.
+    \ee^{at} \dfrac{\ee^{\upepsilon t} - 1}{\upepsilon}.
 \end{equation}
-Будући да је $\DS \lim_{\upepsilon\to 0} \dfrac{1 -\ee^{\upepsilon t}}{\upepsilon} = t$ одзив
+Будући да је $\DS \lim_{\upepsilon\to 0} \dfrac{\ee^{\upepsilon t} - 1}{\upepsilon} = t$ одзив
 у траженом случају ће бити коначно 
 $\DS y(t) = t \ee^{at}$.
 
