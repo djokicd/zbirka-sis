@@ -80,7 +80,7 @@ $y[n<0] = 0$, за побуду у облику $x[n] = \updelta[n]$, на ос�
           &\text{замена у наредни корак}  \hookleftarrow \\ 
     y[2] &= \cancelto{0}{\updelta[2]} + \sqrt 3 
     \cancelto{\sqrt 3}{y[1]} - \cancelto{1}{y[0]} 
-         = \sqrt 3 - 1, \qquad
+         = 2, \qquad
           &\text{замена у наредни корак}  \hookleftarrow \\          
 \end{align}
 Примећујемо да оваквим итеративним поступком можемо одредити 
@@ -91,15 +91,15 @@ $y[n<0] = 0$, за побуду у облику $x[n] = \updelta[n]$, на ос�
     h[1] &= C \cos(\uppi/6) + D \sin(\uppi/6) =
     \dfrac{\sqrt{3}}{2} C + \dfrac{1}{2} D = \sqrt 3, \\
     h[2] &= C \cos(2\uppi/6) + D\sin(\uppi/6) =
-    \dfrac{1}{2} C + \dfrac{\sqrt{3}}{2} D = \sqrt 3 - 1.
+    \dfrac{1}{2} C + \dfrac{\sqrt{3}}{2} D = 2 
 \end{align}
-одакле се налазе коефицијенти $C = 4 - \sqrt 3$, $D = 3 - 2\sqrt 3$, па се одзив 
+одакле се налазе коефицијенти $C = \dfrac25$, $D = \dfrac{6\sqrt 3}{5}$, па се одзив 
 на задату побуду може изразити у облику
 \begin{equation}
     y_{\rm f}^{\text{(в)}}[n] = 
-    \left(4 - \sqrt 3\right)
+    \dfrac25
     \cos\left(\dfrac{n\uppi}{6}\right) + 
-    \left(3 - 2\sqrt 3\right)
+    \dfrac{6\sqrt 3}{5}
     \sin\left(\dfrac{n\uppi}{6}\right) , \qquad
     n \geq 1.
 \end{equation}
