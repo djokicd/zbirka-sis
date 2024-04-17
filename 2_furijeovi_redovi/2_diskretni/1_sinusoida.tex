@@ -1,0 +1,20 @@
+\PID
+Дат је дискретан сигнал 
+$x[n] = \cos \left(
+    \dfrac{6\uppi n}{17}  + \dfrac{\uppi}{3}
+\right)$. Одредити развој тог сигнала у дискретан Фуријеов ред на основном периоду. 
+\vspace*{2mm}
+
+\textsc{\myul{Резултат:}}
+$X[k] = \dfrac{1}{2}
+\left(
+    \exp\left( 
+        \dfrac{\jj\uppi}{3}
+     \right)
+     \updelta[k-3] 
+     +
+     \exp\left( 
+        \dfrac{-\jj\uppi}{3}
+     \right)
+     \updelta[k+3]
+\right)$.
