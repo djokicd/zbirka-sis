@@ -1,0 +1,68 @@
+\begin{slikaDesno}[0.833]{fig/rc_nf_filt.pdf}
+\textbf{\color{red}*}\PID 
+У електричном колу са слике 
+приказан је нископропусни филтар
+(НФ)
+за који је познато
+$R = {60}\unit{\Omega}$,  и 
+${C = \dfrac{5}{3}\unit{mF}}
+\vspace*{1mm}
+$, а 
+који је оптерећен резистивним потрошачем
+отпорности
+$R_{\rm p} = 20\unit{\Omega}
+\vspace*{1mm}$. На улазу филтра прикључен 
+је идеални напонски генератор чији 
+је напон облика 
+${v_{\rm U}(t) = V_0 
+{\rm e}^{-t/\uptau}\,\uu(t)}$, где су
+$V_0 = 64\unit{V}$ и 
+$\uptau = 25\unit{ms}$. У почетном тренутку
+кондензатор је неоптерећен.
+\end{slikaDesno}
+
+\begin{enumerate}[label=(\alph*)]
+    \item Одредити преносну функцију система 
+    $H(s) = \dfrac{V_{\rm I}(s)}{V_{\rm U}(s)}$, $s = \jj\upomega$.
+    \item  
+    Израчунати граничну учестаност 
+    оптерећеног нископропусног
+    филтра  $\upomega_{\rm f}$, као 
+    $|H({\rm j}\upomega_{\rm f})| = \dfrac{1}{\sqrt 2} 
+    \cdot |H({\rm j}\upomega)|_{\rm max}$.
+    \item
+    Применом Парсевалове теореме израчунати
+    укупну енергију предату потрошачу 
+    у интервалу времена $0 \leq t < \infty$
+\end{enumerate} 
+
+\textsc{\underline{Резултат}:} 
+Задатак се може решити применом Тевененове теореме, у односу
+на кондензатор. 
+Том приликом је $v_{\rm T} = \upalpha_{\rm T} v_{\rm U}$ и
+$R_{\rm T} = R\,||\,R_{\rm p} 
+= 15\unit{\Omega}$, где је 
+$\upalpha_{\rm T} = \dfrac{R_{\rm p}}{R + R_{\rm p}}
+= \dfrac{1}{4}$. Преносна функција је 
+$H(s) = \dfrac{\upalpha_{\rm T}}{
+R_{\rm T}Cs + 1} =  
+\dfrac{ \dfrac{R_{\rm p}}{R + R_{\rm p}} }{
+(R\,||\,R_{\rm p})Cs + 1
+} =
+\dfrac{1}{4} \cdot
+\dfrac{1}{  (25\unit{ms}) s + 1  }$. 
+(б) Гранична учестаност филтра је 
+$\upomega_{\rm f} = 40\unit{\dfrac{Mrad}{s}}$.
+(в) Укупна енергија ослобођена на потрошачу 
+налази се Парсеваловом теоремом и износи
+$\displaystyle
+W_{\rm p} = 
+\dfrac{1}{R_{\rm p}}
+\dfrac{1}{\uppi} 
+\int_0^{\infty}
+|H(\jj\upomega)V_{\rm U}(\jj\upomega)|^2\,
+\de\upomega = 
+\dfrac{V_0^2 \upalpha_{\rm T}^2 \uptau^2}{
+2(R_{\rm T}C + \uptau)R_{\rm p}} = 
+128\unit{mJ}
+$.
