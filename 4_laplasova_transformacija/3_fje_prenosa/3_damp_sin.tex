@@ -1,0 +1,47 @@
+%{\color{red}$\blacktriangle$} 
+\PID
+Нека је дата Лапласова трансформација сигнала $x(t)$ у облику $\LT{x(t)} = X(s) = \dfrac{1}{s^2 + s + 1}$. Одредити 
+сигнал $x(t)$. 
+
+\textsc{\underline{Решење}}: Полови дате функције преноса су корени карактеристичне једначине 
+$p^2 + p + 1 = 0$, који се могу израчунати помоћу обрасца за решења квадратне једначине одакле се налази
+$p_{1} = p = \upsigma + \jj\upomega$ и $p_2 = p^\ast$, где су $\upsigma = -\dfrac12$ и $ \upomega = \dfrac{\sqrt{3}}{2}$. 
+Растављањем на парцијалне разломке добија се израз облика,
+\begin{equation}
+    X(s) = \dfrac{A}{s - p} + \dfrac{A^\ast}{s - p^\ast},
+\end{equation}
+а коефицијент $A$ се може потражити на начин описан у додатку \ref{a:pfd}. На основу тог постука 
+је\footnote{Искоришћен је идентитет који важи за комплексне бројеве 
+$z - z^\ast = \jj 2 \, \Im{z}$} 
+\begin{equation}
+    A = \dfrac{1}{\xcancel{(s - p)}(s - p^\ast)} \Bigg|_{s = p} 
+      = \dfrac{1}{p - p^\ast} = \dfrac{1}{2 \jj \Im{p} } = \dfrac{1}{\jj\sqrt{3}} = -\jj \dfrac{\sqrt{3}}{3}. \label{\ID.A}
+\end{equation}
+
+У наставку, искористимо табличну трансформацију $\LT{e^{at}\uu(t)} = \dfrac{1}{s - a}$, одакле налазимо да је 
+\begin{eqnarray}
+x(t) &=& \ILT{ \dfrac{A}{s - p} + \dfrac{A^\ast}{s - p^\ast} } = 
+       A \ILT{ \dfrac{1}{s - p}} + A^\ast \ILT{ \dfrac{1}{s - p^{\ast}}}  \\[2mm]
+     &=&
+     A \ee^{pt} + A^* \ee^{p^\ast t}.
+\end{eqnarray}
+Ради једноставности, изразимо коефицијент $A$ у поларном облику као $A = |A| \ee^{\jj\arg{A}}$, одакле се даље има
+\begin{eqnarray}
+    x(t) &=&
+    |A| \ee^{\jj \arg{A}} \ee^{pt} + |A| \ee^{-\jj \arg{A}} \ee^{p^\ast t} = 
+    |A| \ee^{\jj \arg{A}} \ee^{(\upsigma + \jj\upomega)t} + |A| \ee^{-\jj \arg{A}} \ee^{(\upsigma - \jj\upomega) t} = \\
+    &=&
+    |A| \ee^{\upsigma t} 
+    \underbrace{
+    \left( 
+        \ee^{(\jj(\upomega t + \arg A) } + \ee^{ -(\jj(\upomega t + \arg A)) } 
+    \right)}_{ 2\cos(\upomega t + \arg A) },
+\end{eqnarray}
+одакле коначно закључујемо да је 
+\begin{equation}
+    x(t) = 2|A| \ee^{\upsigma t} \cos(\upomega t + \arg A)
+\end{equation}
+У конкретном случају, из \eqref{\ID.A} се има $A = \dfrac{\sqrt 3}{3} \ee^{-\jj\uppi/2}$, па је онда коначно
+\begin{equation}
+    x(t) = \dfrac{2\sqrt 3}{3} \ee^{-\frac{1}{2}t} \sin \left(\dfrac{\sqrt 3}{2} t\right) \, \uu(t)
+\end{equation}

@@ -1,0 +1,130 @@
+
+\chapter{Растављање преносне функције на парцијалне разломке} \label{a:pfd}
+
+Од значајног интереса за одређивање различитих инверзних трансформација јесте поступак растављања преносне функције 
+облика $H(s) = \dfrac{Q(s)}{P(s)}$, где су $P(s)$ и $Q(s)$ одговарајући полиноми са 
+\myul{реалним} коефицијентима, на \textit{парцијалне разломке}. 
+У том случају, корене полинома $Q(s)$ називамо \textit{нулама} $z_i$, а корене полинома $P(s)$ половима $p_i$, 
+те преносне функције. У општем случају се таква функција преноса може представити у облику 
+\begin{equation}
+    H(s) = k \dfrac{ (s - z_1)(s-z_2)\cdots(s - z_m) }{ (s - p_1)(s - p_2)\cdots(s - p_m) }.
+\end{equation}
+При чему се $k$ онда назива појачањем система. У даљој дискусији, фактор $k$ не прави разлику па ће се анализирати 
+случај када је $k = 1$. Под парцијалним разломцима, подразумевамо суму чланова код којих се у имениоцу налазе 
+полиноми који се не могу даље факторисати, или који представљају вишеструке полове функције преноса. У том смислу, 
+размотрићемо неколико различитих специјалних случајева. 
+
+\subsection{Преносна функција са различитим реалним коренима}
+
+Посматрајмо преносну функцију облика 
+$H(s) = \dfrac{Q(s)}{(s-p_1)(s-p_2)\cdots(s-p_n)}$, код које су сви $p_i$ различити реални корени, а важи да је 
+$\deg Q < n$. Онда се таква функција може представити у облику
+\begin{equation}
+    H(s) = \dfrac{Q(s)}{(s-p_1)(s-p_2)\cdots(s-p_n)} = \dfrac{A_1}{s - p_1} + \dfrac{A_2}{s - p_2} + \cdots + \dfrac{A_n}{s - p_n},
+\end{equation}
+за шта је потребно одредити коефицијенте развоја $A_1$, $A_2$, \ldots, $A_n$. Да бисмо израчунали коефицијент 
+$A_1$ можемо да обе стране израза помножимо са $(s-p_1)$, ако је $s \neq p_1$ па се онда има резултат
+\begin{equation}
+    \dfrac{Q(s)}{(s-p_2)\cdots(s-p_n)} = A_1 + \dfrac{(s-p_1)A_2}{s - p_2} + \cdots + \dfrac{(s-p_1)A_n}{s - p_n},
+\end{equation}
+Уколико сада са обе стране потражимо граничну вредност израза $\lim_{s\to p_1}$, приметимо да је онда 
+$s - p_1 \to 0$, док се лева страна израза може једноставно израчунати.\
+\begin{equation}
+    \underbrace{\dfrac{Q(p_1)}{(p_1-p_2)\cdots(p_1-p_n)}}_{\text{За $s \to p_1$}}
+    = A_1 + \dfrac{\cancelto{0}{(s-p_1)}A_2}{s - p_2} + \cdots + \dfrac{\cancelto{0}{(s-p_1)}A_n}{s - p_n} = A_1.
+\end{equation}
+На основу овог поступка може се формулисати општи сликовити поступак за извлачење коефицијента $A_k$.
+
+\begin{center}
+\shadowbox{
+\begin{minipage}{0.85\textwidth}
+Уколико је  
+$$\dfrac{Q(s)}{(s-p_1)\cdots(s-p_k)\cdots(s-p_n)} = \dfrac{A_1}{s - p_1} + \cdots + 
+\dfrac{A_k}{s - p_k}  + \cdots + \dfrac{A_n}{s - p_n},$$
+за $p_i$ различите реалне вредности, онда се сваки кофицијент $A_k$ може израчунати „прикривањем“ (односно уклањањем) члана $s - p_k$ из израза, 
+па заменом $s \mapsto p_k$ у остатак, као 
+$$
+    A_k = \dfrac{Q(s)}{(s-p_1)\cdots\colorbox{gray!50}{$\xcancel{(s-p_k)}$}\cdots(s-p_n)} \bigg|_{s = p_k}.
+$$
+Овај поступак основа је Хевисајдовог метода прикривања (енг. \textit{Heaviside cover-up method}).
+\end{minipage}
+}
+\end{center}
+
+\subsection{Пар комплексно конјугованих полова.}
+
+Размотримо преносну фунцкију која поред једног реалног пола, $p$, има и један пар комплексно конјугованих полова
+$p_{2,3} = \upsigma \pm \jj\upomega$, а која нема нула. Ради дискусије, пођимо од облика растављеног на парцијалне разломке. 
+%
+\begin{eqnarray}
+    H(s) 
+    &=& 
+    \dfrac{A}{s - p} + 
+    \dfrac{B_1}{s - (\upsigma + \jj\upomega)} + 
+    \dfrac{B_2}{s - (\upsigma - \jj\upomega)} 
+    \\
+    &=& 
+    \dfrac{A}{s - p} + 
+    \dfrac{
+        B_1 \bigl( s - (\upsigma - \jj\upomega) \bigr)
+        +
+        B_2 \bigl( s - (\upsigma + \jj\upomega) \bigr)
+     }{s^2 + 2 \upsigma s + \upomega^2 + \upsigma^2}.  \\[2mm] 
+     %
+     &=&
+     \dfrac{A}{s - p} + 
+     \dfrac{
+         (B_1 + B_2)(s - \upsigma) +   
+         (B_1 - B_2)\jj\upomega
+      }{s^2 + 2 \upsigma s + \upomega^2 + \upsigma^2}. 
+\end{eqnarray}
+%
+Будући да разматрамо само функције преноса са полиномима са реалним коефицијетима, то мора бити 
+$\Im{B_1 + B_2} = 0$ и $\Re{B_1 - B_2} = 0$, па закључујемо да коефицијенти $B_1$ и $B_2$ морају 
+имати конјуговано-комплексну симетрију $B = B_1 = B_2^\ast$. Коефицијент $B$ је онда могуће 
+одредити на начин који аналоган поступку у претходној тачки
+\begin{eqnarray}
+    H(s) 
+    &=& 
+    \dfrac{A}{s - p} + 
+    \dfrac{B}{s - (\upsigma + \jj\upomega)} + 
+    \dfrac{B^\ast}{s - (\upsigma - \jj\upomega)} \qquad | \times \bigl( s + (\upsigma - \jj\upomega) \bigr)
+    \\
+    \bigl( s - (\upsigma + \jj\upomega) \bigr)
+    H(s) 
+    &=& B + 
+    \dfrac{
+        B^\ast \bigl( s - (\upsigma + \jj\upomega) \bigr)
+    }{s - (\upsigma - \jj\upomega)}
+    \Rightarrow
+    B = \lim_{{s \to (\upsigma + \jj\upomega)}}  \bigl( s - (\upsigma + \jj\upomega) \bigr)
+    H(s) 
+\end{eqnarray}
+На основу тога можемо да установимо правило за издвајање парцијалних разломака, који одговарају 
+комплексно конјугованим кореновима 
+
+\begin{center}
+    \shadowbox{
+    \begin{minipage}{0.85\textwidth}
+    Уколико је  
+    $$\dfrac{Q(s)}{\cdots\bigl(s-(\upsigma + \jj\upomega)\bigr)\bigl(s-(\upsigma - \jj\upomega)\bigr)\cdots} = 
+    \cdots + 
+    \dfrac{A_k}{s-(\upsigma + \jj\upomega)}  + 
+    \dfrac{A_k^*}{s-(\upsigma - \jj\upomega)}  
+    \cdots$$
+    онда се сваки коефицијент $A_k$ може израчунати „прикривањем“ (односно уклањањем) члана 
+    $s-(\upsigma + \jj\upomega)$ из израза, 
+    па заменом $s \mapsto p_k$ у остатак, као 
+    $$
+        A_k = 
+        \dfrac{Q(s)}{\cdots
+        \colorbox{gray!50}{$\xcancel{
+                \bigl(s-(\upsigma + \jj\upomega)\bigr)
+        }$}
+        \bigl(s-(\upsigma - \jj\upomega)\bigr)\cdots}
+        \bigg|_{s = \upsigma + \jj\upomega}.
+    $$
+    Том приликом, по аутоматизму се добија коефицијент $A_k^\ast$ и рачунање није потребно понављати, за други корен.
+    \end{minipage}
+    }
+    \end{center}
