@@ -25,12 +25,14 @@
 прозором коначне дужине у виду $x[n] = \underbrace{ \dfrac{V_{\rm m}}{V_{\rm 0}} }_{X_{\rm m}} 
 \cos( \underbrace{\upomega T_{\rm s}}_{\Omega_0} n)
 \cdot \rect_N[n]$. Фуријеова трансформација датог сигнала може се добити помоћу табличних 
-резултата\footnote{ Трансформација правоуганог прозора представља још и тзв. Дирихлеову функцију.}
+резултата
 \begin{eqnarray}
     \FT{ \cos(\Omega_0 n) }  &=&  \uppi \sum_{k = -\infty}^{\infty} \bigl( 
         \updelta(\Omega - \Omega_0 + 2k\uppi) +  \updelta(\Omega + \Omega_0 + 2k\uppi) 
-    \bigr) \\
+    \bigr) 
+    \\
     \FT{ \rect_N [n] } &=& \dfrac{\sin( \Upomega(N + 0,5) ) }{ \sin(\Upomega/2) },
+    \quad\quad\quad\quad\text{(Видети и зададтак \ref{z:dtft_rec})}
 \end{eqnarray}
 применом правила о производу дискретне Фуријеове трансформације 
 $\FT{x[n] \cdot y[n]} = \FT{x[n]} \circledast \FT{y[n]}$. Кружну конволуцију можемо одредити по дефиницији 
