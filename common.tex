@@ -31,15 +31,12 @@
 
 
 \usepackage{multicol}
-
 \usepackage{icomma}
-
 \usepackage{enumitem}
-
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
-
+\usepackage{tabu}
 \usepackage{cancel}
 
 \renewcommand{\figurename}{Слика}
@@ -78,8 +75,18 @@
 \renewcommand{\Im}[1]{\mathbb{I}\mathrm{m}\left\{#1\right\}} 
 
 
-\usepackage[bottom, perpage]{footmisc}
+\newcounter{tablicecount}
+\setcounter{tablicecount}{1}
+\counterwithin{tablicecount}{section}
+%\newcommand{\redTablice}{\stepcounter{tablicecount}\thesection.\arabic{tablicecount}}
+\newcommand{\redTablice}{\refstepcounter{tablicecount}\thetablicecount}
 
+\newcommand{\reft}[1]{T.\ref{#1}}
+
+%\renewcommand{\tablicecount}{\thesection.\arabic{tablicecount}} % adds the section number before your proof counters
+
+
+\usepackage[bottom, perpage]{footmisc}
 
 \usepackage{draftwatermark}
 
