@@ -1,0 +1,68 @@
+\begin{slikaDesno}{fig/dso_plot.pdf}
+    \PID 
+    Дигиталним осцилоскопом снима се континуалан простопериодичан
+    напон, $v = v(t)$, непознате амплитуде $V_{\rm m}$ и непознате учестаности $f_0$. 
+    Сигнал jе снимљен учестаношћу одабирања $f_{\rm s} = 0,5\unit{GHz} > 2 f_0$ , чиме jе у
+    мемориjи осцилоскопа
+    добиjен дискретан представник мереног сигнала коначног трајања
+    $x[n] = \begin{cases}
+        \dfrac{v(nT_{\rm s})}{V_0},& -N \leq n \leq N \\
+        0,& \text{иначе} 
+    \end{cases}$, 
+    где је $V_0 = 10\unit{mV}$, а $2N+1 \in \mathbb N$ је непозната дужина снимка. 
+    У обради добиjеног сигнала на рачунару израчуната jе Фуриjеова
+    трансформациjа дискретног сигнала $x[n]$.  Амплитудски спектар jе приказан у опсегу
+    дискретних кружних учестаности $0 \leq \Omega \leq \uppi$ на слици. 
+\end{slikaDesno}
+\begin{enumerate}[label=(\alph*)]
+    \item Проценити учестаност $f_0$ улазног сигнала, 
+    \item Проценити дужину снимка $2N + 1$.
+    \item Проценити амплитуду $V_{\rm m}$ улазног сигнала.
+\end{enumerate}
+
+\textsc{\underline{Решење}:} Нека је облик побудног напона $v(t) = V_{\rm m} \cos(\upomega t)$.
+Приметимо да се акција одсецања снимка коначног трајања може имитирати множењем са 
+прозором коначне дужине у виду $x[n] = \underbrace{ \dfrac{V_{\rm m}}{V_{\rm 0}} }_{X_{\rm m}} 
+\cos( \underbrace{\upomega T_{\rm s}}_{\Omega_0} n)
+\cdot \rect_N[n]$. Фуријеова трансформација датог сигнала може се добити помоћу табличних 
+резултата\footnote{ Трансформација правоуганог прозора представља још и тзв. Дирихлеову функцију.}
+\begin{eqnarray}
+    \FT{ \cos(\Omega_0 n) }  &=&  \uppi \sum_{k = -\infty}^{\infty} \bigl( 
+        \updelta(\Omega - \Omega_0 + 2k\uppi) +  \updelta(\Omega + \Omega_0 + 2k\uppi) 
+    \bigr) \\
+    \FT{ \rect_N [n] } &=& \dfrac{\sin( \Upomega(N + 0,5) ) }{ \sin(\Upomega/2) },
+\end{eqnarray}
+применом правила о производу дискретне Фуријеове трансформације 
+$\FT{x[n] \cdot y[n]} = \FT{x[n]} \circledast \FT{y[n]}$. Кружну конволуцију можемо одредити по дефиницији 
+на основу чега се добија 
+\begin{eqnarray}
+    X(\jj\Omega) &=& X_{\rm m} \int_{\upxi = -\uppi}^{\uppi} 
+    \bigl( \updelta(\Omega - \Omega_0) +  \updelta(\Omega + \Omega_0)  \bigr)
+    \dfrac{\sin( (\Omega - \upxi)(N + 0,5) ) }{ \sin((\Omega - \upxi)/2) } \de \upxi  \\
+    &=&
+    X_{\rm m} \dfrac{\sin( (\Omega - \Omega_0)(N + 0,5) ) }{ \sin((\Omega - \Omega_0)/2) }
+    +
+    X_{\rm m} \dfrac{\sin( (\Omega + \Omega_0)(N + 0,5) ) }{ \sin((\Omega + \Omega_0)/2) } \label{\ID.sh}
+\end{eqnarray}
+
+(а) Приметимо сада да је синусна функција померила спектар правоуганог импулса у десно и у лево за 
+$\Omega_0$, израз \eqref{\ID.sh}. Одатле, природно је очекивати да се максимум спектра сада налази на дискретној учестаности 
+$\Omega_0$. На основу тога, са графика очитавамо резултат $\Omega_0 = \dfrac{2\uppi}{5}$ на основу чега можемо да 
+се има $f = \dfrac{\upomega}{2\uppi} = \dfrac{\Omega}{2\uppi T_{\rm s}} = \dfrac{ \dfrac{2\uppi}{5} }{2 \uppi T_{\rm s}}
+= \dfrac{1}{5 T_{\rm s}} = 100 \unit{MHz}$. 
+
+(б) Претпоставимо, на основу облика спектра, да су спектри правоугаоних прозора довољно размакнути тако да 
+за  $\Omega \approx +\Omega_0$ важи $X(\jj\Omega) \approx X_{\rm m} \dfrac{\sin( (\Omega - \Omega_0)(N + 0,5) ) }{ \sin((\Omega - \Omega_0)/2) }$, 
+(односно, занемаримо лик који постоји у негативним учестаностима). На основу тога, можемо очекивати нуле спектра, 
+$\Omega_z$,  
+на местима где је $(\Omega_z - \Omega_0)(N + 0,5) \approx \uppi$, односно је 
+$ N \approx \dfrac{\uppi}{\Omega_z - \Omega_0} - 0,5$. Са графика очитавамо да је 
+${\Omega_z - \Omega_0} \approx \dfrac{\uppi}{10}$, па на крају закључујемо да је $N \approx 9,5$, па заокружујемо на 
+ближу непарну вредност $N = 9$, па можемо да се проени да је снимак дугачак $\approx 19$ одбирака. 
+
+(в) Познајући резултате претходних тачака, размотримо максималну вредност функције у тачки $\Omega \approx \Omega_0$. 
+На том месту је 
+$X(\jj\Omega_0) \approx \lim_{\Omega \to \Omega_0} X_{\rm m} \dfrac{\sin( (\Omega - \Omega_0)(N + 0,5) ) }{ \sin((\Omega - \Omega_0)/2) }
+= X_{\rm m} 2(N + 0,5) \approx 19 X_{\rm m}$. Са графика очитавамо да је максимална вредност $10$ па се онда има 
+$X_{\rm m} \approx \dfrac{10}{19} \approx 0,52$. Одавде закључујемо да је $V_{\rm m} = V_0 \cdot X_{\rm m} 
+\approx 52\unit{mV}$.
