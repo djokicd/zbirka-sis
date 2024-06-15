@@ -260,9 +260,9 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     \hline
     \redTablice & $\mathrm{u}(t)$ & $\dfrac{1}{s}$ \\
     \hline 
-    \redTablice & $\dfrac{1}{\sqrt{\pi t}}\,\mathrm{u}(t)$ & $\dfrac{1}{\sqrt{s}}$ \\
+    \redTablice & $\dfrac{1}{\sqrt{\uppi t}}\,\mathrm{u}(t)$ & $\dfrac{1}{\sqrt{s}}$ \\
     \hline 
-    \redTablice & $2 \, \sqrt{\dfrac{t}{\pi}}\,\mathrm{u}(t)$ & $s^{-\frac{3}{2}}$ \\
+    \redTablice & $2 \, \sqrt{\dfrac{t}{\uppi}}\,\mathrm{u}(t)$ & $s^{-\frac{3}{2}}$ \\
     \hline 
     \redTablice & $\dfrac{t^n}{n!}\,\mathrm{u}(t), \quad n\in\mathbb N$ & $\dfrac{1}{s^{n+1}}$ \\
     \hline 
@@ -322,13 +322,13 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     %(4)
     \redTablice &
     $
-    \sum\limits_{p=-\infty}^{+\infty} \updelta[n-p\, N]$ & $\dfrac{2\pi}{N} \, 
+    \sum\limits_{p=-\infty}^{+\infty} \updelta[n-p\, N]$ & $\dfrac{2\uppi}{N} \, 
     \operatorname{rep}_{\frac{2\uppi}{N}} 
     \updelta\left(\Omega\right)$ \\
     \hline
     %(5)
     \redTablice &
-    $1$ & $2\pi 
+    $1$ & $2\uppi 
     \operatorname{rep}_{2\uppi}
     \updelta(\Omega)$ \\
     \hline
@@ -338,14 +338,14 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     \hline
     %(7)
     \redTablice &
-    $\ee^{\jj\Omega_0 n}$ & $2\pi 
+    $\ee^{\jj\Omega_0 n}$ & $2\uppi 
     \operatorname{rep}_{2\uppi}
     \updelta(\Omega - \Omega_0)$ \\
     \hline
     % (8)
     \redTablice &
     $\cos(\Omega_0 n + \uptheta)$ & 
-    $\footnotesize \pi
+    $\footnotesize \uppi
     \operatorname{rep}_{2\uppi}
     \bigl(
     \, {\rm e}^{\jj\uptheta}  \updelta(\Omega - \Omega_0 ) 
@@ -355,7 +355,7 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     %(9)
     \redTablice &
     $\sin(\Omega_0 n + \uptheta)$ & 
-    $\dfrac{\pi}{\jj} \, 
+    $\dfrac{\uppi}{\jj} \, 
     \operatorname{rep}_{2\uppi}
     \bigl( \, {\rm e}^{\jj\uptheta} \updelta(\Omega - \Omega_0) -
     \, {\rm e}^{-\jj\uptheta} \updelta(\Omega + \Omega_0)
@@ -363,7 +363,7 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     \hline 
     %(10)
     \redTablice &
-    $\mathrm{u}[n]$ & $\dfrac{1}{1 - \ee^{-\jj\Omega}} + \pi \, 
+    $\mathrm{u}[n]$ & $\dfrac{1}{1 - \ee^{-\jj\Omega}} + \uppi \, 
     \operatorname{rep}_{2\uppi} \updelta(\Omega)$ \\
     \hline 
     % (11)
@@ -385,11 +385,11 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     \hline
     %(15)
     \redTablice &
-    $\dfrac{\sin(\Omega_0 n)}{\pi n}$ & $
+    $\dfrac{\sin(\Omega_0 n)}{\uppi n}$ & $
     \operatorname{rep}_{4\uppi\Omega_0}
     \mathrm{rect}\left(\dfrac{\Omega}{2
     \Omega_0} \right)$ \\
-    & $0 < \Omega_0 < \pi$ & \\
+    & $0 < \Omega_0 < \uppi$ & \\
     \hline
     \redTablice &
     $\operatorname{tri}_N[n]$ & 
@@ -403,15 +403,15 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     $ \\
     \hline
     \redTablice &
-    $\sum\limits_{p=\left\langle N \right\rangle} a_p \, \ee^{\jj p \,\frac{2n\pi}{N}}$ & $2\pi \, \sum\limits_{k=-\infty}^{+\infty} a_k \, \updelta\left(\Omega - \dfrac{2k\pi}{N}\right)$ \\
+    $\sum\limits_{p=\left\langle N \right\rangle} a_p \, \ee^{\jj p \,\frac{2n\uppi}{N}}$ & $2\uppi \, \sum\limits_{k=-\infty}^{+\infty} a_k \, \updelta\left(\Omega - \dfrac{2k\uppi}{N}\right)$ \\
     \hline
     \end{tabu} 
     }
 \end{center}
-где је $\operatorname{rep}_\alpha 
+где је $\operatorname{rep}_\upalpha 
 X(\jj\Omega) = 
 \sum_{m = -\infty}^{\infty}
-X(\jj(\Omega + m\alpha))$, периодично 
+X(\jj(\Omega + m\upalpha))$, периодично 
 продужење функције $X(\Omega)$.
 
 

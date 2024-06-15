@@ -1,0 +1,52 @@
+\PID Одредити Фуријеову трансформацију комплексног сигнала 
+$x(t) = \begin{cases}
+    \ee^{\jj\upomega_0 t} &, |t| < T \\
+    0 &, |t| \geq T
+\end{cases}$, где су $\upomega_0$ и $T$ познате реалне ненегативне константе. 
+Полазећи од добијеног резултата, показати да је 
+$\FT{\ee^{\jj\upomega_0 t}} = 2 \uppi \updelta(\upomega - \upomega_0)$.
+
+\textsc{\underline{Решење}:} По дефиницији Фуријеове трансформације је 
+$\FT{x(t)} = \int_{-\infty}^{\infty} x(t) \ee^{-\jj\upomega t} \de t$. Заменом датог сигнала, вредност 
+$T$ поставља границе интеграције, па је\footnote{Користи се таблични 
+интеграл 
+$\int \ee^{kx} \de x = \dfrac{1}{k} e^{kx} + C$, као и идентитет 
+${\ee^{\jj x} - \ee^{-\jj x}} = \jj 2 \sin(x) $
+}
+\begin{eqnarray}
+    \FT{x(t)}   &=& \int_{ \mathclap{t = -T} }^{T} x(t) \ee^{-\jj\upomega t} \de t +  \cancelto{0}{\int_{ t > |T| } \underbrace{x(t)}_{=0} \ee^{-\jj\upomega t} \de t} 
+                =   \int_{ \mathclap{t = -T} }^{T} \ee^{\jj\upomega_0 t} \ee^{-\jj\upomega t} \de t     
+                =   \int_{ \mathclap{t = -T} }^{T} \ee^{\jj (\upomega_0 - \upomega) t} \de t   \\[2mm]
+                &=& \dfrac{1}{\jj(\upomega_0 - \upomega)} \ee^{\jj (\upomega_0 - \upomega) t} \bigg|_{t = -T}^T  
+                =   \dfrac{ \ee^{\jj (\upomega_0 - \upomega) T} - \ee^{-\jj (\upomega_0 - \upomega) T} }{\jj(\upomega_0 - \upomega)}  \\[2mm]
+                &=&   \dfrac{2 \cancel{\jj} \sin((\upomega_0 - \upomega) T)}{ \cancel{\jj} (\upomega_0 - \upomega) } 
+                =  \dfrac{2 \sin((\upomega_0 - \upomega) T)}{ \upomega_0 - \upomega } 
+\end{eqnarray}
+
+Да гранични процес представља Делта импус може се показати на основу два дефинициона својства делта импулса, односно показивањем нормираности 
+$\int_{-\infty}^{\infty} \updelta(t) \de t = 1$, и провером да је $\updelta(t \neq 0) = 0$.
+У конретно разматраном случају, гранични процес којим се од $x(t)$ тежи ка сигналу $\ee^{\jj\upomega_0 t}$ би био $T \to \infty$, па се може писати 
+$
+    \FT{\ee^{\jj\upomega t}} = \lim_{T \to \infty} \dfrac{2 \sin((\upomega_0 - \upomega) T)}{ \upomega_0 - \upomega } 
+$. Приметимо да се добијени излаз може трансформисати у израз који садржи нормирани сигнал $\sinc(t)$ помоћу поступка 
+\begin{equation}
+    \FT{\ee^{\jj\upomega t}} = \lim_{T \to \infty} \dfrac{2 \sin((\upomega_0 - \upomega) T)}{ \upomega_0 - \upomega } 
+                             = \lim_{T \to \infty} \dfrac{2 \sin((\upomega_0 - \upomega) T)}{ (\upomega_0 - \upomega) T } T 
+                             = \lim_{T \to \infty} 2 T \sinc\left( \dfrac{(\upomega_0 - \upomega)T}{\uppi} \right) 
+\end{equation}
+Покажимо да добијена форма задовољава наведена својства Делта импулса. Када је $\upomega_0 \neq \upomega$ тада је 
+\begin{eqnarray}
+    \FT{\ee^{\jj\upomega t}} = \lim_{T \to \infty} 2 T \sinc\left( \dfrac{(\upomega_0 - \upomega)T}{\uppi} \right) 
+    \lim_{T \to \infty} \sim \lim_{T \to \infty} \dfrac{ \overbrace{\sin({\rm const}\, T)}^{\text{ограничена}}  }{\const \, T}
+    \sim \lim_{T \to \infty}  \dfrac{1}{T}
+    = 0.  \label{\ID.zero}
+\end{eqnarray}.
+Покажемо и да је интеграл добијене функције по параметру $\upomega$ конвергира када $T \to \infty$, односно 
+\begin{eqnarray}
+    \int_{\mathclap{\upomega = -\infty}}^{\infty} 2 T \sinc \left( \dfrac{(\upomega_0 - \upomega)T}{\uppi} \right) \de \upomega = 
+    \int_{\mathclap{\upomega = -\infty}}^{\infty} 2 T \sinc \left( \dfrac{(\upomega - \upomega_0)T}{\uppi} \right) 
+    \underbrace{\dfrac{\uppi}{T} \de \left( \dfrac{(\upomega-\upomega_0) T}{\uppi} \right)  }_{\de \upomega} = 2\uppi, \label{\ID.norm}
+\end{eqnarray}
+којом приликом су искоришћена парност, $\sinc(x) = \sinc(-x)$, и нормираност $\int_{-\infty}^{\infty} \sinc(x) \de x = 1$. 
+На основу резултата \eqref{\ID.norm} и \eqref{\ID.zero}, може се тврдити да је 
+$\FT{\ee^{\jj\upomega_0 t}} = 2 \uppi \updelta(\upomega - \upomega_0)$, што је требало и показати \\
