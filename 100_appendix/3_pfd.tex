@@ -132,6 +132,25 @@ $\Im{B_1 + B_2} = 0$ и $\Re{B_1 - B_2} = 0$, па закључујемо да �
     }
     \end{center}
 
+Када је на тај начин одређен  коефицијент $A_k$, приметимо да се даље може писати\footnote{Користе се и идентитети 
+$z + z^* = 2\Re{z}$ и 
+$z - z^* = \jj 2 \Im{z}$, за $z \in \mathbb C$. }
+\begin{eqnarray}
+    \dfrac{A_k}{s-(\upsigma + \jj\upomega)}  + 
+    \dfrac{A_k^*}{s-(\upsigma - \jj\upomega)}  
+    &=&  
+    \dfrac{ A_k(s-(\upsigma - \jj\upomega)) + A_k^* (s-(\upsigma + \jj\upomega))}{(s-\upsigma)^2 + \upomega^2}  
+    \\ 
+    &=&
+    \dfrac{ (A_k + A_k^*) (s - \upsigma) + (A_k - A_k^*) (-\jj\upomega)   }{(s-\upsigma)^2 + \upomega^2}     
+    \\
+    &=&
+    2\,\dfrac{ \Re{A_k} (s - \upsigma) + \jj \Im{A_k} (-\jj\upomega)   }{(s-\upsigma)^2 + \upomega^2}     
+    \\
+    &=&
+    2\,\dfrac{ \Re{A_k} (s - \upsigma) + \Im{A_k} \upomega   }{(s-\upsigma)^2 + \upomega^2},    
+\end{eqnarray}
+што може бити погодно имајући у виду табличне резултате \reft{T:LT:exp_sin} и \reft{T:LT:exp_cos}
 
 \subsection{Поступак за вишеструке полове}
 
@@ -166,7 +185,7 @@ $H(s) = \dfrac{1}{(s+1)(s+2)^2}$.
 Коефицијенте $A$ и $B$ можемо директно одредити прикривањем као 
 \begin{eqnarray}
     A = \dfrac{1}{ \xcancel{(s+1)}(s+2)^2} \bigl|_{s = -1} = 1 \qquad
-    B = \dfrac{1}{ \xcancel{(s+1)}\xcancel{(s+2)^2}} \bigl|_{s = -2} = -1
+    B = \dfrac{1}{ {(s+1)}\xcancel{(s+2)^2}} \bigl|_{s = -2} = -1
 \end{eqnarray}
 На основу ових резултата знамо да је
 $ \dfrac{1}{(s+1)(s+2)^2} = \dfrac{1}{s + 1} + \dfrac{B}{s+2} - \dfrac{1}{(s+2)^2}$. Па једини преостали коефицијент 
