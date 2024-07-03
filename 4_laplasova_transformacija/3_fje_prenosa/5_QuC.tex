@@ -1,0 +1,99 @@
+\begin{slikaDesno}{fig/Q_u_C.pdf}
+    \textbf{{\color{red}*незавршен}}\PID Математичко клатно, сачињено из мале  
+    куглице, полупречника $a = 1\unit{mm}$ и наелектрисања $Q$, и танке неистегљиве нити дужине ${L = 1\unit{m}}$, 
+    постављено је у унутрашњост равног плочастог кондензатора. Једна облога кондензатора је на 
+    референтном потенцијалу док се друга може помоћу преклопника $\Uppi$ пребацивати 
+    између прикључка идеалног напонског генератора сталног напона $V_{\rm G} = 9\unit{kV}$ и 
+    референтног потенцијала, као што је приказано на слици. Гравитационог убрзање је 
+    $g = 9,81\unit{\dfrac{m}{s^2}}$ и оријентисано је као на слици. 
+\end{slikaDesno}
+Сила отпора средине представља се Стоксовом силом, где је $F_{\rm ov} = - 6\uppi \upeta r {\bf v}$.
+\begin{enumerate}[label=(\alph*)]
+    \item Посматра се систем, чији је једини улаз напон кондензатора $u = u(t)$ а једини излаз отклон клатна 
+    $\uptheta = \uptheta(t)$. Одредити функцију преноса тог система 
+    $H(s) = \dfrac{\Uptheta(s)}{U(s)}$.
+    \item До тренутка $t = 0$ прекидач $\Uppi$ је у стању (0). У тренутку $t = 0$ први пут мења стање, а затим  
+    мења стање сваки пут у тренуцима $t = kT$, $k \in \mathbb N$, $f = \dfrac 1T$. Одредити израз за 
+    $u(t)$. Пошто разматрани систем има релативно висок $Q$ фактор, уколико се разматра резонантна побуда, релевантан је 
+    утицај само до основног хармоника (на резонантној учестаности). Сигнал $u(t)$ развити у Фуријеов ред па 
+    апроксимирати побудни напон као $u(t) = \bigl( U_{0} + U_{1} \sin(\upomega_0 t) \bigr) \uu(t)$, а 
+    на основу те апроксимације одредити $U(s)$.
+    \item Полазећи од резултата претходних тачака, одредити израз за $\Uptheta(s)$ и одредити комплетан одзив 
+    посматраног система. 
+\end{enumerate}
+
+\RESENJE
+(а) Унутар кондензатора постоји хомогено електрично поље $E$, услед кога на куглицу 
+делује електрична сила $F = QE$.
+Дијаграм сила које делују на куглицу приказан је на слици \ref{kuglica}. 
+Једначина другог Њутоновог закона за ротационо кретање клатна, у облику $J \dfrac{\de\uptheta}{\de t} = M$ за
+куглицу онда гласи:
+\begin{eqnarray} 
+    mL^2 \dfrac{\de^2 \uptheta}{\de t^2} &=& - 6\uppi \upeta a L\dfrac{\de \uptheta}{\de t} - mgL\sin(\uptheta) + QE L\cos(\uptheta) \Rightarrow \\[1mm]
+    \dfrac{\de^2 \uptheta}{\de t^2} &=& - \dfrac{6\uppi \upeta a}{mL}  \dfrac{\de \uptheta}{\de t} - \dfrac{g}{L} L\sin(\uptheta) + \dfrac{QE}{mL}\cos(\uptheta)
+\end{eqnarray}
+Уколико применимо апроксимацију малог угла $\sin\uptheta \approx \uptheta$, односно $\cos \uptheta \approx 1$, као и заменимо 
+израз за јачину електричног поља у области кондензатора $U = \dfrac{E}{d}$, даље се Лапласовом трансформацијом налази 
+\begin{eqnarray}
+    \dfrac{\de^2 \uptheta}{\de t^2} + \dfrac{6\uppi \upeta a}{mL}  \dfrac{\de \uptheta}{\de t} + \dfrac{g}{L} \uptheta =  \dfrac{Q}{mdL} u
+    \overset{{\LT{\bullet}}}{ \Rightarrow } 
+    \left(
+        s^2 + \dfrac{6\uppi \upeta a}{mL} s +  \dfrac{g}{L}
+    \right) \Uptheta(s) =
+    \dfrac{Q}{mdL} U(s)
+\end{eqnarray}
+Одакле се непосредно налази:
+\begin{equation}
+    H(s) = \dfrac{ H_0 }{s^2 + \uptau s + \upomega_{\rm k}^2}, \qquad H_0 = \dfrac{Q}{mdL}, \quad \uptau = \dfrac{6\uppi \upeta a}{mL}, \quad \upomega_{\rm k} = \sqrt{\dfrac{g}{L}}
+\end{equation}
+Добијена квадратна форма може се средити допуњавањем до квадрата бинома као 
+$ H(s) = s^2 + \uptau s + \upomega_{\rm k}^2 = s^2 + 2 \dfrac{\uptau}{2} s + \dfrac{\uptau^2}{4} + \upomega_{\rm k}^2 - \dfrac{\uptau^2}{4} 
+= \left( s + \dfrac{\uptau}{2} \right)^2 +  \upomega_0^2 - \dfrac{\uptau^2}{4}$, па се онда добијена функција преноса може изразити и као 
+\begin{eqnarray}
+    H(s) = \dfrac{H_0}{(s + \upsigma)^2 + \upomega_0^2}, \qquad \upsigma = \dfrac{\uptau}{2} \quad \upomega_0 = \sqrt{\upomega_{\rm k}^2 - \dfrac{\uptau^2}{4} }
+\end{eqnarray}
+
+(б) Дати сигнал се може записати у временском домену као 
+$u(t) = V_{\rm G} \sum_{k = 0}^{\infty} \uu(t - kT) - \uu(t - (k+1/2)T)$, односно, представља униполарну правоугаону поворку 
+правоугаоних импулса. 
+На основу резултата задатка \ref{z:rect_povorka} је комплексни спектар разматраног сигнала
+$U[k] = \dfrac{V_{\rm G}}{2} \sinc\left(\dfrac{k}{2}\right) \ee^{-\jj k \uppi / 2 } $.
+На основу тога су $U[0] = \dfrac{V_{\rm G}}{2}$, и 
+$U[1] = \dfrac{V_{\rm G}}{2} \dfrac{2}{\uppi} \ee^{-\jj\uppi/2} = - \jj \dfrac{V_{\rm G}}{\uppi}$.
+Помоћу везе између развоја у тригонометријски и комплексан Фуријеов ред\footnote{Користи се 
+резултат $X[k] = \dfrac{A[k] - \jj B[k]}{2} \Rightarrow B[k] = -2 \Im{X[k]}$.
+}, онда се може писати, помоћу табличне трансформације \reft{T:LT:sin}, да је 
+\begin{equation}
+    u(t) \approx \dfrac{V_{\rm G}}{2}  
+    \left( 1 + \dfrac{4}{\uppi} \sin(\upomega_0 t) \right).
+    \Rightarrow
+    U(s) = \dfrac{V_{\rm G}}{2}
+    \left(
+        \dfrac{1}{s} + \dfrac{4}{\uppi} \dfrac{\upomega_0 }{s^2 + \upomega_0^2}
+    \right)
+\end{equation}
+
+(в) Помоћу резултата претходних тачака, Лапласова трансформација одзива дата је у облику: 
+\begin{equation}
+    \Uptheta(s) =
+    \dfrac{H_0}{(s + \upsigma)^2 + \upomega_0^2}
+    \cdot
+    \dfrac{V_{\rm G}}{2}
+    \left(
+        \dfrac{1}{s} + \dfrac{ \dfrac{4\upomega_0}{\uppi}  }{s^2 + \upomega_0^2}
+    \right)
+    = 
+    \dfrac{H_0 V_{\rm G}}{2}
+    \dfrac{1}{(s + \upsigma)^2 + \upomega_0^2}
+    \cdot
+    \dfrac{s^2 + \upomega_0^2 + \dfrac{4\upomega_0}{\uppi}s }{ s(s^2 + \upomega_0^2) }
+\end{equation}
+Инверзна Лапласова трансформација обавља се растављањем на парцијалне разломке, чиме се на основу добија 
+\begin{equation}
+    H(s) = \dfrac{A}{s} + \dfrac{B}{ s - (\upsigma + \jj\upomega_0 ) } + \dfrac{B^\ast}{ s - (\upsigma - \jj\upomega_0 ) } 
+    + \dfrac{C}{s - \jj\upomega_0} + \dfrac{C^*}{s + \jj\upomega_0}  
+\end{equation}
+Коефицијенти се налазе поступком који је детаљно описан у додатку \ref{a:pfd}, чиме се добијају
+\begin{eqnarray}
+    A = \dfrac{H_0 V_{\rm G}}{2} \dfrac{1}{\upsigma^2 + \upomega_0^2}
+\end{eqnarray}
