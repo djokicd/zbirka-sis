@@ -258,7 +258,7 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     \hline \hline
     \redTablice & $\updelta(t)$ & $1$ \\
     \hline
-    \redTablice & $\mathrm{u}(t)$ & $\dfrac{1}{s}$ \\
+    \redTablice \label{T:LT:u}& $\mathrm{u}(t)$ & $\dfrac{1}{s}$ \\
     \hline 
     \redTablice & $\dfrac{1}{\sqrt{\uppi t}}\,\mathrm{u}(t)$ & $\dfrac{1}{\sqrt{s}}$ \\
     \hline 
@@ -282,13 +282,13 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     \hline
     \redTablice & $\dfrac{\sin(\upomega t) - \upomega t \, \cos(\upomega t)}{2 \upomega}\,\mathrm{u}(t)$ & $\dfrac{\upomega^2}{(s^2 + \upomega^2)^2}$ \\
     \hline
-    \redTablice \label{T:LT:exp_sin} &
+    \redTablice\label{T:LT:exp_sin} &
     ${\rm e}^{-at} \sin(\upomega t)\,\mathrm{u}(t)$
     &
     $
     \dfrac{\upomega}{(s+a)^2 + \upomega^2}
     $ \\ \hline
-    \redTablice \label{T:LT:exp_cos} &
+    \redTablice\label{T:LT:exp_cos} &
     $ 
     {\rm e}^{-at} \cos(\upomega t)\,\mathrm{u}(t)
     $
