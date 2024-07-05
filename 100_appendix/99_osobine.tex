@@ -1,0 +1,190 @@
+\renewcommand{\thechapter}{S}
+\setcounter{section}{0}
+\chapter{Важна својства трансформација}
+
+
+\section{Конволуција континуалних и дискретних сигнала}
+Конволуција континуалних, односно, дискретних сигнала дефинише се као 
+\begin{equation}
+    x(t) \ast y(t) = \int_{\mathclap{\uptau = -\infty}}^{\infty} x(\uptau) y(t-\uptau) \de \uptau, 
+    \qquad
+    x[n] \ast y[n] = \sum_{\mathclap{m = -\infty}}^{\infty} x[m] y[n-m] 
+\end{equation}
+Без обзира на то да ли се односи на континуалне или дискретне сигнале, за конволуцију важе:
+\begin{itemize}\itemsep0pt
+    \item \emph{Комутативност:} $x \ast y = y \ast x$;
+    \item \emph{Асоцијативност:} $(x \ast y) \ast z = x \ast (y \ast z)$;
+    \item \emph{Дистрибутивност у односу на сабирање:} $x \ast (y + z) = (x \ast y) + (x \ast z)$;
+    \item \emph{Асоцијативност у односу на скаларно множење:} $k \cdot (x \ast y) = (kx) \ast y$; 
+    \item \emph{Постојање неутралног елемента} $f \ast \updelta = f$; 
+    \item \emph{Комплексна конјукција} $(x \ast y)^\ast = x^{\ast} \ast y^{\ast}$.
+\end{itemize}
+
+\subsection{Кружна конволуција}
+Под кружном конволуцијом два поериодична сигнала (са периодом $T$ у континуалном случају, или 
+периодом $N$ у дискретном), подразумевају се 
+\begin{equation}
+    x(t) \circledast y(t) = \int_{\mathclap{\uptau = \langle T \rangle }} x(\uptau) y(t-\uptau) \de \uptau, 
+    \qquad
+    x[n] \circledast y[n] = \sum_{\mathclap{m = \langle N \rangle }} x[m] y[n-m] 
+\end{equation}
+Том приликом смисао овако написаних граница интеграције јесте интервал дужине периода, односно, од $t_0$ до $t_0 + T$. 
+Дуално, смисао граница сумирања јесте такође дужина интервала, односно до $n_0$ до $n_0 + N - 1$. 
+
+\section{Фуријеови редови континуалних сигнала}
+
+У општем случају, уколико континуални сигнал $x(t)$, са периодом $T$, задовољава Дирихлеове услове, тада се он може развити у ред облика 
+\begin{eqnarray}
+    x(t) &=& \sum_{k = -\infty}^{\infty} X[k] \ee^{\jj k \upomega_{\rm F}t } 
+    \qquad\qquad\qquad\qquad\qquad\qquad\quad
+    {\text{(комплексни облик), или}} \\
+         &=&
+    A[0] + \sum_{k = 1}^{\infty} A[k] \cos(\upomega_{\rm F} k) + \sum_{k = 0}^{\infty} B[k]  \sin(\upomega_{\rm F} k)
+    \quad \text{(тригонометријски облик)},
+\end{eqnarray}
+где је $\upomega_{\rm F}$ кружна учестаност основног хармонијка. $X[k]$ представљају комплексне а $A[k]$ и $B[k]$ тригонометријске (реалне) 
+коефицијенти уколико се разматра реалан сигнал $x(t)$. Комлексни коефицијенти могу се израчунати помоћу корелације са комплексним 
+сигналима Фуријеовог базиса $\{ \ee^{\jj k \upomega_{\rm F}t} \}$:
+\begin{eqnarray}
+    \FS{X[k]} = X[k] = \dfrac{1}{T_{\rm F}}\int_{  \mathclap{\langle T_{\rm F} \rangle } } x(t)\,\ee^{-\jj k \upomega_{\rm F} t} \, \de t 
+\end{eqnarray},
+а тригонометријски коефицијенти се могу израчунати помоћу корелације са тригонометријским функцијама:
+\begin{eqnarray}
+     A[0] = \dfrac{1}{T_{\rm F}} \int_{ \langle T_{\rm F} \rangle } x(t) \, \de t ,
+    \qquad && 
+    A[k > 0] = \dfrac{2}{T_{\rm F}} 
+    \int_{\mathclap{\langle T_{\rm F} \rangle}  } 
+    x(t) \cos(k \upomega_{\rm F} t ) \\
+    && B[k > 0] = \dfrac{2}{T_{\rm F}} 
+    \int_{ \mathclap{\langle T_{\rm F} \rangle} } 
+    x(t) \sin(k \upomega_{\rm F} t ), 
+\end{eqnarray}
+Између комплексних и тригонометријских 
+коефицијената постоје везе
+\begin{equation}
+    X[k \neq 0] = \dfrac{A[k] - \jj B[k]}{2}, \qquad X[k] = A[0],
+\end{equation}
+које се могу показати полазећи од Ојлеровe формула $\ee^{\jj x} = \cos(x) + \jj\sin(x)$.  
+Уколико се разматра реални сигнал $x(t)$, сигнали $A[k]$ и $B[k]$ су реални, па важе и инверзне релације 
+\begin{eqnarray}
+    X[0] = A[0] && 
+    A[k > 0] = 2 \, \Re{X[k]} \qquad
+    B[k > 0] = -2 \, \Im{X[k]}.
+\end{eqnarray}
+
+Уколико је сигнал $x(t)$ реалан, његов комплексни спектар задовољава комплексно-конјуговану (Хермитову) симетрију 
+$X[-k] = X^{\ast}[k]$. \\[1mm]
+
+Коефицијенти сигнала $x(t)$ (и $y(t)$), чији је развој у Фуријеов ред
+$X[k] = \FS{x(t)}$ (и $Y[k] = \FS{y(t)}$),
+задовољавају нередне значајне особине: 
+\begin{itemize}\itemsep0pt
+    \item \emph{Линеарност:}  $\FS{ax(t) + by(t)} = a \FS{x(t)} + b \FS{y(t)}$, $a,b = \const$;
+    \item \emph{Померај у времену:} $ \FS{x(t-\uptau)} = \FS{x(t)} \ee^{-\jj k \upomega_{\rm 0} \uptau}$, $\uptau = \const$;
+    \item \emph{Инверзија временске осе:} $\FS{x(t)} = X[k] \Rightarrow \FS{x(-t)} = X[-k] $;
+    \item \emph{Кружна конволуција\footnote{Односи се на конволуцију, само на заједничком периоду $T_0$ за оба сигнала.}}
+    $
+    \FS{x(t) \circledast y(t)} = T_0 X[k] Y[k];
+    $
+    \item \emph{Производ\footnote{Односи се на конволуцију, само на заједничком периоду $T_0$ за оба сигнала.}}
+    $
+    \FS{x(t) \cdot y(t)} = X[k] \ast Y[k];
+    $
+    \item \emph{Дејство на извод} $\FS{ \dfrac{\de x(t)}{\de t} } = \jj k \upomega_0 X[k]$;
+    \item \emph{Дејство на интеграл} $\FS{ \int_{\uptau = -\infty}^t x(\uptau) \, \de \uptau } = \dfrac{1}{\jj k \upomega_0} X[k]$ 
+\end{itemize}
+
+
+\section{Фуријеови редови дискретних сигнала}
+
+Дискретан сигнал $x[n]$ са периодом $N_{\rm F}$ може се представити преко коефицијената Фуријеовог 
+реда дискретног сигнала као
+\begin{eqnarray}
+    x[n] = \sum_{k = \langle N_{\rm F} \rangle } X[k] \ee^{ \jj k \Upomega_{\rm F} n }, 
+\end{eqnarray}
+где је $\Upomega_{\rm F} = \dfrac{2\uppi}{N_{\rm F}}$ дискретна кружна учестаност основног хармоника. Коефицијенти 
+Фуријеовог реда могу се израчунати према формули 
+\begin{equation}
+    X[k] = \dfrac{1}{N_{\rm F}} \sum_{n = \langle N_{\rm F} \rangle} x[n] \ee^{\jj k \Upomega n}, 
+    \qquad\qquad\qquad
+    k = \langle N_{\rm F} \rangle,
+\end{equation}
+а у општем случају има их $N_{\rm F}$. 
+
+
+Коефицијенти сигнала $x[n]$ (и $y[n]$), чији је развој у Фуријеов ред
+$X[k] = \FS{x[n]}$ (и $Y[k] = \FS{y[n]}$), на периоду $N_{\rm F}$ задовољавају својства:
+\begin{itemize}\itemsep0pt
+    \item \emph{Линеарност:} $\FS{a x[n] + b y[n]} = a X[k] + b Y[k], \qquad a,b = \const$ 
+    \item \emph{Померај у времену: }
+    $ \FS{x[n-M]} = X[k] \ee^{-\jj k \upomega_{\rm 0} M}$, $M = \const$;
+    \item \emph{Модулација у времену:}
+    $ \FS{\ee^{\jj k_0 \Upomega_{\rm F} n } x[n] } = 
+    X[k - k_0]$;
+    \item \emph{Инверзија временске осе:}
+    $\FS{x[-n]} = X[-k] $;
+    \item \emph{Комплексна конјукција:}
+    $\FS{x^{\ast}[n] } = X^{\ast} [-k]$;
+    \item \emph{Кружна конволуција:}
+    $\FS{x[n] \circledast y[n] } = N_{\rm F} X[k] Y[k]$
+    \item \emph{Производ:}
+    $\FS{x[n] \cdot y[n]} = X[k] \circledast Y[k]$
+\end{itemize}
+
+
+
+\section{Фуријеова трансформација континуалног сигнала}
+
+За континуалан сигнал $x(t)$, у општем случају апериодичан, може се одредити Фуријеова трансформација по дефиницији
+\begin{eqnarray}
+    X(\jj\upomega) = \FT{x(t)} = \int_{\mathclap{t = -\infty}}^{\infty} x(t) \ee^{-\jj \upomega t} \de t
+\end{eqnarray}
+
+Фуријеова трансформација строго је дефинисана за сигнале који су апсолутно интеграбилни, односно, који задовољавају услов 
+$\int_{-\infty}^{\infty} |x(t)| \de t = 1$. Ипак, увођењем Делта импулса, као што је показано у задатку \ref{z:jexp}, ово 
+домен трансформације се може проширити тако да обухвата и све периодичне сигнале за које се може дефинисати 
+Фуријеов ред (практично све периодичне сигнале у инжењеству). 
+
+Дакле, за периодичан сигнал $x(t)$ који се може развити у Фуријеов ред $X[k] = \FS{x(t)}$, може се одредити онда Фуријеова трансформација 
+као\footnote{Члан „$2\uppi$“ заправо потиче из чињенице да у инжењерској пракси користимо Фуријеову трансформацију чији је 
+аругмент \textit{кружна} учестаност, па тај члан проистиче из $\upomega = 2\uppi f$, односно, у интегралу 
+$\de \upomega = 2\uppi \, \de f$. }
+\begin{equation}
+    X(\jj\upomega) = 2\uppi \sum_{k = -\infty}^{\infty} X[k] \updelta( \upomega - k \upomega_{\rm 0} )
+    \qquad
+    \text{(\textit{Веза Фуријеовог реда и трансформације})}
+\end{equation}
+
+%Квадрат модула Фуријеове трансформације представља спектралну густину снаге сигнала 
+%$S_x = |\FT{x(t)}|^2$ (Парсевалова теорема). 
+
+За континуални сигнал $x(t)$ (и $y(t)$), за који постоји Фуријеова трансформација
+$X(\jj\upomega) = \FT{x(t)}$ (и $Y(\jj\upomega) = \FT{y(t)}$), важе следећа својства
+\begin{itemize}
+    \item \emph{Линеарност:} $\FT{ax(t) + by(t)} = a X(\jj\upomega) + b Y(\jj\upomega)$, \qquad $a,b = \const$;
+    \item \emph{Померај у времену:} $\FT{x(t-\uptau)} = X(\jj\upomega) \ee^{-\jj\upomega \uptau}$; \qquad $\uptau = \const$
+    \item \emph{Модулација у времену:} $\FT{x(t) \ee^{\jj\upalpha t}} = X(\jj(\upomega - \upalpha))$; \qquad $\upalpha = \const$
+    \item \emph{Комплексна конјукција:} $\FT{x^{\ast}(t) } = X^{\ast}(-\jj\upomega)$; 
+    \item \emph{Инверзија временске осе:} $\FT{x(-t) } = X(-\jj\upomega)$; 
+    \item \emph{Скалирање временске осе:} $\FT{a x(t)} = \dfrac{1}{|a|} X\left( \dfrac{\upomega}{a} \right)$;
+    \item \emph{Конволуција:} $\FT{x(t) \ast y(t)} = X(\jj\upomega) \cdot Y(\jj\upomega)$; 
+    \item \emph{Производ:} $ \FT{x(t) \cdot y(t)} = \dfrac{1}{2\uppi} X(\jj\upomega) \ast Y(\jj\upomega)$;
+    \item \emph{Дејство на извод:} $ \FT{ \dfrac{ \de x(t)}{\de t}} = \jj\upomega X(\jj\upomega)$;
+    \item \emph{Дејство на интеграл:} $ \FT{ \int_{-\infty}^{t} x(t) \de t} =  
+    \left( 
+        \dfrac{1}{\jj\upomega} + \updelta(\upomega)
+    \right) X(\jj\upomega)$;
+    \item \emph{Диференцирање по учестаности:} 
+    $
+    \FT{ t x(t) } = \jj \dfrac{\de X(\jj\upomega)}{\de \upomega}
+    $;
+    \item \emph{Дејство на парни део сигнала:}
+    $
+    \FT{ \operatorname{Ev}x(t)} = \Re{X[k]}
+    $
+    \item \emph{Дејство на непарни део сигнала:}
+    $
+    \FT{ \operatorname{Od}x(t)} = -\Im{X[k]}
+    $
+    
+\end{itemize} 
