@@ -1,6 +1,6 @@
 \begin{slikaDesno}{fig/Q_u_C.pdf}
-    \textbf{{\color{red}*незавршен}}\PID Математичко клатно, сачињено из мале  
-    куглице, полупречника $a = 1\unit{mm}$ и наелектрисања $Q = 1\unit{pC} $, и танке неистегљиве нити дужине ${L = 1\unit{m}}$, 
+    \textbf{{\color{red}*}}\PID Математичко клатно, сачињено из мале  
+    куглице, полупречника $a = 1\unit{mm}$ и наелектрисања $Q = 1\unit{nC} $, и танке неистегљиве нити дужине ${L = 1\unit{m}}$, 
     постављено је у унутрашњост равног плочастог кондензатора. Једна облога кондензатора је на 
     референтном потенцијалу док се друга може помоћу преклопника $\Uppi$ пребацивати 
     између прикључка идеалног напонског генератора сталног напона $V_{\rm G} = 9\unit{kV}$ и 
@@ -45,7 +45,7 @@
 \end{eqnarray}
 Одакле се непосредно налази:
 \begin{equation}
-    H(s) = \dfrac{ H_0 }{s^2 + \dfrac{1}{\uptau} s + \upomega_{\rm k}^2}, \quad H_0 = \dfrac{Q}{mdL} \approx 10^{-8} \unit{\dfrac{1}{Vs^2}} ,\, \uptau = \dfrac{m}{b} 
+    H(s) = \dfrac{ H_0 }{s^2 + \dfrac{1}{\uptau} s + \upomega_{\rm k}^2}, \quad H_0 = \dfrac{Q}{mdL} \approx 10^{-5} \unit{\dfrac{1}{Vs^2}} ,\, \uptau = \dfrac{m}{b} 
     \approx 15\unit{s},\, \upomega_{\rm k} = \sqrt{\dfrac{g}{L}} \approx 3,13\unit{\dfrac{rad}{s}}
 \end{equation}
 Добијена квадратна форма може се средити допуњавањем до квадрата бинома као 
@@ -115,9 +115,11 @@ $U[1] = \dfrac{V_{\rm G}}{2} \dfrac{2}{\uppi} \ee^{-\jj\uppi/2} = - \jj \dfrac{V
     \left(
         \sin(\upomega t )
         -
-        \dfrac{\upomega}{\upomega_0} \ee^{-\upsigma t} \sin(\upomega_0 t )
+        \dfrac{\upomega}{\upomega_0} \ee^{-\upsigma t} \sin(\upomega_0 t ).
     \right)
 \end{equation}
+Резултат је приказан на слици \ref{\ID.res}.
+
 % Пошто су сопствена учестаност система и учестаност побуде блиски, може се писати $\upomega = \upomega_0 + \Delta \upomega$, па се 
 % заменом налази 
 % \begin{eqnarray}
@@ -134,3 +136,9 @@ $U[1] = \dfrac{V_{\rm G}}{2} \dfrac{2}{\uppi} \ee^{-\jj\uppi/2} = - \jj \dfrac{V
 %         \right)\sin(\upomega_0 t )
 %     \right)
 % \end{eqnarray}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics{fig/klatno_plot.pdf}
+    \caption{Временски дијаграм одзива клатна}
+    \label{\ID.res}
+\end{figure}
