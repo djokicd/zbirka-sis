@@ -1,0 +1,55 @@
+\PID 
+Нека је дата поворка делта импулса у облику $x(t) = \III_T(t)$, где је $Т$ позната константа. 
+Одредити развој тог сигнала у комплексан Фуријеов ред 
+на (а) основном периоду $T_{\rm F} = T$  и (б) на умношку $m$ основног периода $T_{\rm F} = mT$, $m \in \mathbb N$, $m > 1$ .
+
+\RESENJE
+Развој у комплексан облик Фуријеовог реда  може се спровести по применом аналитичке релације, на сличан начин као и у 
+задатку \ref{z:rect_povorka}, има се 
+\begin{eqnarray}
+    \FS{\III_{T}(t)} = \dfrac{1}{T} 
+    \int_{\mathclap{-T/2}}^{\mathclap{T/2}} x(t) \ee^{-\jj k \upomega_{\rm F} t} \de t. \label{\ID.e1}
+\end{eqnarray}
+У границама интеграције постоји само један делта импулс, $\updelta(t)$, па се онда на основу 
+својства одабирања делта импулса има 
+\begin{eqnarray}
+    \FS{\III_{T}(t)} = \dfrac{1}{T} 
+    \int_{\mathclap{-T/2}}^{\mathclap{T/2}} \updelta(t) \ee^{-\jj k \upomega_{\rm F} t} \de t = 
+     \dfrac{1}{T} \cancelto{1}{\ee^{-\jj k \upomega_{\rm F} \cdot 0}} = \dfrac{1}{T}.
+\end{eqnarray}
+Односно, добијени спекатар представља константни дискретан сигнал $\FS{\III_{T}(t)} = \dfrac{1}{T}$. 
+
+(б) У случају када се развој ради на умношку основног периода, тада ће под интегралом остати више делта импулса. 
+Границе интеграције треба да покрију интервал $[0, T_{\rm F} = mT]$, па ћемо разматрати интервал 
+$\left[-\dfrac{T}{2}, \left(m -\dfrac{1}{2}\right) T \right]$ унутар кога се налазе импулси 
+$\updelta(t)$, $\updelta(t - T)$, \ldots, $\updelta(t - (m-1)T)$, па из интеграла \eqref{\ID.e1} тада остаје 
+\begin{eqnarray}
+    \FS{\III_{T}(t)} &=& \dfrac{1}{T_{\rm F}} 
+    \int_{\mathclap{-T/2}}^{\mathclap{(m-1/2)T}} \updelta(t) \ee^{-\jj k \upomega_{\rm F} t} \de t
+    + \cdots + 
+    \dfrac{1}{T_{\rm F}} 
+    \int_{\mathclap{-T/2}}^{\mathclap{(m-1/2)T}} \updelta(t - (m-1)T) \ee^{-\jj k \upomega_{\rm F} t} \de t \\
+    &=&
+    \ee^{-\jj k \upomega_{\rm F} \cdot 0} +\ee^{-\jj k \upomega_{\rm F} \cdot 1} +
+    \cdots \ee^{-\jj k \upomega_{\rm F} \cdot (m-1)}. 
+\end{eqnarray}
+Добијена сума представља суму геометријске прогресије\footnote{Користи се у облику 
+$1 + q + \cdots + q^{n-1} = \dfrac{1 - q^n}{1-q}$ када је $|q|<1$. У нарочитом случају када је 
+$q = 1$ сума је једнака $n$.} са параметром $q = \ee^{-\jj k \upomega_{\rm F}}$, па је онда 
+\begin{equation}
+    \FS{\III_{T}(t)} = \dfrac{1}{T_{\rm F}}   
+    \begin{cases}
+        \dfrac{1 - \ee^{-\jj k \upomega_{\rm F}m}}{1-\ee^{-\jj k \upomega_{\rm F}}}  &, k\not |\ m \\ 
+        m &, k \vert m  \\ 
+    \end{cases}
+    = \dfrac{1}{T}
+    \begin{cases}
+        0 &, k\not |\ m \\ 
+        1 &, k \vert m  \\         
+    \end{cases}
+    = 
+    \III_m[k].
+\end{equation}
+Односно резултат представља дискретну поворку дискретних импулса између којих су уметнути $m-1$ нула. 
+
+Резултат овог задатка доступан је у таблици као унос \reft{t:ctfs:comb}.
