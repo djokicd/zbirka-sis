@@ -186,7 +186,7 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     { \tabulinesep=0.2mm
     \begin{tabu}{|c|c|c|c|}
     \hline
-    рбр. & Основни период $x(t)$ & $X[k] = \mathcal{FS}\{x(t)\}$ & Период развоја \\ \hline \hline
+    рбр. & Основни период $x(t)$ & $X[k] = \FS{x(t)}$ & Период развоја \\ \hline \hline
     \redTablice \label{t:ctfs:comb} &
     $\updelta(t)$ & $\operatorname{comb}_m[k]$ & $T_{\rm F} = m \, T_0$ \\
     & \includegraphics[scale=\figscale]{fig/t_3_1.pdf} & \includegraphics[scale=\figscale]{fig/t_3_2.pdf} & \\
@@ -211,7 +211,7 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     {\tabulinesep=1.2mm
     \begin{tabu}{|c|c|c|} 
     \hline
-    рбр & $x(t)$ & $X(\jj \upomega) = \mathcal{FT}\{x(t)\}$ \\
+    рбр & $x(t)$ & $X(\jj \upomega) = \FT{x(t)}$ \\
     \hline \hline
     \redTablice & $1$ & $2\uppi \, \updelta(\upomega)$ \\
     \hline
@@ -306,10 +306,7 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     {\tabulinesep=1.2mm
     \begin{tabu}{|c|c|c|} 
     \hline
-    & & Основни период 
-    ($0 \leq \Omega < 2\uppi$) \\
-    рбр & $x[n]$ & $X(\jj\Omega) = \mathcal{FT} \{
-    x[n])\}$ \\
+    рбр & $x[n]$ & $X(\jj\Omega) = \FT{x[n]}$ \\
     \hline \hline
     %(1) 
     \redTablice &
@@ -410,7 +407,7 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
 \end{center}
 где је $\operatorname{rep}_\upalpha 
 X(\jj\Omega) = 
-\sum_{m = -\infty}^{\infty}
+\sum_{\mathclap{m = -\infty}}^{\infty}
 X(\jj(\Omega + m\upalpha))$, периодично 
 продужење функције $X(\Omega)$.
 
@@ -419,31 +416,31 @@ X(\jj(\Omega + m\upalpha))$, периодично
 
 \begin{center}
     {\tabulinesep=1.2mm
-    \begin{tabu}{|c|c|} 
+    \begin{tabu}{|c|c|c|} 
     \hline
-    $x[n]$ & $\mathcal{Z}\{x[n]\}$ \\
+    рбр & $x[n]$ & $\mathcal{Z}\{x[n]\}$ \\
     \hline \hline
-    $\delta[n]$ & $1$ \\
+    \redTablice & $\delta[n]$ & $1$ \\
     \hline
-    $a^n \, \mathrm{u}[n]$ & $\dfrac{z}{z-a}$ \\
+    \redTablice & $a^n \, \mathrm{u}[n]$ & $\dfrac{z}{z-a}$ \\
     \hline
-    $n \, a^n \, \mathrm{u}[n]$ & $\dfrac{az}{(z-a)^2}$ \\
+    \redTablice & $n \, a^n \, \mathrm{u}[n]$ & $\dfrac{az}{(z-a)^2}$ \\
     \hline 
-    $\dfrac{n \, (n+1)}{2} \, \mathrm{u}[n]$ & $\dfrac{z^2}{(z-1)^3}$ \\
+    \redTablice & $\dfrac{n \, (n+1)}{2} \, \mathrm{u}[n]$ & $\dfrac{z^2}{(z-1)^3}$ \\
     \hline
-    $\binom{n+k}{k} \, a^n \, \mathrm{u}[n]$ & $\left(\dfrac{z}{z-a}\right)^{k+1}$ \\
+    \redTablice & $\binom{n+k}{k} \, a^n \, \mathrm{u}[n]$ & $\left(\dfrac{z}{z-a}\right)^{k+1}$ \\
     \hline
-    $\binom{n+m}{k} \, \mathrm{u}[n], \quad m \ge 0$ & $\dfrac{z^{m+1}}{(z-1)^{k+1}}$ \\
+    \redTablice & $\binom{n+m}{k} \, \mathrm{u}[n], \quad m \ge 0$ & $\dfrac{z^{m+1}}{(z-1)^{k+1}}$ \\
     \hline
-    $(-1)^n \, \binom{m}{n} \, \mathrm{u}[n], \quad m \ge 0$ & $\left(\dfrac{z-1}{z}\right)^m$ \\
+    \redTablice & $(-1)^n \, \binom{m}{n} \, \mathrm{u}[n], \quad m \ge 0$ & $\left(\dfrac{z-1}{z}\right)^m$ \\
     \hline
-    $a^n \, \cos[n \uptheta] \, \mathrm{u}[n]$ & $\dfrac{z \, (z - a \cos(\uptheta))}{z^2 - 2 az \, \cos(\uptheta) + a^2}$ \\
+    \redTablice & $a^n \, \cos[n \uptheta] \, \mathrm{u}[n]$ & $\dfrac{z \, (z - a \cos(\uptheta))}{z^2 - 2 az \, \cos(\uptheta) + a^2}$ \\
     \hline
-    $a^n \, \sin[n \uptheta] \, \mathrm{u}[n]$ & $\dfrac{az \, \sin (\uptheta)}{z^2 - 2 az \, \cos(\uptheta) + a^2}$ \\
+    \redTablice & $a^n \, \sin[n \uptheta] \, \mathrm{u}[n]$ & $\dfrac{az \, \sin (\uptheta)}{z^2 - 2 az \, \cos(\uptheta) + a^2}$ \\
     \hline
-    $a^n \, \cosh[n \uptheta] \, \mathrm{u}[n]$ & $\dfrac{z \, (z - a \cosh(\uptheta))}{z^2 - 2 az \, \cosh(\uptheta) + a^2}$ \\
+    \redTablice & $a^n \, \cosh[n \uptheta] \, \mathrm{u}[n]$ & $\dfrac{z \, (z - a \cosh(\uptheta))}{z^2 - 2 az \, \cosh(\uptheta) + a^2}$ \\
     \hline
-    $a^n \, \sinh[n \uptheta] \, \mathrm{u}[n]$ & $\dfrac{az \, \sinh (\uptheta)}{z^2 - 2 az \, \cosh(\uptheta) + a^2}$ \\ 
+    \redTablice & $a^n \, \sinh[n \uptheta] \, \mathrm{u}[n]$ & $\dfrac{az \, \sinh (\uptheta)}{z^2 - 2 az \, \cosh(\uptheta) + a^2}$ \\ 
     \hline
     \end{tabu} 
     }
