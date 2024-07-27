@@ -42,6 +42,22 @@ $v_{\rm U} = v_{\rm U}[k]$. Непосредно пре тога, почетни
     \underbrace{( 1 - \DD \upalpha )}_{P(\DD)} v_{\rm I}[k] = \underbrace{\upalpha(1 - \DD)}_{Q(\DD)} v_{\rm U}[k]
 \end{equation}
 
+\begin{figure}[ht!]
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[scale=1]{fig/sc-sol.pdf}
+        \caption{Са уведеном заменском шемом.}
+        \label{\ID.zam_sch}
+    \end{subfigure}
+    %
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[scale=1]{fig/sc_plot.pdf}
+        \caption{График дискретног излазног напона.}
+        \label{\ID.fig.b}
+    \end{subfigure}
+\end{figure}
+
 (б) Израз са десне стране диференцне једначине може се поједноставити као 
 $\underbrace{(1 - \DD)}_{Q(\DD)} v_{\rm U}[k] = \underbrace{\upalpha(1 - \DD)}_{Q(\DD)} V_0 \uu[k] =\upalpha V_0 \updelta[k]$, па је потребно 
 решити диференцну једначину облика
@@ -57,21 +73,5 @@ $P(\uplambda) = \uplambda - \upalpha$ чији је једини корен $\up
 \end{equation}
 За конкретно задате бројеве је $\upalpha = \dfrac{1}{2}$ па је временски дијаграм тог сигнала дат на слици 
 \ref{\ID.fig.b}.
-
-\begin{figure}
-    \begin{subfigure}{0.49\textwidth}
-        \centering
-        \includegraphics[scale=1]{fig/sc-sol.pdf}
-        \caption{Са уведеном заменском шемом.}
-        \label{\ID.zam_sch}
-    \end{subfigure}
-    %
-    \begin{subfigure}{0.49\textwidth}
-        \centering
-        \includegraphics[scale=1]{fig/sc_plot.pdf}
-        \caption{График дискретног излазног напона.}
-        \label{\ID.fig.b}
-    \end{subfigure}
-\end{figure}
 
 (в) Треба да буде $R = \dfrac{1}{fC_{\rm s}}$.

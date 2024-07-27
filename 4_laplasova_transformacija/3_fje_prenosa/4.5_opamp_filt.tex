@@ -1,0 +1,114 @@
+\mnDifficult
+\begin{slikaDesno}{fig/opamp_ckt.pdf}
+    \PID
+    У колу са слике познато jе 
+    $R_2 = 10 R_1 = R_3/10$. Функциjа преноса
+    кола, чиjи улаз jе напон $v_{\rm U}$ а излаз напон 
+    $v_{\rm I}$ jе облика
+    $
+    {H(s) = K\dfrac{s^2}{s^2 + \dfrac{\upomega_0}{Q} s + \upomega_0^2 }}
+    $.
+    (а) Израчунати параметре $K$ и $Q$,
+    и вредности елемената кола $R_1$ и $C_1$ ако су познати $R_2 = 10\unit{k\Omega}$ и 
+    $\upomega_0 = 10^5\unit{\dfrac{rad}{s}}$.
+    (б) Одредити принудни и устаљени одзив филтра на побуду
+    $v_{\rm G}(t) = V_0 \bigl(5 + \ee^{2t} \updelta(t) \bigr)\,\uu(t - \uptau)$, где су $V_0 = 1\unit{V}$ 
+    и $\uptau = 2\unit{s}$. 
+\end{slikaDesno}
+
+\RESENJE
+
+(а) 
+Једносмерно појачање система (DC) одређује се као
+$H(s = 0) = 0$. У том случају, капацитивности се понашају као отворене везе. 
+Приметимо да је тада отпорност $R_1$ везана редно улазном напонском генератору. 
+Односно, да би напонско појачање система било равно нули, мора бити 
+$R_1 \to \infty$. 
+Са друге стране, 
+када jе $\upomega \to \infty$ тада су 
+$V^+ = V^- = V_{\rm U}$ за оба операциона поjачавача па jе
+$VI = 2V_U \Rightarrow K = 2$, због разделника напона $R_2$--$R_2$.
+
+На „+“ прикључку доњег операционог поjачавача jе, услед напонског разделника, 
+напон $V^+ = \dfrac{V_{\rm I}}2$ , што jе и на „$-$“ прикључку, због НПС.
+Тиме jе дефинисана струjа кондензатора
+као $I = \dfrac{V_{\rm I} - \dfrac{V_{\rm I}}{2}}{R_2} = \dfrac{V_{\rm I}}{2R_2}$.
+Напон на излазу доњег операционог појачавача је 
+$V_{\rm OP} = \dfrac{V_{\rm I}}{2} \left( 1 - \dfrac{1}{sC_1R_2} \right)$.
+Струjа
+кроз улазни кондензатор jе jеднака 
+$I_{\rm U}
+=
+\left(
+    V_{\rm U} 
+    -
+    \dfrac{V_{\rm I}}{2}
+\right) sC_1$, одакле се има 
+$V_{\rm U} = \dfrac{V_{\rm I}}{2}
+\cdot
+\dfrac{1 + sC_1R_2 + (sC_1R_2)^2 }{ (sC_1R_2)^2 }$
+па се сређивањем добија
+\begin{equation}
+    H(s) = 2 \dfrac{s^2}{ 
+        s^2 + \dfrac{1}{R_2 C_1} s + \left( \dfrac{1}{R_2 C_1} \right)^2
+    }.
+\end{equation}
+Поређењем добијеног облика са обликом из поставке задатка директном идентификацијом 
+се установљава да су $Q = 1$ и $C_1 = 1\unit{nF}$
+
+(б)
+Пошто jе Хевисаjдова функциjа померена, Делта импулс у нули се анулира, а одзив jе исти као за побуду
+$v_{\rm G} = 5 V_0 \, \uu(t - \uptau)$, па се одзив система може потражити као 
+\begin{eqnarray}
+    V_{\rm I}(s) = 
+    V_{\rm G}(s) \cdot H(s)
+    =
+    \dfrac{5 V_0 \ee^{-s\uptau}}{\cancel{s}} \cdot 
+    K\dfrac{s^{\cancel2}}{s^2 + \upomega_0 s + \upomega_0^2 }
+\end{eqnarray}
+Инверзна Лапласова трансформација може се одредити допуњавањем именионца до потпуног квадрата
+\begin{eqnarray}
+    && V_{\rm I}(s)=5 V_0 \cdot 
+    K\dfrac{
+        s + \dfrac{\upomega_0}{2} - \dfrac{\upomega_0}{2}
+    }{
+    \underbrace{s^2 + \upomega_0 s + \left(\dfrac{\upomega_0}{2}\right)^2}_{
+        \left(
+            s + \upomega_0/2
+        \right)^2
+    } 
+    \underbrace{
+    - \left(\dfrac{\upomega_0}{2}\right)^2  + \upomega_0^2 }_{ {3\upomega_0^2}/{4} } 
+    }
+    \ee^{-s\uptau} = \\
+    &=& \hspace*{-2mm} 5KV_0 
+        \left(
+            \dfrac{
+            s + \dfrac{\upomega_0}{2} 
+            }{
+               \left(s + \dfrac{\upomega_0}2 \right)^2 + \left( \dfrac{\upomega_0 \sqrt 3}{2} \right)^2
+            }
+            - \dfrac{\cancel \upomega_0}{\cancel 2}
+            \cdot
+            \dfrac{\cancel 2}{\cancel \upomega_0 \sqrt3}
+            \dfrac{
+                \dfrac{\upomega_0 \sqrt 3}{2}
+            }{
+                \left(s + \dfrac{\upomega_0}2 \right)^2 + \left( \dfrac{\upomega_0 \sqrt 3}{2} \right)^2
+            }
+    \right)
+    \ee^{-s\uptau},
+\end{eqnarray}
+па се на сличан начин као и у задатку \ref{z:teleskop} помоћу табличних трансформација 
+\reft{T:LT:exp_cos} и \reft{T:LT:exp_sin}, те применом својства кашњења, налази коначни резултат 
+\begin{equation}
+    v_{\rm I}(t) = 
+    10\unit{V}
+    \exp\left(- \dfrac{\upomega_0}{2} (t-\uptau)\right)
+    \left( 
+        \cos\left( \dfrac{\upomega_0\sqrt3}{2}(t-\uptau) \right)
+        -
+        \dfrac{\sqrt 3}{3}
+        \sin\left( \dfrac{\upomega_0\sqrt3}{2}(t-\uptau) \right)
+    \right) \uu(t-\uptau).
+\end{equation}
