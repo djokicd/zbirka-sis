@@ -3,7 +3,7 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage[T1, T2A]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[b5paper, margin = 15mm]{geometry}
+\usepackage[b5paper, textwidth = 415 pt, textheight = 600 pt, marginparwidth = 10 mm]{geometry}
 \usepackage[serbianc]{babel}
 \usepackage{amsmath, amsfonts}
 \usepackage{mathtools}
@@ -177,6 +177,15 @@
 \draw[dashed] (m.south east) -- (m.north east);
 \end{tikzpicture}
 }
+
+%% MARGIN NOTES 
+
+\usepackage{layout}
+\usepackage{fourier-orns}
+%\usepackage{marginnote}
+\newcommand{\mnImportant}{\marginpar{$\clubsuit$}}
+\newcommand{\mnAst}{\marginpar{$\bigstar$}}
+\newcommand{\mnAdvanced}{\marginpar{\noway}}
 
 
 %% UNDERLINE
