@@ -187,6 +187,13 @@
 \newcommand{\mnDifficult}{{\marginpar{\textcolor{red}{\warning}}}}
 \newcommand{\mnAdvanced}{\marginpar{\textcolor{red}{\noway}}}
 
+%% TOC 
+
+\usepackage{tocloft}
+\renewcommand{\cftchapfont}{\normalfont}  % Remove bold for chapter entries
+\renewcommand{\cftchappagefont}{\normalfont}  % Remove bold for page numbers
+\renewcommand{\cftchapdotsep}{\cftdotsep}  % Add dots to chapter entries
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}  % Customize dot leaders
 
 %% UNDERLINE
 
