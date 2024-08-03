@@ -1,0 +1,62 @@
+\PID Поновити задатак \ref{z:snaga_complex} применом формалног развоја у Фуријеов ред. 
+
+\RESENJE
+
+Формални развој у Фуријеов ред подразумева развој датог сигнала у степени ред облика 
+$\sum_{k = -\infty}^{\infty} X[k] z^{k}$, где је $z = \ee^{\jj\upomega t}$, изражавањем датог израза по 
+$z$ па формалним сређивањем израза и развојем у редове помоћу познатих развоја. У овом случају, може се искористити $\cos(\upomega t) = \dfrac{\ee^{\jj\upomega t} + \ee^{-\jj\upomega t}}{2} 
+= \dfrac{z + z^{-1}}{2}$ па се након замене и сређивања у дати израз за струју добија 
+\begin{equation}
+    i(t) = I_0 \dfrac{0,75}{1,25 - \dfrac{z + z^{-1}}{2} } 
+         = I_0 \dfrac{1,5}{2,5 - z - z^{-1}}  
+         \cdot 
+         \dfrac{z}{z}
+         = I_0 \dfrac{1,5 z}{ -z^2 + 2,5 z - 1 } 
+         =  -I_0 \dfrac{1,5 z}{ \left( z - \dfrac{1}{2} \right) (z - 2) } \label{eq:\ID.i}
+\end{equation}
+Добијени израз може се раставити на парцијалне разломке по параметру $z$, одакле се применом техника описаних 
+у додатку \ref{a:pfd} добија 
+$
+    i(t) = -I_0 \left( \dfrac{1}{\dfrac{1}{2}z - 1} - \dfrac{1}{2z - 1} \right). 
+$ Леви члан у добијеном изразу може се развити директно у геометриски ред\footnote{Израз за суму геометријског реда 
+$\sum_{k = 0}^{\infty} q^k = \dfrac{1}{1 - q}$, $|q| < 1$ } по параметру $z$, будући да је 
+$\left\lvert\dfrac{1}{2} z\right\rvert = \dfrac{1}{2} \cancelto{1}{|z|}  < 1$, док је 
+за други члан није могуће извести исто јер није задовољен услов $|2z| < 1$. Да би се и он развио потребно је приметити
+$
+\dfrac{1}{2z - 1} = \dfrac{1}{2}z^{-1} \dfrac{1}{1 - \dfrac{1}{2}z^{-1} }
+$, па је њега могуће развити у геометријски ред по $\dfrac{1}{2}z^{-1}$. Имајући наведено у виду, даље се може 
+заменом у \eqref{eq:\ID.i} писати
+\begin{eqnarray}
+    i(t) &=& -I_0 \left(
+        \dfrac{1}{\dfrac{1}{2}z - 1} - \dfrac{1}{2}z^{-1} \dfrac{1}{1 - \dfrac{1}{2}z^{-1} }    
+    \right) = I_0 \left(
+      \sum_{k = 0}^{\infty} \left(\dfrac{1}{2}z \right)^k + \dfrac{1}{2} z^{-1} \sum_{k = 0}^{\infty} \left(\dfrac{1}{2} z^{-1} \right)^k     
+    \right) \\[2mm]
+    &=&
+    I_0 \left(
+        \sum_{k = 0}^{\infty} \left(\dfrac{1}{2} \right)^k z^k + \dfrac{1}{2} z^{-1} \sum_{k = -\infty}^{0} \left(\dfrac{1}{2}\right)^{-k} z^{k}     
+    \right)
+    \\[2mm] &=&
+    I_0 \left(
+        \sum_{k = 0}^{\infty} \left(\dfrac{1}{2} \right)^k z^k + \sum_{k = -\infty}^{0} \left(\dfrac{1}{2}\right)^{-(k-1)} z^{k-1}     
+    \right) \\[2mm]
+        &=&
+    I_0 \left(
+        \sum_{k = 0}^{\infty} \left(\dfrac{1}{2} \right)^k z^k + \sum_{k = -\infty}^{-1} \left(\dfrac{1}{2}\right)^{-k} z^k     
+    \right)
+\end{eqnarray}
+Коначним обједињавањем добијених сума добија се 
+$i(t) = \sum_{ k = -\infty }^{\infty} \underbrace{ I_0 \left(\dfrac{1}{2}\right)^{|k|}}_{I[k]} z^k$. Снага пријемника 
+онда је одређена као 
+$P_{\rm p} = R_{\rm p} \overline{i^2}$, а снага сигнала $i(t)$ 
+може се израчунати онда помоћу Парсевалове теореме 
+\begin{equation}
+    \overline{i^2} = \sum_{k = -\infty}^{\infty} |I[k]|^2 = 
+    |I[0]|^2 + 2 \sum_{k = 1}^{\infty} |I[k]|^2 =   
+    I_0^2 \left( 1 + 2 \sum_{k = 1}^{\infty} \left(\dfrac{1}{2} \right)^{2k} \right) = \dfrac{5}{3} \unit{mA^2},
+\end{equation}
+па се коначно израчунава $R_{\rm p} = 5\unit{mW}$. 
+
+Дати сигнал припада нарочитој групи сигнала чији
+Фуријеови редови образују различите геометријске низове, а који су доступни и кроз таблицу 
+\reft{T:frs}
