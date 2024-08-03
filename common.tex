@@ -20,8 +20,10 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{} % clear all fields
-\fancyhead[L]{\rightmark}
-\fancyhead[R]{\thepage}
+\fancyhead[LO]{\rightmark}
+\fancyhead[RO]{\thepage}
+\fancyhead[RE]{\rightmark}
+\fancyhead[LE]{\thepage}
 
 \renewcommand{\subsectionmark}[1]{%
   \markright{{\thesubsection.\ #1}}
