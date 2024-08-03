@@ -35,8 +35,22 @@ $\dfrac{1 - \ee^{-\jj 2x}}{\jj 2} = \ee^{-\jj x} \sin(x) $,
      \cdot 
      \dfrac{1}{k \uppi D} 
      = V_{\rm m} D \dfrac{\sin(k\uppi D)}{k\uppi D} \ee^{-\jj k \uppi D} 
-     = V_{\rm m} D \sinc(k D) \ee^{-\jj k \uppi D}.
+     = V_{\rm m} D \sinc(k D) \ee^{-\jj k \uppi D}. \label{eq:\ID.form}
 \end{align}
-Добијени резултат може се одредити и таблично којом приликом ће се члан 
-$\ee^{-\jj k \uppi D}$ појавити услед кашњења у времену периодичне поворке правоугаоних 
-импулса симетричне око ординате. 
+
+\textbf{II начин.} Исти резултат може  се одредити и помоћу трансформација поворке Диракових импулса. 
+Приметимо да је $v(t) = V_{\rm m} \int_{-\infty}^t (\III_T(t) - \III_T(t - DT))\, \de t$. Применом особина 
+померања у времену\footnote{
+   $\FS{x(t-\uptau)} = \FS{x(t)} \ee^{-\jj k \upomega_{\rm 0} \uptau}$, $\uptau = \const$
+}
+и интеграције\footnote{
+   $\FS{ \int_{\uptau = -\infty}^t x(\uptau) \, \de \uptau } = \dfrac{1}{\jj k \upomega_0} X[k]$ 
+} Фуријеовог реда континуалног сигнала, уз резултат задатка \ref{z:dirak_povorka} добија се 
+\begin{equation}
+   \FS{v(t)} = V_{\rm m} \dfrac{1}{\jj k \upomega }  \left( \dfrac{1}{T} - \dfrac{\ee^{-\jj k \upomega D T}}{T} \right)
+             = \dfrac{V_{\rm m}}{\uppi k} \dfrac{1 - \ee^{-\jj k \upomega D T}}{\jj 2}, \qquad \qquad \upomega T = 2\uppi,
+\end{equation}
+што је исти облик који је добијен и као \eqref{eq:\ID.form}, па се истим поступком долази до истог коначног резултата.
+
+Добијени резултат може се одредити и помоћу таблице, којом приликом ће се члан 
+$\ee^{-\jj k \uppi D}$ појавити услед кашњења у времену уноса у таблици доступног као \reft{T:ctfs:rect}. 
