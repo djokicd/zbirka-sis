@@ -1,0 +1,70 @@
+\begin{slikaDesno}{fig/fr_kolo.pdf}
+    \PID
+    Дат jе континуалан сигнал 
+    $$ 
+    x(t) = 1 - 2 \sin(\upomega_0 t) + 3 \cos(\upomega_0 t) 
+    - 4 \cos(4 \upomega_0 t),$$ где jе $\upomega_0$ константа. 
+    Израчунати коефициjенте развоjа тог сигнала у (а) тригонометриjски и (б) комплексни Фуриjеов ред, 
+    на основном периоду. (в) У колу са слике познато jе $R_1 = 10R_2 = 5\unit{k\Omega}$, $L \to \infty$, 
+    а струjа струjног генератора jе $i_{\rm G} = 1 \unit{mA} \cdot x(t)$. Израчунати ефективне вредности напона на отпорницима 
+    $V_{R_1}$ и $V_{R_2}$.
+\end{slikaDesno}
+
+\RESENJE
+
+Општа форма развоја у тригонометријски Фуријеов ред је 
+\begin{equation}
+    x(t) = A[0] + \sum_{k = 1}^{\infty} A[k] \cos(k\upomega_0 t) + \sum_{k = 1}^{\infty} B[k] \sin(k\upomega_0 t),
+\end{equation}
+па се чланови тригонометријског Фуријеовог реда могу директно препознати идентификацијом. Поређењем са формом датом у поставци задатка има се:
+\begin{eqnarray}
+    x(t) = 
+    \underbrace{1}_{A[0]} 
+    \underbrace{-2}_{B[{\color{blue}1}]} \sin({\color{blue} 1} \upomega_0 t) 
+    \underbrace{+3}_{A[{\color{blue}1}]} \cos({\color{blue} 1} \upomega_0 t) 
+    \underbrace{-4}_{A[{\color{blue}4}]} \cos({\color{blue} 4} \upomega_0 t),
+\end{eqnarray}
+односно: 
+\begin{eqnarray}
+    A[0] = 1, A[1] = 3, A[4] = -4 &\Rightarrow& A[k] = \updelta[k] + 3\updelta[k-1] - 4\updelta[k-4]\\
+              B[1] = -2           &\Rightarrow& B[k] = -2\updelta[k-1]
+\end{eqnarray}
+
+(б) Коефицијенти комплексног Фуријеовог реда могу се изразити преко тригонометријских помоћу веза
+$X[0] = A[0], X[k > 0] = \dfrac{A[k] - \jj B[k]}{2}, X[k < 0] = X^\ast[-k]$, па је 
+\begin{eqnarray}
+    && X[0] = 1 \\ 
+    && X[1] = \dfrac{A[1] - \jj B[1]}{2} = \dfrac{3 + \jj 2}{2} \Rightarrow  X[-1] = \dfrac{3 - \jj 2}{2}  \\
+    && X[4] = -2 \Rightarrow X[-4] = -2 \\
+\end{eqnarray}
+Па се коначно може записати 
+\begin{equation}
+    X[k] = - 2\updelta[k + 4] + \dfrac{3 - \jj 2}{2}\updelta[k+1] 
+    + \updelta[k] 
+    + \dfrac{3 + \jj 2}{2}\updelta[k-1] 
+    - 2\updelta[k - 4].
+\end{equation}
+
+(б) Ефективна вредност напона отпорника може се изразити као 
+\begin{eqnarray}
+    V_R = \sqrt{ \dfrac{1}{T} \int_{\langle T \rangle} v_R^2  \, \de t  }
+        = \sqrt{ \dfrac{1}{T} \int_{\langle T \rangle} R^2 i_R^2  \, \de t  }
+        = R \sqrt{ \, \overline{i_R^2} },
+\end{eqnarray}
+Снага сигнала струје отпорника $\overline{i^2}$ може се рачунати помоћу Парсевалове теореме. Струја
+отпорника $R_1$ једнака је струји генератора па је 
+\begin{eqnarray}
+    I_{R_1}[k] = 1\unit{mA} \cdot X[k]
+\end{eqnarray}
+па се снага тог сигнала налази као 
+\begin{equation}
+    \overline{i_{R_1}^2} = 1 \unit{mA^2} \sum_{k = -\infty}^{\infty} |X[k]|^2 = \dfrac{31}{2} \unit{mA^2}.
+\end{equation}
+па је онда $V_{R_1} = 5 \sqrt{\dfrac{31}{2}} \unit{V} \approx 19,7 \unit{V}$. За отпорник $R_2$, пошто је $L \to \infty$, само 
+стална компонента струје генератора се успоставља на калему, односно, спектрални садржај струје отпорника 
+$R_2$ исти је као и спектрални садржај струје отпорника $R_1$ са изузетком сталне компоненте која је код 
+њега једнака нули. Снага сигнала струје тог отпорника се онда може потражити као
+\begin{equation}
+    \overline{i_{R_2}^2} = 1 \unit{mA^2} \sum_{ \substack{k = -\infty\\k\neq 0}}^{\infty} |X[k]|^2 = \dfrac{29}{2} \unit{mA^2}.
+\end{equation}
+па је онда $V_{R_2} = \dfrac{1}{2} \sqrt{ \dfrac{29}{2} } \unit{V} \approx 1,9 \unit{V}$.

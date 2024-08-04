@@ -1,0 +1,21 @@
+\begin{slikaDesno}[1.2]{fig/formal_ckt.pdf}
+    \PID 
+    У колу са слике позната jе струjа струjног генера-
+    тора у дата облику 
+    $i_{\rm G}(t) = I_{\rm m} (1 + \cos(\upomega_0 t) \sin^2(\upomega_0 t))$,
+    где су $I_{\rm m} = 1\unit{mA}$ и $\upomega_0 = 200\uppi \unit{\dfrac{rad}{s}}$.
+    (а) Одредити развоj струjе $i_{\rm G}$ у Фуриjеов ред на основном периоду.
+    (б) Израчунати средње снаге отпорника $R_1$ и $R_2$. У 
+    колу jе успостављен сложенопериодичан режим.
+\end{slikaDesno}
+
+\REZULTAT
+
+(а) Тражени развој је 
+$I[k] = I_{\rm m} \left(
+    \updelta[k] - \dfrac{1}{8}\left(
+        \updelta[k-3] - \updelta[k-1] - \updelta[k+1] + \updelta[k+3]
+    \right)
+\right)$. (б) Снаге отпорника су 
+$P_{R_1} \approx 100\unit{mW}$, и 
+$P_{R_2} \approx \dfrac{1}{16}\unit{mW}$.
