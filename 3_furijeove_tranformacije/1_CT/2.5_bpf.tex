@@ -1,0 +1,41 @@
+\PID 
+Фреквенцијска карактеристика идеалног филтра пропусника опсега учестаности је 
+$H(\jj\upomega) = 
+\begin{cases}
+    1 &, \upomega_0 < |\upomega| < 3\upomega_0 \\
+    0 &, \text{иначе}
+\end{cases}.$ Одредити импулсни одзив тог филтра. 
+
+\RESENJE 
+
+Фреквенцијска карактеристика састоји се од два правоугаона прозора полуширине $\upomega_0$ центриране на кружним учестаностима 
+$\pm 2\upomega_0$, што се може записати као 
+\begin{eqnarray}
+    H(\jj\upomega) = \rect_{\upomega_0} (\upomega - 2\upomega_0) + \rect_{\upomega_0} (\upomega + 2\upomega_0).
+\end{eqnarray}
+Добијена померања у учестаности могу се изразити конволуцијом са одговарајућим Дираковим импулснима одакле се може писати 
+\begin{eqnarray}
+    H(\jj\upomega) = \rect_{\upomega_0} (\upomega) \ast 
+    \bigl(
+        \updelta(\upomega - 2\upomega_0) + \updelta(\upomega + 2\upomega_0)
+    \bigr).
+\end{eqnarray}
+Инверзна Фуријеова трансформација одређује се применом теореме о конволуцији по учестаности\footnote{
+   $\FT{x(t) \cdot y(t)} = \dfrac{1}{2\uppi} X(\jj\upomega) \ast Y(\jj\upomega)$
+}, одакле се има
+\begin{eqnarray}
+    h(t) &=& 2\uppi
+    \underbrace{\IFT{ \rect_{\upomega_0}(\upomega) }}_{
+        \text{Задатак \ref{z:lpf} }
+    } \cdot 
+    \underbrace{\IFT{ \updelta(\upomega - 2\upomega_0) + \updelta(\upomega + 2\upomega_0) }}_{
+        \text{Таблица, \reft{T:ctft:cos}: } \frac{1}{\uppi} \cos(2\upomega_0 t)
+    } \\
+    &=& 2 \cancel{\uppi}
+    \dfrac{\upomega_0}{\cancel{\uppi}} \sinc \left( \frac{\upomega_0 t}{\uppi} \right) 
+    \cdot 
+    \dfrac{1}{\uppi} \cos(2\upomega_0 t)
+    = 
+    2 \upomega_0 \cos(2\upomega_0 t) \sinc \left( \frac{\upomega_0 t}{\uppi} \right),
+\end{eqnarray}
+што је и требало одредити. 

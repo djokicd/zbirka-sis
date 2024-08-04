@@ -1,0 +1,27 @@
+\PID \label{z:lpf}
+Фреквенцијска карактеристика идеалног филтра пропусника ниских учестаности је 
+$H(\jj\upomega) = 
+\begin{cases}
+    1 &, |\upomega| < \upomega_0 \\
+    0 &, \text{иначе}
+\end{cases}.$ Одредити импулсни одзив тог филтра. 
+
+\RESENJE 
+
+Дата функција преноса може се записати као правоугаони прозор полуширине 
+$\upomega_0$, у облику $\rect_{\upomega_0}(\upomega)$.
+Такав правоугаони прозор може се изразити помоћу јединичног правоуганог прозора коначно
+$\rect_{\upomega_0}(\upomega) = \rect \left( \dfrac{\upomega}{2\upomega_0} \right)$.
+Помоћу табличне трансформације \reft{T:ctft:sinc} и особине скалирања аргумента\footnote{
+    $\FT{x(at)} = \dfrac{1}{|a|} X\left( \dfrac{\upomega}{a} \right)$;
+} може се писати
+\begin{eqnarray}
+    && \FT{ \sinc(t) } = \mathrm{rect}\left(\frac{\upomega}{2\uppi}\right)
+    \Rightarrow
+    \FT{ a \sinc(at) } = \mathrm{rect}\left(\frac{\upomega}{2\uppi a}\right) \\ 
+    && a = \dfrac{\upomega_0}{\pi} \Rightarrow
+    \FT{ \dfrac{\upomega_0}{\uppi} \sinc \left( \dfrac{\upomega_0 t}{\uppi} \right) } = \mathrm{rect}\left(\frac{\upomega}{2 \upomega_0}\right) 
+    =   \rect_{\upomega_0} (\upomega) \\ 
+    && \IFT{ \rect_{\upomega_0} (\upomega)  } = \dfrac{\upomega_0}{\uppi} \sinc \left( \dfrac{\upomega_0 t}{\uppi} \right),
+\end{eqnarray}
+што представља импулсни одзив датог филтра $h(t) = \dfrac{\upomega_0}{\uppi} \sinc \left( \dfrac{\upomega_0 t}{\uppi} \right)$.
