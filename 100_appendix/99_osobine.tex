@@ -62,14 +62,14 @@
 Између комплексних и тригонометријских 
 коефицијената постоје везе
 \begin{equation}
-    X[k \neq 0] = \dfrac{A[k] - \jj B[k]}{2}, \qquad X[k] = A[0],
+    X[k \neq 0] = \dfrac{A[k] - \jj B[k]}{2}, \qquad X[0] = A[0], \label{eq:ctfs_ab_to_x}
 \end{equation}
 које се могу показати полазећи од Ојлерове формула $\ee^{\jj x} = \cos(x) + \jj\sin(x)$.  
 Уколико се разматра реални сигнал $x(t)$, сигнали $A[k]$ и $B[k]$ су реални, па важе и инверзне релације 
 \begin{eqnarray}
-    X[0] = A[0] && 
+    A[0] = X[0] && 
     A[k > 0] = 2 \, \Re{X[k]} \qquad
-    B[k > 0] = -2 \, \Im{X[k]}.
+    B[k > 0] = -2 \, \Im{X[k]}. \label{eq:ctfs_x_to_ab}
 \end{eqnarray}
 
 Уколико је сигнал $x(t)$ реалан, његов комплексни спектар задовољава комплексно-конјуговану (Хермитову) симетрију 
@@ -91,7 +91,7 @@ $X[k] = \FS{x(t)}$ (и $Y[k] = \FS{y(t)}$),
     \FS{x(t) \cdot y(t)} = X[k] \ast Y[k];
     $
     \item \emph{Дејство на извод} $\FS{ \dfrac{\de x(t)}{\de t} } = \jj k \upomega_0 X[k]$;
-    \item \emph{Дејство на интеграл} $\FS{ \int_{\uptau = -\infty}^t x(\uptau) \, \de \uptau } = \dfrac{1}{\jj k \upomega_0} X[k]$ 
+    \item \emph{Дејство на интеграл} $\FS{ \int_{\uptau = -\infty}^t x(\uptau) \, \de \uptau } = \dfrac{1}{\jj k \upomega_0} X[k]$
 \end{itemize}
 
 

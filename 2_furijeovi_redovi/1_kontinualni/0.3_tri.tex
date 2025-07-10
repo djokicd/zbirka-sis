@@ -1,0 +1,58 @@
+\noindent\begin{slikaDesno}{fig/I0tri.pdf}
+\PID  Нека је дата струја облика униполарне поворке симетричних троугаоних импулса, периода $T$ и амплитуде $I_0$, 
+на свом основном периоду изразом
+$
+i(t) = \left| 2\dfrac{I_0}{T} t \right|
+$ као што је илустровано на слици. Одредити развој овога напона у његов тригонометријски Фуријеов ред.
+\end{slikaDesno}
+
+\RESENJE
+Задатак се може решити полазећи од дефиниције што се препушта заинтересованом читаоцу. Ефикасније 
+решење може се добити применом својства о изводу, односно интегралу, сигнала.
+Приметимо да се диференцирањем дате струје добија 
+$\dfrac{\de i}{\de t} = \dfrac{2I_0}{T} \sgn(t)$, што је облик који одговара сигналу добијеном у 
+задатку \ref{z:pravougani_po_def}. Уколико тај сигнал означимо са $v = v(t)$, као у том задатку, 
+онда можемо изразити 
+$
+\dfrac{\de i}{\de t} = \dfrac{2 I_0}{T} \dfrac{v}{V_0},
+$
+односно, водећи рачуна о средњој вредности струје, можемо писати
+\begin{equation}
+    i(t) = \dfrac{I_0}{2} + \dfrac{2 I_0}{T V_0} \int_{-\infty}^t v(\uptau) \de \uptau.
+\end{equation}
+Применом особине интеграљења Фуријеовог реда контиинуалног сигнала\footnote{
+$\FS{ \int_{\uptau = -\infty}^t x(\uptau) \, \de \uptau } = \dfrac{1}{\jj k \upomega_0} X[k]$}
+даље се могу одредити комплексни коефицијенти Фуријеовог реда струје $i(t)$ као 
+\begin{eqnarray}
+    I[k] = \dfrac{I_0}{2}\updelta[k] + \dfrac{2 I_0}{T V_0} \dfrac{1}{\jj k\upomega_0} V[k].
+    \label{eq:\ID.2}
+\end{eqnarray}
+Комплексни коефицијенти напона $V[k]$ могу се изразити на основу релације \ref{eq:ctfs_ab_to_x} из додатка
+$V[k] = \dfrac{B_v[k] - \jj A[k]}{2} = \dfrac{1}{2} B_v[k] = 
+\dfrac{2V_0}{k\uppi} \cdot \begin{cases}
+    1, k\text{ непарно} \\
+    0, k\text{ парно} \\
+\end{cases}.$
+Заменом тако добијеног резултата
+у \ref{eq:\ID.2} даље се добија:
+\begin{align}
+    I[k] &= \dfrac{I_0}{2} \updelta[k] + \dfrac{2 I_0}{T \cancel{V_0}} \dfrac{1}{\jj k \upomega_0} 
+    \dfrac{2\cancel{V_0}}{k\uppi} n[k] = 
+    \dfrac{I_0}{2} \updelta[k]  - \jj
+    \dfrac{2 I_0}{k^2 \uppi^2} 
+    \cdot \begin{cases}
+        1, k\text{ непарно} \\
+        0, k\text{ парно} \\
+    \end{cases},
+\end{align}
+при чему је искоришћено $\upomega_0 T = 2\uppi$. Трансформисање у тригонометријске коефициjенте може се 
+обавити помоћу релације \eqref{eq:ctfs_x_to_ab} чиме се има 
+\begin{align}
+    & A_i[0] = \dfrac{I_0}{2}, \\
+    & A_i[k>0] = 0,  \\
+    & B_i[k>0] = \dfrac{4 I_0}{k^2 \uppi^2} \cdot 
+    \begin{cases}
+        1, k\text{ непарно} \\
+        0, k\text{ парно} \\
+    \end{cases}.
+\end{align}
