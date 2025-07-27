@@ -1,0 +1,70 @@
+\noindent 
+\PID \label{z:fr_moving_average} 
+Нека су познати коефицијенти развоја сигнала $x(t)$ у тригонометријски Фуријеов ред на његовом основном периоду, 
+$A[k]$ и $B[k]$. Одредити коефицијенте развоја сигнала 
+$y(t) = \dfrac{1}{2T}\int_{t-T}^{t+T} x(\uptau) \de \uptau$, у тригонометријски Фуријеов ред на основном периоду, 
+где је $T>0$ познати параметар.
+
+\RESENJE
+На основу датих коефицијената, сигнал $x(t)$ се може изразити синтетичком релацијом као 
+\begin{equation}
+    x(t) = A[0] + \sum_{k=1}^{\infty} A[k] \cos(k\upomega_0 t) + \sum_{k=1}^{\infty} B[k] \sin(k\upomega_0 t).
+\end{equation}
+Заменом тог израза у израз за сигнал $y(t)$ добија се\footnote{Овом 
+приликом користи се замена места интеграла и суме, у доказ чије се оправданости на овом предмету не упуштамо.} 
+\begin{eqnarray}
+    y(t) &=& \dfrac{1}{2T} \int_{t-T}^{t+T}
+    \left(
+        A[0] + \sum_{k=1}^{\infty} A[k] \cos(k\upomega_0 \uptau) + \sum_{k=1}^{\infty} B[k] \sin(k\upomega_0 \uptau) 
+    \right) \de \uptau \\
+    && \hspace*{-4em} = 
+    \underbrace{\dfrac{1}{2T} \int_{t-T}^{t+T} A[0] \de \uptau}_{=A[0]} + 
+    \sum_{k = 1}^{\infty} \left( \dfrac{A[k]}{2T} \int_{t-T}^{t+T} \cos(k\upomega_0 \uptau)\,\de\uptau \right) + 
+    \sum_{k = 1}^{\infty} \left( \dfrac{B[k]}{2T} \int_{t-T}^{t+T} \sin(k\upomega_0 \uptau)\,\de\uptau\right) \label{\ID.1}
+\end{eqnarray}
+Добијени интеграли су практично таблични\footnote{
+    Таблични интеграли су $\int \sin(x)\,\de x = -\cos(x) + C$, односно
+    $\int \cos(x)\,\de x = \sin(x) + C$
+}, па се применом одговарајућих тригонометријских идентитета за производ синуса односно косинуса\footnote{
+    Тригонометријски идентитети су
+    $\sin(x+y) - \sin(x-y) = 2\cos(x)\sin(y)$, односно 
+    $\cos(x+y) - \cos(x-y) = 2\sin(x)\sin(y)$. 
+} добија
+\begin{eqnarray}
+    \hspace*{-2em}
+    \int_{t-T}^{t+T} \cos(k\upomega_0 \uptau)\,\de\uptau = 
+    \dfrac{1}{k}\left(
+        \sin\big(k\upomega_0(t+T)\big)-\sin\big(k\upomega_0(t-T)\big)
+    \right) = \dfrac{2\sin(k\upomega_0 T)\cos(k\upomega_0 t)}{k\upomega_0}, \label{\ID.2}
+\end{eqnarray}
+односно
+\begin{eqnarray}
+    \hspace*{-2em}
+    \int_{t-T}^{t+T} \sin(k\upomega_0 \uptau)\,\de\uptau = 
+    \dfrac{1}{k}\left(
+        \cos\big(k\upomega_0(t-T)\big)-\cos\big(k\upomega_0(t+T)\big)
+    \right) = \dfrac{2\sin(k\upomega_0 T)\sin(k\upomega_0 t)}{k\upomega_0}. \label{\ID.3}
+\end{eqnarray}
+Заменом добијених резултата \eqref{\ID.2} и \eqref{\ID.3} у \eqref{\ID.1} има се 
+\begin{eqnarray}
+    \hspace*{-4em}
+    y(t) &=& A[0] + 
+    \sum_{k = 1}^{\infty} \left( \dfrac{A[k]}{\cancel{2}T} \dfrac{\cancel{2}\sin(k\upomega_0 T)\cos(k\upomega_0 t)}{k\upomega_0} \right) + 
+    \sum_{k = 1}^{\infty} \left( \dfrac{B[k]}{\cancel{2}T} \dfrac{\cancel{2}\sin(k\upomega_0 T)\sin(k\upomega_0 t)}{k\upomega_0} \right) 
+    \\
+    &=& \underbrace{A[0]}_{A'[0]}
+    + \sum_{k = 1}^{\infty}
+    \underbrace{\dfrac{A[k] \sin(k\upomega_0 T)}{k \upomega_0 T}}_{A'[k]} \cos(k\upomega_0 t) 
+    +  
+    + \sum_{k = 1}^{\infty}
+    \underbrace{\dfrac{B[k] \sin(k\upomega_0 T)}{k \upomega_0 T}}_{B'[k]} \sin(k\upomega_0 t).
+\end{eqnarray}
+Коефицијенте развоја $y(t)$ непосредно идентификујемо као што је указано у резултату, чиме се добија 
+\begin{equation}
+    A'[0] = A[0], \qquad
+    A'[k] = \dfrac{\sin(k\upomega_0 T)}{k\upomega_0 T} A[k], \text{и} \qquad
+    B'[k] = \dfrac{\sin(k\upomega_0 T)}{k\upomega_0 T} B[k].
+\end{equation}
+
+Заинтересованом читаоцу се препоручује да задатак уради и уколико су познати комплексни коефицијенти сигнала $x(t)$ а
+траже се комплексни коефицијенти сигнала $y(t)$. 
