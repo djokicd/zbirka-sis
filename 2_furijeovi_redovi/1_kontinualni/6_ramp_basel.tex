@@ -115,13 +115,14 @@ $0 < t < T$, помоћу \eqref{\ID.eqvin}, као
 
 (в) Тражени спектар може се одредити полазећи од спектра струје кондензатора, а који се одређује на основу израза 
 \eqref{\ID.iceqn}, одакле се има
-\begin{equation}
-    I_C[k] = \FS{ i_C(t) } = \FS{ I_{\rm G} ( 1 - T \III_T(t)) } = 
+\begin{eqnarray}
+    I_C[k] &=& \FS{ i_C(t) } = \FS{ I_{\rm G} ( 1 - T \III_T(t)) } \\
+    &=& 
     I_{\rm G} \left( 
     \FS{1} - T \underbrace{\FS{\III_T(t)}}_{\text{Задатак \ref{z:dirak_povorka}}} 
     \right)
     = I_{\rm G}(\updelta[k] - 1). 
-\end{equation}
+\end{eqnarray}
 Пошто важи карактеристика кондензатора \eqref{\ID.cchar}, за одговарајуће спектре ће важити\footnote{Применом својства 
 дејства Фуријеовог реда на интеграл: $\int \mapsto \cdot \dfrac{1}{\jj k \upomega_{\rm F}}$. }
 \begin{eqnarray}

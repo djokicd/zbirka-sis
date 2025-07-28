@@ -1,8 +1,6 @@
-\newpage
 \mnDifficult
-\begin{slikaDesno}{fig/proc_1.pdf}[fig/proc_2.pdf]
     \noindent\PID
-    На слици \ID.1 jе представљена принципска шема система за
+    На слици \ID.1а jе представљена принципска шема система за
     генерисање и довођење сигнала такта до одговараjућег прикључка
     дигиталног процесора. Генератор такта jе идеалан напонски
     генератор симетричне униполарне поворке правоугаоних импулса
@@ -19,8 +17,7 @@
     преласку напона такта са ниског на високи ниво, дозвољено jе
     да у прелазној зони између $V_1 = 1,5\unit{V}$ и $V_2 = 3,5\unit{V}$, доведени сигнал такта
     проведе највише 
-    $\Delta t_{\rm max} = 5\unit{ns}$, као што jе илустровано на слици \ID.2. 
-    \end{slikaDesno}
+    $\Delta t_{\rm max} = 5\unit{ns}$, као што jе илустровано на слици \ID.1б. 
 
     (а) Одредити развоје генерисаног сигнала такта, $v_{\rm clk}(t)$, и сигнала такта
     на улазу у процесор $v_{\rm clk}^{\rm(CPU)}(t)$ у комплексан Фуријеов ред у зависности 
@@ -34,6 +31,22 @@
     прелазној зони, претпоставити да је нагиб сигнала такта 
     $\dfrac{\de v_{\rm clk}^{\rm (CPU)}(t)}{\de t}$ практично константан и да има максималну 
     вредност. \\
+
+    \begin{figure}[ht!]
+        \begin{subfigure}{0.5\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{fig/proc_1.pdf}
+            \caption{}
+        \end{subfigure}
+        %
+        \begin{subfigure}{0.5\textwidth}
+            \centering
+            \includegraphics{fig/proc_2.pdf}
+            \caption{}
+        \end{subfigure}
+        \caption{}
+    \end{figure}
+
 
     \RESENJE  Генерисани сигнал такта јесте периодична поворка правоугаоних импулса. 
     Спектар такве поворке, на основном периоду $T_{\rm clk}$, на основу резултата задатка 
@@ -176,7 +189,7 @@
  
     \begin{figure}[ht!]
         \centering
-        \includegraphics[scale=1]{fig/proc_plot.pdf} 
+        \includegraphics[width=\textwidth]{fig/proc_plot.pdf} 
         \caption{}
     \end{figure}
     

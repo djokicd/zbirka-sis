@@ -47,10 +47,11 @@
     \dfrac{Q}{mdL} U(s)
 \end{eqnarray}
 Одакле се непосредно налази:
-\begin{equation}
-    H(s) = \dfrac{ H_0 }{s^2 + \dfrac{1}{\uptau} s + \upomega_{\rm k}^2}, \quad H_0 = \dfrac{Q}{mdL} \approx 10^{-5} \unit{\dfrac{1}{Vs^2}} ,\, \uptau = \dfrac{m}{b} 
-    \approx 15\unit{s},\, \upomega_{\rm k} = \sqrt{\dfrac{g}{L}} \approx 3,13\unit{\dfrac{rad}{s}}
-\end{equation}
+\begin{eqnarray}
+    H(s) = \dfrac{ H_0 }{s^2 + \dfrac{1}{\uptau} s + \upomega_{\rm k}^2}, \quad && H_0 = \dfrac{Q}{mdL} \approx 10^{-5} \unit{\dfrac{1}{Vs^2}} ,\, \uptau = \dfrac{m}{b} 
+    \approx 15\unit{s},\,  \\
+    && \upomega_{\rm k} = \sqrt{\dfrac{g}{L}} \approx 3,13\unit{\dfrac{rad}{s}}
+\end{eqnarray}
 Добијена квадратна форма може се средити допуњавањем до квадрата бинома као 
 $ H(s) = s^2 + \dfrac{1}{\uptau} s + \upomega_{\rm k}^2 = s^2 + 2 \dfrac{1}{2\uptau} s + \dfrac{1}{4\uptau^2} + \upomega_{\rm k}^2 - \dfrac{1}{4\uptau^2} 
 = \left( s + \dfrac{1}{2\uptau} \right)^2 +  \upomega_0^2 - \dfrac{1}{4\uptau^2}$, па се онда добијена функција преноса може изразити и као 
@@ -136,7 +137,7 @@ $
 \dfrac{1}{\underbrace{(\upomega_0 - \upomega)}_{\Delta\upomega} \underbrace{(\upomega_0 + \upomega)}_{\approx 2\upomega} } \approx 
 \dfrac{1}{2\upomega \Delta \upomega}
 $, па се заменом у \eqref{\ID.odziv} налази 
-\begin{eqnarray}
+\begin{eqnarray*}
     && \uptheta(t) \approx \dfrac{H_0 V_{\rm g}}{\uppi \upomega \Delta \upomega}
     \left(
         \sin(\upomega t )
@@ -152,13 +153,13 @@ $, па се заменом у \eqref{\ID.odziv} налази
         \left(
             \sin( \upomega t )  \cos(\Delta \upomega t ) + \cos( \upomega t )  \underbrace{\sin(\Delta \upomega t ) }_{\approx 0}
         \right)
-    \right)\\ 
+    \right) \\ 
     && \approx
     \underbrace{\dfrac{H_0 V_{\rm g}}{\uppi \upomega \Delta \upomega}
         \left(
             1 - \left(1 - \dfrac{\Delta \upomega}{\upomega}\right) \ee^{-\upsigma t} \cos(\Delta \upomega t ) 
         \right)}_{A(t)} \sin(\upomega t),
-\end{eqnarray}
+\end{eqnarray*}
 којом приликом је члан са $\sin(\Delta\upomega t)$ занемарен јер он брзо ишчезава са временом, а током времена током ког је члан релевантан, 
 је његова амплитуда мала јер је тада $\Delta \upomega t \ll 1$. Добијени сигнал представља простопериодични сигнал променљиве амплитуде 
 $A \approx A(t)$ 

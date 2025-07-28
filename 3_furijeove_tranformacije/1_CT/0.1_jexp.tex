@@ -1,5 +1,5 @@
 \PID\mnImportant\label{z:jexp}
-Одредити Фуријеову трансформацију комплексног сигнала 
+Одредити Фуријеову трансформацију ограниченог комплексног сигнала 
 $x(t) = \begin{cases}
     \ee^{\jj\upomega_0 t} &, t < |T| \\
     0 &, t \geq |T|
@@ -7,7 +7,7 @@ $x(t) = \begin{cases}
 Полазећи од добијеног резултата, показати да је 
 $\FT{\ee^{\jj\upomega_0 t}} = 2 \uppi \updelta(\upomega - \upomega_0)$.
 
-\textsc{\underline{Решење}:} По дефиницији Фуријеове трансформације је 
+\textsc{\underline{Решење}:} По дефиницији је 
 $\FT{x(t)} = \int_{-\infty}^{\infty} x(t) \ee^{-\jj\upomega t} \de t$. Заменом датог сигнала, вредност 
 $T$ поставља границе интеграције, па је\footnote{Користи се таблични 
 интеграл 
@@ -17,7 +17,9 @@ ${\ee^{\jj x} - \ee^{-\jj x}} = \jj 2 \sin(x) $
 \begin{eqnarray}
     \FT{x(t)}   &=& \int_{ \mathclap{t = -T} }^{T} x(t) \ee^{-\jj\upomega t} \de t +  \cancelto{0}{\int_{ t > |T| } \underbrace{x(t)}_{=0} \ee^{-\jj\upomega t} \de t} 
                 =   \int_{ \mathclap{t = -T} }^{T} \ee^{\jj\upomega_0 t} \ee^{-\jj\upomega t} \de t     
-                =   \int_{ \mathclap{t = -T} }^{T} \ee^{\jj (\upomega_0 - \upomega) t} \de t   \\[2mm]
+                \\[2mm]
+                &=&   \int_{ \mathclap{t = -T} }^{T} \ee^{\jj (\upomega_0 - \upomega) t} \de t   
+                \\[2mm]
                 &=& \dfrac{1}{\jj(\upomega_0 - \upomega)} \ee^{\jj (\upomega_0 - \upomega) t} \bigg|_{t = -T}^T  
                 =   \dfrac{ \ee^{\jj (\upomega_0 - \upomega) T} - \ee^{-\jj (\upomega_0 - \upomega) T} }{\jj(\upomega_0 - \upomega)}  \\[2mm]
                 &=&   \dfrac{2 \cancel{\jj} \sin((\upomega_0 - \upomega) T)}{ \cancel{\jj} (\upomega_0 - \upomega) } 

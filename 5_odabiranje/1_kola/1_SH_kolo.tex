@@ -54,10 +54,11 @@ x_{\rm s}(t) = \sum_{k = -\infty}^{\infty} x(kT) \cdot r(t - kT)
 
 \begin{eqnarray}
     X_{\rm s}(\jj\upomega) = \mathcal{FT}\{ x_{\rm s}(t) \}
-    = R(\jj\upomega) \cdot \dfrac{1}{\cancel{2\uppi}} 
+    &=& R(\jj\upomega) \cdot \dfrac{1}{\cancel{2\uppi}} 
     \left(X(\jj\upomega) \ast 
     \underbrace{\dfrac{\cancel{2\uppi}}{T}}_{\upomega_0} \III_{\upomega_s}(\upomega) \right)
-    =
+    \\
+    &=&
     \dfrac{1}{T}
     R(\jj\upomega) \sum_{k = -\infty}^{\infty} X(\jj(\upomega - k\upomega_s)) \nonumber \\
 \end{eqnarray}
