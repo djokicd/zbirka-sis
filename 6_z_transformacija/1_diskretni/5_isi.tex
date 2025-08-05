@@ -36,7 +36,25 @@
     f[z] = \IZT{F(z)} = \IZT{\dfrac{z}{z-\underbrace{(-0,4)}_a} } = (-0,4)^n \uu[n]
 \end{eqnarray}
 Добијени резултат приказан је на слици \ref{fig:\ID.1}
+%
 
+\begin{figure}[b!]
+    \centering
+        \begin{subfigure}{0.59\textwidth}
+            \centering
+            \includegraphics{fig/h_equalizer.pdf}
+            \caption{Импулсни одзив филтра $f[n]$.}
+            \label{fig:\ID.1}
+        \end{subfigure}
+        %
+        \begin{subfigure}{0.39\textwidth}
+            \centering
+            \includegraphics{fig/equalizer_blok.pdf}
+            \caption{Реализација задатим компонентама.}
+            \label{fig:\ID.2}
+        \end{subfigure}
+    \end{figure}
+%
 (в) Функцију преноса треба изразити у облику који је погодан за реализацију. Будући да је функција преноса блока за кашњење
 $z^{-1}$ треба изразити све чланове у том олбику.
 Сама функција преноса филтра представља однос одзива и побуде па је $F(z) = \dfrac{Y(z)}{X(z)} = \dfrac{z}{0,4 + z} = 
@@ -45,20 +63,3 @@ $z^{-1}$ треба изразити све чланове у том олбик�
     Y(z) = X(z) - 0,4 z^{-1} Y(z)
 \end{equation}
 На основу тога, дати филтар се може реализовати како је приказано на слици \ref{fig:\ID.2}.
-
-\begin{figure}[ht!]
-\centering
-    \begin{subfigure}{0.59\textwidth}
-        \centering
-        \includegraphics{fig/h_equalizer.pdf}
-        \caption{Импулсни одзив филтра $f[n]$.}
-        \label{fig:\ID.1}
-    \end{subfigure}
-    %
-    \begin{subfigure}{0.39\textwidth}
-        \centering
-        \includegraphics{fig/equalizer_blok.pdf}
-        \caption{Реализација задатим компонентама.}
-        \label{fig:\ID.2}
-    \end{subfigure}
-\end{figure}
