@@ -49,8 +49,9 @@
 
 
     \RESENJE  Генерисани сигнал такта јесте периодична поворка правоугаоних импулса. 
-    Спектар такве поворке, на основном периоду $T_{\rm clk}$, на основу резултата задатка 
-    \ref{ID:rect_pulse_train_FS} је $V_{\rm clk}[k] = 
+    Спектар такве поворке, на основном периоду $T_{\rm clk}$, на основу 
+    табличног резултата \reft{T:ctfs:rect}, 
+    је $V_{\rm clk}[k] = 
     (-\jj)^k \dfrac{V_{\rm m}}{2} \sinc \left(
     \dfrac{k}{2}
     \right) $.
@@ -131,15 +132,17 @@
     (-1)^{2m + 1} \jj^{2m + 2} = (-1)^m
     $
     ,има се 
-    $
+    \begin{equation}
         \dfrac{v_{\rm clk}^{\rm (CPU)}}{\de t}  (\uptau)
-        = \DS
+        =
+     \DS
         \sum_{\substack{ k = -\infty \\ k = 2m + 1 } }^{\infty} 
         \dfrac{ 
         \upomega_{\rm clk} \, 
         V_{\rm m} }{\uppi}
-        \rect \left( \dfrac{{k \upomega_{\rm clk}}}{2\upomega_0} \right)  
-    $. Величина под сумом је парна функција па се може одговарајућа\footnote{
+        \rect \left( \dfrac{{k \upomega_{\rm clk}}}{2\upomega_0} \right). 
+    \end{equation}
+        Величина под сумом је парна функција па се може одговарајућа\footnote{
         Трансформација за парни сигнал $a[k]$ је 
         $\sum_{k = -\infty}^{\infty} a[k] = a[0] + 2\sum_{k = 1}^{\infty} a[k]$.
     }
