@@ -1,0 +1,34 @@
+\noindent
+\begin{slikaDesno}{fig/max_odziv.pdf}
+    \PID 
+    У систему са слике користе се идеални диференцијатори и множачи познатим 
+    константама $a$, $b$, и $1/c$. 
+    Одредити учестаност $\upomega_{\rm m}$ при којој се остварује максимална 
+    вредност амплитудске фреквенцијске карактеристике датог 
+    $\upomega_{\rm m} = \arg \max |H(\jj\upomega)|$.     
+\end{slikaDesno}
+
+\RESENJE
+
+На основу резултата задатка \ref{z:dif_pf} се блок диференцијатора у фреквенцијском домену може заменити множењем са 
+$\jj\upomega$. Тако се праћењем тока сигнала добија 
+$((\jj\upomega)^2 a + (\jj \upomega) b  + c) Y(\jj\upomega) = X(\jj\upomega)$, односно, функција преноса целог система је
+\begin{equation}
+    H(\jj\upomega) = 
+    \dfrac{Y(\jj\upomega)}{X(\jj\upomega)} = \dfrac{1}{  \jj \upomega b  + c - \upomega^2 a}
+\end{equation}
+
+Учестаност при којој се постиже максимална вредност амплитудске карактеристике се онда може потражити као 
+\begin{equation}
+    \upomega_{\rm m} = \arg \max |H(\jj\upomega)| = \arg \max |H(\jj\upomega)|^2 = \arg \max \dfrac{1}{ (\upomega b)^2 + ( c - \upomega^2 a )^2 }.
+\end{equation}
+Ради једноставности поступка, максимум се може добити и одређивањем минимума реципрочне вредности, помоћу првог извода, 
+\begin{eqnarray}
+    \upomega_{\rm m} = \arg \min \left(   (\upomega b)^2 + ( c - \upomega^2 a )^2  \right) 
+    &\Rightarrow&
+    \dfrac{\de }{\de \upomega} \left(   (\upomega b)^2 + ( c - \upomega^2 a )^2  \right) = 0 \\
+    &\Rightarrow&
+    \cancel{2\upomega} b^2 - \cancel{2\upomega} \, 2 (c - \upomega^2 a) = 0 \\
+    &\Rightarrow&
+    \upomega_{\rm m} = \pm \sqrt{ \dfrac{c}{a} - \dfrac{b^2}{2a}  }
+\end{eqnarray}

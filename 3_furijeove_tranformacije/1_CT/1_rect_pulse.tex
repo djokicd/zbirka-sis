@@ -6,8 +6,8 @@
 
 \hspace{4mm}
 \textsc{\underline{Решење}:} Дати сигнал се може записати у облику 
-$x(t) = \uu(t) - \uu(t - T)$. Применом особине померања у времену Фуријеове трансформације\footnotemark
-и табличног резултата\footnote{Видети и таблицу \reft{T:ctft:uu}} $\mathcal{FT}\{\uu(t)\} = \dfrac{1}{\jj\upomega} + \uppi\updelta(\upomega)$,
+$x(t) = \uu(t) - \uu(t - T)$. Применом особине померања у времену Фуријеове трансформације из додатка \ref{a:svojstva},
+и табличног резултата \reft{T:ctft:uu},
 има се резултат
 $X(\jj\upomega) = \dfrac{1}{\jj\upomega} + \uppi \updelta(\upomega) - 
         \dfrac{\ee^{-\jj\upomega T}}{\jj\upomega} - \uppi \ee^{-\jj\upomega T}\updelta(\upomega) 
@@ -17,6 +17,5 @@ $X(\jj\upomega) = \dfrac{1}{\jj\upomega} + \uppi \updelta(\upomega) -
         }$, где је у последњем кораку примењено својство еквиваленције Дираковог импулса. 
 Коначно је $X(\jj\upomega) = \dfrac{1 - \ee^{-\jj\upomega T} }{\jj\upomega}$
 \end{slikaDesno}
-\footnotetext{Својство померања ФТ је $\mathcal{FT}\{x(t-T)\} = \mathcal{FT}\{x(t)\}\cdot\ee^{-\jj\upomega T}$.}
 
 

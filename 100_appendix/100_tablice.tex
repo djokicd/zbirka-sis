@@ -215,7 +215,7 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     \hline \hline
     \redTablice & $1$ & $2\uppi \, \updelta(\upomega)$ \\
     \hline
-    \redTablice & $\updelta(t)$ & $1$ \\
+    \redTablice \label{T:ctft:delta} & $\updelta(t)$ & $1$ \\
     \hline
     \redTablice \label{T:ctft:uu} & $\mathrm{u}(t)$ & $\dfrac{1}{\jj\upomega} + \uppi \, \updelta(\upomega)$ \\
     \hline 
@@ -235,7 +235,7 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     \hline
     \redTablice & $\mathrm{tri}(t)$ & $\mathrm{sinc}^2\left(\frac{\upomega}{2\uppi}\right)$ \\
     \hline
-    \redTablice & $\mathrm{e}^{-at} \, \mathrm{u}(t), \quad \Re a > 0$ & $\dfrac{1}{a + \jj\upomega}$ \\
+    \redTablice \label{T:ctft:exp} & $\mathrm{e}^{-at} \, \mathrm{u}(t), \quad \Re a > 0$ & $\dfrac{1}{a + \jj\upomega}$ \\
     \hline
     \redTablice & $\mathrm{e}^{-\uppi t^2}$ & $\mathrm{e}^{-\frac{\upomega^2}{4\uppi}}$ \\
     \hline

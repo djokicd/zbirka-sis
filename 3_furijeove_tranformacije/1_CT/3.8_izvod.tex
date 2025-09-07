@@ -1,0 +1,26 @@
+
+\noindent
+\mnImportant 
+\begin{slikaDesno}{fig/dif.pdf}
+    \PID \label{z:dif_pf}
+    Одредити функцију преноса $H(\jj\upomega)$ диференцијатора чија је 
+    шематска ознака приказана на слици. 
+\end{slikaDesno}
+
+% \begin{slikaDesno}{fig/dif.pdf}
+% \noindent
+% \PID\mnImportant
+%     
+% \end{slikaDesno}
+
+\RESENJE
+
+Преносна функција диференцијатора одређује се Фуријеовом трансформацијом његовог импулсног одзива 
+$h(t) = \dfrac{\de \updelta(t)}{\de t}$, која се може одредити применом веома важног правила о 
+изводу\footnote{Дејство о изводу Фуријеове трансформације, 
+$\FT{ \dfrac{ \de x(t)}{\de t}} = \jj\upomega X(\jj\upomega)$
+},
+\begin{equation}
+    H(\jj\upomega) = \FT{h(t)} = \FT{\dfrac{\de \updelta(t)}{\de t}}
+    = \jj\upomega \underbrace{ \FT{\updelta(t)} }_{=1, \text{\reft{T:ctft:delta}}}. = \jj\upomega
+\end{equation}
