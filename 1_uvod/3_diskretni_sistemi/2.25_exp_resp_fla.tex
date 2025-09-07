@@ -18,7 +18,7 @@ $P(\EE) y[n] = x[n]$, где је $P(\EE) = \EE^2 - 5\EE + 6$.
 \begin{eqnarray}
     n=0 &\Rightarrow& y[2] - \cancelto{0}{5 y[1]} + \cancelto{0}{6 y[0]} = x[0] \Rightarrow y[2] = x[0] \label{\ID.pom1}
     \\ 
-    n=1 &\Rightarrow& y[3] x- 5y[2] + \cancelto{0}{6y[1]} = x[1] \Rightarrow y[3] = x[1] + 5 y[2] = x[1] + 5 x[0]. \label{\ID.pom2}
+    n=1 &\Rightarrow& y[3] - 5y[2] + \cancelto{0}{6y[1]} = x[1] \Rightarrow y[3] = x[1] + 5 y[2] = x[1] + 5 x[0]. \label{\ID.pom2}
 \end{eqnarray}
 На основу тих услова, биће могуће одредити потребне коефицијенте, када је познат побудни сигнал $x[n]$ и када се одреди партикуларни део одзива.
 
@@ -26,11 +26,11 @@ $P(\EE) y[n] = x[n]$, где је $P(\EE) = \EE^2 - 5\EE + 6$.
 
 (a) Партикуларни део може се одредити на основу формуле дате у додатку \ref{dod:exp_response}, на основу чега је 
 \begin{eqnarray}
-    y_{\rm p}(t) = \dfrac{3 \cdot \left( \dfrac14 \right)^n }{ P\left( \dfrac14 \right) } = \dfrac{48}{77} \cdot \left( \dfrac14 \right)^n.
+    y_{\rm p}[n] = \dfrac{3 \cdot \left( \dfrac14 \right)^n }{ P\left( \dfrac14 \right) } = \dfrac{48}{77} \cdot \left( \dfrac14 \right)^n.
 \end{eqnarray}
 Одавде је облик одзива, за који треба наћи одговарајуће константе, на побуду дат изразом 
 \begin{equation}
-    y(t) = C_1 \cdot 3^n + C_2 \cdot 2^n +  \dfrac{48}{77} \cdot \left( \dfrac14 \right)^n.
+    y[n] = C_1 \cdot 3^n + C_2 \cdot 2^n +  \dfrac{48}{77} \cdot \left( \dfrac14 \right)^n.
 \end{equation}
 Помоћне услове рачунамо на основу \eqref{\ID.pom1} и \eqref{\ID.pom2} па је онда 
 \begin{equation}
@@ -38,14 +38,16 @@ $P(\EE) y[n] = x[n]$, где је $P(\EE) = \EE^2 - 5\EE + 6$.
 \end{equation}
 па се решавањем система једначина на основу помоћних услова налазе $C_1 = \dfrac{12}{11}$ и $C_2 = -\dfrac{12}{7}$.
 
-(б) Пошто је у овом случају параметар $a = \dfrac{1}{4}$ једноструки корен полинома $P(\DD)$, партикуларни део у том случају дат је формулом 
+(б) Пошто је у овом случају вредност $a = 3$ једноструки корен полинома $P(\DD)$, побуђен је резонантни 
+одзив система. Партикуларни део у том случају је дат формулом из додатка 
+\ref{dod:exp_response},
 \begin{eqnarray}
     y_{\rm p}[n] &=& \dfrac{ 2 n \cdot 3^{n-1} }{ P'(3) }, \qquad P'(\EE) = 2\EE - 5 \Rightarrow P'(3) = 1 \\
                  &=& \dfrac{2}{3}n \cdot 3^n,
 \end{eqnarray}
 па је на сличан начин као у претходној тачки укупан облик одзива 
 \begin{eqnarray}
-    y[n] = C_1 \cdot 3^n + C_2 \cdot 2^n + \dfrac{2}{3}n \cdot 3^{n},
+    y[n] = C_1 \cdot 3^n + C_2 \cdot 2^n + \dfrac{2}{3}n \cdot 3^{n}.
 \end{eqnarray}
 На основу истих помоћних услова као у претходној тачки, решавањем система једначина одређују се коефицијенти 
 $C_1 = - \dfrac{9}{4}$, и $C_2 = \dfrac{45}{16}$.
