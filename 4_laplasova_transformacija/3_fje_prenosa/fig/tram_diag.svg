@@ -7,8 +7,58 @@
    width="160"
    height="45"
    viewBox="0 0 160 45"
+   sodipodi:docname="tram_diag.svg"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showguides="true"
+     inkscape:zoom="2.9146341"
+     inkscape:cx="162.97071"
+     inkscape:cy="66.217573"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1"
+     showgrid="true">
+    <inkscape:page
+       x="0"
+       y="0"
+       inkscape:label="1"
+       id="page1"
+       width="160"
+       height="45"
+       margin="0"
+       bleed="0" />
+    <inkscape:grid
+       id="grid26"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="5"
+       spacingy="5"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
   <defs
      id="defs1">
     <clipPath
@@ -83,7 +133,9 @@
     </clipPath>
   </defs>
   <g
-     id="g1">
+     id="g1"
+     inkscape:groupmode="layer"
+     inkscape:label="1">
     <g
        id="g2"
        clip-path="url(#clipPath3-1)"
@@ -94,18 +146,21 @@
          style="fill:none;stroke:#000000;stroke-width:0.376405;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:6;stroke-dasharray:none;stroke-opacity:1"
          transform="scale(1.3234013,-1.3333333)"
          clip-path="url(#clipPath1-7)"
-         id="path2-76" />
+         id="path2-76"
+         sodipodi:nodetypes="ccccc" />
     </g>
     <path
        d="M 28.934,-0.492 H 56.407614 V -24.68 H 28.934 Z"
        style="fill:none;stroke:#000000;stroke-width:0.752809;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:6;stroke-dasharray:none;stroke-opacity:1"
        transform="matrix(1.3234013,0,0,-1.3333333,-4.98579,5.4165963)"
        clip-path="url(#clipPath55)"
-       id="path5-73" />
+       id="path5-73"
+       sodipodi:nodetypes="ccccc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.999999px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
        d="M 69.79418,22.197936 H 91.0373"
-       id="path44" />
+       id="path44"
+       sodipodi:nodetypes="cc" />
     <g
        id="g68-7-5"
        transform="matrix(0,-0.52314516,0.52314516,0,58.889106,77.098532)">
@@ -129,6 +184,7 @@
        d="M 20.953934,22.197936 H 24.79418"
        style="fill:none;stroke:#000000;stroke-width:0.998464;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:6;stroke-dasharray:none;stroke-opacity:1" />
     <g
+       inkscape:label=""
        transform="matrix(1.0000044,0,0,1.0000044,4.564843,16.357416)"
        id="g23">
       <g
@@ -161,6 +217,7 @@
       </g>
     </g>
     <g
+       inkscape:label=""
        transform="translate(38.174245,16.687536)"
        id="g26">
       <g
@@ -239,6 +296,7 @@
        d="m 89.79418,22.197936 h 8.328"
        id="path46-5" />
     <g
+       inkscape:label=""
        transform="translate(79.86911,11.229704)"
        id="g28">
       <g
@@ -259,6 +317,7 @@
       </g>
     </g>
     <g
+       inkscape:label=""
        transform="translate(105.89723,15.052128)"
        id="g32">
       <g
@@ -328,6 +387,7 @@
          id="path32-8" />
     </g>
     <g
+       inkscape:label=""
        transform="translate(150.43273,18.783883)"
        id="g37">
       <g
