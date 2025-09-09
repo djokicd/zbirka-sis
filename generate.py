@@ -37,13 +37,14 @@ Problem_ID_generator = Problem_ID()
 
 def set_problem(directory, problem):
     ID = next(Problem_ID_generator)
-    output.write( '\n' )
+    output.write( '\n\n' )
     output.write( r"\refstepcounter{ID}" + '\n' )
     output.write( r"\setcounter{fid}{0}" + '\n' )
     output.write( r"\graphicspath{{" + str(directory) + "/}}" + '\n')
     output.write( r"\noindent" + '\n' )
     output.write( r"\input{" + problem + "}\n" )
     output.write( r"\vspace*{\ProblemSep}" + '\n' )
+    output.write( r"\goodbreak" + '\n' )
 
 sections = sorted ( [ f.path for f in os.scandir(".") if f.is_dir() ], key=cmp_to_key(compare_strs) )
 
