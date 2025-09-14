@@ -20,8 +20,16 @@
 
 \tableofcontents 
 
+%\newpage
+%% Metodicki pregled
+%\metodickiPregled
+
+\newwrite\pregledFile
+\immediate\openout\pregledFile=pregled.tex
+
 \newpage
 
 \input{content.tex}
 
+\immediate\closeout\pregledFile
 \end{document}

@@ -130,7 +130,8 @@
 \newcommand{\fid}{\stepcounter{fid}\thefid}
 \newcommand{\ID}{\theID}
 
-\newcommand{\PID}{\noindent\textbf{\color{blue}\ID.} }
+\newcommand{\PID}[1][ ]{\noindent\textbf{\color{blue}\ID.}
+\immediate\write\pregledFile{\unexpanded{\\} \ID\unexpanded{ & } \unexpanded{#1} \unexpanded{ & }  } }
 
 \counterwithin{equation}{ID}
 \counterwithin{figure}{ID}
@@ -188,6 +189,7 @@
 \end{tikzpicture}
 }
 
+
 %% MARGIN NOTES 
 
 \usepackage{layout}
@@ -227,3 +229,25 @@
 \makeatother
 
 
+%% METODICKI PREGLED
+\usepackage{supertabular,booktabs}
+
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.25\hsize}X}
+
+\newcommand{\metodickiPregled}{
+    %\input{pregled.tex}
+}
+
+%\usepackage{refcount}
+\newcommand{\refz}[1]{%
+    \ref{z:#1}%
+    \immediate\write\pregledFile{\getrefnumber{z:#1}}%
+}
+
+% Referenca bez upisa u metodicki fajl
+\newcommand{\refzz}[1]{%
+    \ref{z:#1}%
+}
+
+\newcommand{\metod}[1]{\immediate\write\pregledFile{\unexpanded{#1}}}
