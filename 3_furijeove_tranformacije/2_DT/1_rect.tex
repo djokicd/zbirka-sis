@@ -18,8 +18,8 @@ $X(\jj\Omega) = \sum_{n = -\infty}^{\infty} x[n] z^{-n}$, где је $z = \ee^{
 }
 \begin{eqnarray}
     X[\jj\Omega] &=& \sum_{n = -\infty}^{\infty} \rect_N[n] z^{-n} = \sum_{n = -N}^N z^{-n} 
-    = \dfrac{ z^{-(-N)} - z^{-(N+1)} }{1 - z} = 
-    \dfrac{z^{N} - z^{-N-1}}{1 - z}. \label{eq:\ID.f1}
+    = \dfrac{ z^{-(-N)} - z^{-(N+1)} }{1 - z^{-1}} = 
+    \dfrac{z^{N} - z^{-N-1}}{1 - z^{-1}}. \label{eq:\ID.f1}
 \end{eqnarray}
 Да бисмо даље упростили дати резултат, потребно је да израз у бројиоцу изразимо у облику
 \begin{eqnarray}
@@ -33,7 +33,7 @@ $X(\jj\Omega) = \sum_{n = -\infty}^{\infty} x[n] z^{-n}$, где је $z = \ee^{
 $z^n - z^{-n} = \jj 2 \sin(\Omega n)$, у облик 
 \begin{equation}
     X(\jj\Omega) = \dfrac{ \cancel{z^{-\frac12}}\left( z^{N + \frac12} - z^{-(N + \frac12)} \right)  }
-    { \cancel{z^{\frac12}} \left( z^{-\frac n2} - z^{-\frac n2} \right)}
+    { \cancel{z^{-\frac12}} \left( z^{\frac {1}2} - z^{-\frac {1}2} \right)}
     \Rightarrow
     X(\jj\Omega) 
     = \dfrac{\sin \left( \left(N + \frac12\right) \Omega \right) }{ \sin \left(  \frac12 \Omega \right)}
