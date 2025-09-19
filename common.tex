@@ -90,7 +90,11 @@
 %\newcommand{\redTablice}{\stepcounter{tablicecount}\thesection.\arabic{tablicecount}}
 \newcommand{\redTablice}{\refstepcounter{tablicecount}\thetablicecount}
 
+\newcommand{\Svojstvo}{(\refstepcounter{equation}\theequation)} 
+
 \newcommand{\reft}[1]{T.\ref{#1}}
+\newcommand{\refs}[1]{S.\ref{#1}}
+
 
 %\renewcommand{\tablicecount}{\thesection.\arabic{tablicecount}} % adds the section number before your proof counters
 

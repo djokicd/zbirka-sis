@@ -1,9 +1,10 @@
 \renewcommand{\thechapter}{S}
 \setcounter{section}{0}
+\counterwithin{equation}{chapter}
 \chapter{Важна својства трансформација} \label{a:svojstva}
 
 
-\section*{Конволуција континуалних и дискретних сигнала}
+\section{Конволуција континуалних и дискретних сигнала}
 Конволуција континуалних, односно, дискретних сигнала дефинише се као 
 \begin{equation}
     x(t) \ast y(t) = \int_{\mathclap{\uptau = -\infty}}^{\infty} x(\uptau) y(t-\uptau) \de \uptau, 
@@ -12,15 +13,15 @@
 \end{equation}
 Без обзира на то да ли се односи на континуалне или дискретне сигнале, за конволуцију важе:
 \begin{itemize}\itemsep0pt
-    \item \emph{Комутативност:} $x \ast y = y \ast x$;
-    \item \emph{Асоцијативност:} $(x \ast y) \ast z = x \ast (y \ast z)$;
-    \item \emph{Дистрибутивност у односу на сабирање:} $x \ast (y + z) = (x \ast y) + (x \ast z)$;
-    \item \emph{Асоцијативност у односу на скаларно множење:} $k \cdot (x \ast y) = (kx) \ast y$; 
-    \item \emph{Постојање неутралног елемента} $f \ast \updelta = f$; 
-    \item \emph{Комплексна конјукција} $(x \ast y)^\ast = x^{\ast} \ast y^{\ast}$.
+    \item \emph{Комутативност:} $x \ast y = y \ast x$; \hfill \Svojstvo
+    \item \emph{Асоцијативност:} $(x \ast y) \ast z = x \ast (y \ast z)$; \hfill \Svojstvo
+    \item \emph{Дистрибутивност у односу на сабирање:} $x \ast (y + z) = (x \ast y) + (x \ast z)$; \hfill \Svojstvo
+    \item \emph{Асоцијативност у односу на скаларно множење:} $k \cdot (x \ast y) = (kx) \ast y$; \hfill \Svojstvo
+    \item \emph{Постојање неутралног елемента} $f \ast \updelta = f$; \hfill \Svojstvo
+    \item \emph{Комплексна конјукција} $(x \ast y)^\ast = x^{\ast} \ast y^{\ast}$. \hfill \Svojstvo
 \end{itemize}
 
-\subsection*{Кружна конволуција}
+\subsection{Кружна конволуција}
 Под кружном конволуцијом (или периодичном конволуцијом) 
 два периодична сигнала (са периодом $T$ у континуалном случају, или 
 периодом $N$ у дискретном), подразумевају се 
@@ -43,6 +44,8 @@ $\tilde y(t) =  \sum_{\mathclap{k = -\infty}}^{\infty} y(t - kT)$. Онда се
     = \int_{\mathclap{\uptau =-\infty}}^{\infty} x(\uptau) \tilde y(t-\uptau) \de \uptau = x(t) \ast \tilde y(t). 
 \end{equation}
 Закључује се, \textit{периодична конволуција два сигнала једнака је конволуцији једног са основим периодом другог}.
+\hfill \Svojstvo
+
 Потпуно исти закључак се може извести и у дискретном случају. 
 
 \section*{Фуријеови редови континуалних сигнала} \label{d:CTFS}
@@ -100,19 +103,19 @@ P_x = \dfrac{1}{T} \int_{0}^{T} |x^2(t)|\,\de t = \sum_{k=-\infty}^{\infty} |X[k
 $X[k] = \FS{x(t)}$ (и $Y[k] = \FS{y(t)}$),
 задовољавају наредне значајне особине: 
 \begin{itemize}\itemsep0pt
-    \item \emph{Линеарност:}  $\FS{ax(t) + by(t)} = a \FS{x(t)} + b \FS{y(t)}$, $a,b = \const$;
-    \item \emph{Померај у времену:} $ \FS{x(t-\uptau)} = \FS{x(t)} \ee^{-\jj k \upomega_{\rm 0} \uptau}$, $\uptau = \const$;
-    \item \emph{Инверзија временске осе:} $\FS{x(t)} = X[k] \Rightarrow \FS{x(-t)} = X[-k] $;
-    \item \emph{Кружна конволуција\footnote{Односи се на конволуцију, само на заједничком периоду $T_0$ за оба сигнала.}}
+    \item \emph{Линеарност:}  $\FS{ax(t) + by(t)} = a \FS{x(t)} + b \FS{y(t)}$, $a,b = \const$; \hfill \Svojstvo
+    \item \emph{Померај у времену:} $ \FS{x(t-\uptau)} = \FS{x(t)} \ee^{-\jj k \upomega_{\rm 0} \uptau}$, $\uptau = \const$; \hfill \Svojstvo
+    \item \emph{Инверзија временске осе:} $\FS{x(t)} = X[k] \Rightarrow \FS{x(-t)} = X[-k] $; \hfill \Svojstvo
+    \item \emph{Кружна конволуција\footnote{Односи се на конволуцију, само на заједничком периоду $T_0$ за оба сигнала.}} 
     $
     \FS{x(t) \circledast y(t)} = T_0 X[k] Y[k];
-    $
+    $ \hfill \Svojstvo
     \item \emph{Производ\footnote{Односи се на конволуцију, само на заједничком периоду $T_0$ за оба сигнала.}}
     $
     \FS{x(t) \cdot y(t)} = X[k] \ast Y[k];
-    $
-    \item \emph{Дејство на извод} $\FS{ \dfrac{\de x(t)}{\de t} } = \jj k \upomega_0 X[k]$;
-    \item \emph{Дејство на интеграл} $\FS{ \int_{\uptau = -\infty}^t x(\uptau) \, \de \uptau } = \dfrac{1}{\jj k \upomega_0} X[k]$;
+    $ \hfill \Svojstvo
+    \item \emph{Дејство на извод} $\FS{ \dfrac{\de x(t)}{\de t} } = \jj k \upomega_0 X[k]$; \hfill \Svojstvo
+    \item \emph{Дејство на интеграл} $\FS{ \int_{\uptau = -\infty}^t x(\uptau) \, \de \uptau } = \dfrac{1}{\jj k \upomega_0} X[k]$; \hfill \Svojstvo
 \end{itemize}
 
 \section*{Фуријеови редови дискретних сигнала}
@@ -134,20 +137,20 @@ $X[k] = \FS{x(t)}$ (и $Y[k] = \FS{y(t)}$),
 Коефицијенти сигнала $x[n]$ (и $y[n]$), чији је развој у Фуријеов ред
 $X[k] = \FS{x[n]}$ (и $Y[k] = \FS{y[n]}$), на периоду $N_{\rm F}$ задовољавају својства:
 \begin{itemize}\itemsep0pt
-    \item \emph{Линеарност:} $\FS{a x[n] + b y[n]} = a X[k] + b Y[k], \qquad a,b = \const$ 
+    \item \emph{Линеарност:} $\FS{a x[n] + b y[n]} = a X[k] + b Y[k], \qquad a,b = \const$ \hfill \Svojstvo
     \item \emph{Померај у времену: }
-    $ \FS{x[n-M]} = X[k] \ee^{-\jj k \upomega_{\rm 0} M}$, $M = \const$;
+    $ \FS{x[n-M]} = X[k] \ee^{-\jj k \upomega_{\rm 0} M}$, $M = \const$; \hfill \Svojstvo
     \item \emph{Модулација у времену:}
     $ \FS{\ee^{\jj k_0 \Upomega_{\rm F} n } x[n] } = 
-    X[k - k_0]$;
+    X[k - k_0]$; \hfill \Svojstvo
     \item \emph{Инверзија временске осе:}
-    $\FS{x[-n]} = X[-k] $;
+    $\FS{x[-n]} = X[-k] $; \hfill \Svojstvo
     \item \emph{Комплексна конјукција:}
-    $\FS{x^{\ast}[n] } = X^{\ast} [-k]$;
+    $\FS{x^{\ast}[n] } = X^{\ast} [-k]$; \hfill \Svojstvo
     \item \emph{Кружна конволуција:}
-    $\FS{x[n] \circledast y[n] } = N_{\rm F} X[k] Y[k]$
+    $\FS{x[n] \circledast y[n] } = N_{\rm F} X[k] Y[k]$ \hfill \Svojstvo
     \item \emph{Производ:}
-    $\FS{x[n] \cdot y[n]} = X[k] \circledast Y[k]$
+    $\FS{x[n] \cdot y[n]} = X[k] \circledast Y[k]$ \hfill \Svojstvo
 \end{itemize}
 
 
@@ -187,31 +190,31 @@ W_x = \int_{-\infty}^{\infty} |x^2(t)|\,\de t = \dfrac{1}{2\uppi}\int_{-\infty}^
 За континуални сигнал $x(t)$ (и $y(t)$), за који постоји Фуријеова трансформација
 $X(\jj\upomega) = \FT{x(t)}$ (и $Y(\jj\upomega) = \FT{y(t)}$), важе следећа својства
 \begin{itemize}
-    \item \emph{Линеарност:} $\FT{ax(t) + by(t)} = a X(\jj\upomega) + b Y(\jj\upomega)$, \qquad $a,b = \const$;
-    \item \emph{Померај у времену:} $\FT{x(t-\uptau)} = X(\jj\upomega) \ee^{-\jj\upomega \uptau}$; \qquad $\uptau = \const$
-    \item \emph{Модулација у времену:} $\FT{x(t) \ee^{\jj\upalpha t}} = X(\jj(\upomega - \upalpha))$; \qquad $\upalpha = \const$
-    \item \emph{Комплексна конјукција:} $\FT{x^{\ast}(t) } = X^{\ast}(-\jj\upomega)$; 
-    \item \emph{Инверзија временске осе:} $\FT{x(-t) } = X(-\jj\upomega)$; 
-    \item \emph{Скалирање временске осе:} $\FT{x(at)} = \dfrac{1}{|a|} X\left( \dfrac{\upomega}{a} \right)$;
-    \item \emph{Конволуција:} $\FT{x(t) \ast y(t)} = X(\jj\upomega) \cdot Y(\jj\upomega)$; 
-    \item \emph{Множење:} $\FT{x(t) \cdot y(t)} = \dfrac{1}{2\uppi} X(\jj\upomega) \ast Y(\jj\upomega)$; 
-    \item \emph{Дејство на извод:} $ \FT{ \dfrac{ \de x(t)}{\de t}} = \jj\upomega X(\jj\upomega)$;
+    \item \emph{Линеарност:} $\FT{ax(t) + by(t)} = a X(\jj\upomega) + b Y(\jj\upomega)$, \qquad $a,b = \const$; \hfill \Svojstvo
+    \item \emph{Померај у времену:} $\FT{x(t-\uptau)} = X(\jj\upomega) \ee^{-\jj\upomega \uptau}$; \qquad $\uptau = \const$ \hfill \Svojstvo
+    \item \emph{Модулација у времену:} $\FT{x(t) \ee^{\jj\upalpha t}} = X(\jj(\upomega - \upalpha))$; \qquad $\upalpha = \const$ \hfill \Svojstvo
+    \item \emph{Комплексна конјукција:} $\FT{x^{\ast}(t) } = X^{\ast}(-\jj\upomega)$;  \hfill \Svojstvo
+    \item \emph{Инверзија временске осе:} $\FT{x(-t) } = X(-\jj\upomega)$;  \hfill \Svojstvo
+    \item \emph{Скалирање временске осе:} $\FT{x(at)} = \dfrac{1}{|a|} X\left( \dfrac{\upomega}{a} \right)$; \hfill \Svojstvo
+    \item \emph{Конволуција:} $\FT{x(t) \ast y(t)} = X(\jj\upomega) \cdot Y(\jj\upomega)$;  \hfill \Svojstvo
+    \item \emph{Множење:} $\FT{x(t) \cdot y(t)} = \dfrac{1}{2\uppi} X(\jj\upomega) \ast Y(\jj\upomega)$; \hfill \Svojstvo
+    \item \emph{Дејство на извод:} $ \FT{ \dfrac{ \de x(t)}{\de t}} = \jj\upomega X(\jj\upomega)$; \hfill \Svojstvo
     \item \emph{Дејство на интеграл:} $ \FT{ \int_{-\infty}^{t} x(t) \de t} =  
     \left( 
         \dfrac{1}{\jj\upomega} + \updelta(\upomega)
-    \right) X(\jj\upomega)$;
+    \right) X(\jj\upomega)$; \hfill \Svojstvo
     \item \emph{Диференцирање по учестаности:} 
     $
     \FT{ t x(t) } = \jj \dfrac{\de X(\jj\upomega)}{\de \upomega}
-    $;
+    $; \hfill \Svojstvo
     \item \emph{Дејство на парни део сигнала:}
-    $
+    $ 
     \FT{ \operatorname{Ev}x(t)} = \Re{X[k]}
-    $
+    $ \hfill \Svojstvo
     \item \emph{Дејство на непарни део сигнала:}
     $
     \FT{ \operatorname{Od}x(t)} = -\Im{X[k]}
-    $
+    $\hfill \Svojstvo
     
 \end{itemize} 
 
@@ -248,31 +251,31 @@ W_x =
 За дискретни сигнал $x[n]$ (и $y[n]$), за који постоји Фуријеова трансформација
 $X(\jj\Omega) = \FT{x[n]}$ (и $Y(\jj\Omega) = \FT{y[n]}$), важе следећа својства
 \begin{itemize}
-    \item \emph{Линеарност:} $\FT{ax[n] + by[n]} = a X(\jj\Omega) + b Y(\jj\Omega)$, \qquad $a,b = \const$;
-    \item \emph{Померај у времену:} $\FT{x(n-n_0)} = X(\jj\upomega) \ee^{-\jj\Omega n_0}$; \qquad $n_0 = \const$
-    \item \emph{Модулација у времену:} $\FT{x[n] \ee^{\jj\Omega_0 n}} = X(\jj(\Omega - \Omega_0))$; \qquad $\Omega_0 = \const$
-    \item \emph{Комплексна конјукција:} $\FT{x^{\ast}[n] } = X^{\ast}(-\jj\Omega)$; 
-    \item \emph{Инверзија временске осе:} $\FT{x[-n] } = X(-\jj\Omega)$; 
-    \item \emph{Конволуција:} $\FT{x[n] \ast y[n]} = X(\jj\Omega) \cdot Y(\jj\Omega)$; 
-    \item \emph{Множење:} $\FT{x[n] \cdot y[n]} = \dfrac{1}{2\uppi} X(\jj\Omega) \circledast Y(\jj\Omega)$; 
-    \item \emph{Дејство на деференцу уназад:} $ \FT{ \nabla x[n] } = (1 - \ee^{\jj\Omega}) X(\jj\Omega) $;
+    \item \emph{Линеарност:} $\FT{ax[n] + by[n]} = a X(\jj\Omega) + b Y(\jj\Omega)$, \qquad $a,b = \const$; \hfill \Svojstvo
+    \item \emph{Померај у времену:} $\FT{x(n-n_0)} = X(\jj\upomega) \ee^{-\jj\Omega n_0}$; \qquad $n_0 = \const$ \hfill \Svojstvo
+    \item \emph{Модулација у времену:} $\FT{x[n] \ee^{\jj\Omega_0 n}} = X(\jj(\Omega - \Omega_0))$; \qquad $\Omega_0 = \const$ \hfill \Svojstvo
+    \item \emph{Комплексна конјукција:} $\FT{x^{\ast}[n] } = X^{\ast}(-\jj\Omega)$;  \hfill \Svojstvo
+    \item \emph{Инверзија временске осе:} $\FT{x[-n] } = X(-\jj\Omega)$; \hfill \Svojstvo
+    \item \emph{Конволуција:} $\FT{x[n] \ast y[n]} = X(\jj\Omega) \cdot Y(\jj\Omega)$; \hfill \Svojstvo
+    \item \emph{Множење:} $\FT{x[n] \cdot y[n]} = \dfrac{1}{2\uppi} X(\jj\Omega) \circledast Y(\jj\Omega)$; \hfill \Svojstvo
+    \item \emph{Дејство на деференцу уназад:} $ \FT{ \nabla x[n] } = (1 - \ee^{\jj\Omega}) X(\jj\Omega) $;\hfill \Svojstvo
     \item \emph{Дејство на акумулацију:} $ \FT{\Sigma x[n]} =  
     \dfrac{X(\jj\Omega)}{1 - \ee^{-\jj\Omega}} + \dfrac{X(0)}{2} \III\left(
         \dfrac{\Omega}{2\uppi}
-    \right)
-    $;
+    \right) 
+    $; \hfill \Svojstvo
     \item \emph{Диференцирање по учестаности:} 
     $
     \FT{ n x[n] } = \jj \dfrac{\de X(\jj\Omega)}{\de \omega}
-    $;
+    $; \hfill \Svojstvo
     \item \emph{Дејство на парни део сигнала:}
     $
     \FT{ \operatorname{Ev}x[n]} = \Re{X(\jj\Omega)}
-    $
+    $ \hfill \Svojstvo
     \item \emph{Дејство на непарни део сигнала:}
     $
     \FT{ \operatorname{Od}x[n]} = -\Im{X(\jj\Omega)}
-    $
+    $ \hfill \Svojstvo
     
 \end{itemize} 
 
@@ -298,15 +301,15 @@ $X(\jj\Omega) = \FT{x[n]}$ (и $Y(\jj\Omega) = \FT{y[n]}$), важе следе�
 $X(s) = \LT{x(t)}$ (и $Y(s) = \LT{y(t)}$), важе следећа својства
 \begin{itemize}\itemsep0pt
     \item \emph{Линеарност:} $\LT{ax(t) + by(t)} = a X(s) + b Y(s)$, \qquad $a,b = \const$;
-    \item \emph{Скалирање временске осе:} $\LT{x(at)} = \dfrac{1}{a} F\left(\dfrac{s}{a}\right)$, \qquad $a \in \mathbb R$, $a > 0$;
-    \item \emph{Померај у времену:} $\LT{x(t-\uptau} = X(s)\ee^{-s\uptau} \qquad \uptau = \const$; 
-    \item \emph{Померај у фреквенцији:} $\LT{ \ee^{-\upsigma t} x(t) } = X(s - \upsigma)$; \\
-    \item \emph{Утицај на извод:} $ \LT{ \dfrac{\de x(t)}{\de t} } = s X(s) - x(0^-) $;
-    \item \emph{Утицај на интеграл:} $ \LT{ \int_0^t x(\uptau) \de \uptau } = \dfrac{1}{s} X(s)$;
+    \item \emph{Скалирање временске осе:} $\LT{x(at)} = \dfrac{1}{a} F\left(\dfrac{s}{a}\right)$, \qquad $a \in \mathbb R$, $a > 0$; \hfill \Svojstvo
+    \item \emph{Померај у времену:} $\LT{x(t-\uptau} = X(s)\ee^{-s\uptau} \qquad \uptau = \const$;  \hfill \Svojstvo
+    \item \emph{Померај у фреквенцији:} $\LT{ \ee^{-\upsigma t} x(t) } = X(s - \upsigma)$; \hfill \Svojstvo \\
+    \item \emph{Утицај на извод:} $ \LT{ \dfrac{\de x(t)}{\de t} } = s X(s) - x(0^-) $; \hfill \Svojstvo
+    \item \emph{Утицај на интеграл:} $ \LT{ \int_0^t x(\uptau) \de \uptau } = \dfrac{1}{s} X(s)$; \hfill \Svojstvo
     %\item \emph{Диференцирање у комплексном домену:} $\LT{t^n x(t)} = (-1)^n \dfrac{\de^n F}{\de s^2}$, \qquad $n\in\mathbb N_0$.
     %\item \emph{Интеграл у комплексном домену:} $\LT{ \dfrac{x(t)}{t} } = \int_{s}^{\infty F(z) \de z} $, \qquad $n\in\mathbb N_0$.
-    \item \emph{Конволуција: } $\LT{x(t) \ast y(t)} = X(s) \cdot Y(s)$; 
-    \item \emph{Множење:} $\LT{ x(t) \cdot y(t) }  = \dfrac{1}{\jj2\uppi} X(s) \ast Y(s)$; 
+    \item \emph{Конволуција: } $\LT{x(t) \ast y(t)} = X(s) \cdot Y(s)$;  \hfill \Svojstvo
+    \item \emph{Множење:} $\LT{ x(t) \cdot y(t) }  = \dfrac{1}{\jj2\uppi} X(s) \ast Y(s)$;  \hfill \Svojstvo
 \end{itemize}
 
 Слика периодичног сигнала $x(t)$, чији је основни период $T$, може се одредити као 
@@ -337,10 +340,10 @@ $\mathcal{Z}$-трансформација је уопштење дискрет�
 За дискретни сигнал $x[n]$ (и $y[n]$), за који постоји $\mathcal{Z}$-трансформација
 $X(z) = \ZT{x[n]}$ (и $Y(z) = \ZT{y[n]}$), важе следећа својства
 \begin{itemize}
-    \item \emph{Линеарност:} $\ZT{ax[n] + by[n]} = a X(z) + b Y(z)$, \qquad $a,b = \const$;
-    \item \emph{Предикција у времену} : $\ZT{x[n+1]} = z X(z) - z x[0]$;
-    \item \emph{Модулација у времену:} $\ZT{ a^n x[n] } = X \left(\dfrac{z}{a}\right)$, \qquad $a = \const$;
-    \item \emph{Комплексна конјукција:} $\ZT{ x^{\ast}[n] } = X^{\ast}(z^{\ast})$;
-    \item \emph{Извод по фреквенцији:} $\ZT{n x[n]} = -z \dfrac{\de X(z) }{\de z}$;
-    \item \emph{Конволуција} $\ZT{x[n]  \ast y[n]} = X(z) \cdot Y(z)$; 
-\end{itemize}
+    \item \emph{Линеарност:} $\ZT{ax[n] + by[n]} = a X(z) + b Y(z)$, \qquad $a,b = \const$; \hfill \Svojstvo
+    \item \emph{Предикција у времену} : $\ZT{x[n+1]} = z X(z) - z x[0]$; \hfill \Svojstvo
+    \item \emph{Модулација у времену:} $\ZT{ a^n x[n] } = X \left(\dfrac{z}{a}\right)$, \qquad $a = \const$; \hfill \Svojstvo
+    \item \emph{Комплексна конјукција:} $\ZT{ x^{\ast}[n] } = X^{\ast}(z^{\ast})$; \hfill \Svojstvo
+    \item \emph{Извод по фреквенцији:} $\ZT{n x[n]} = -z \dfrac{\de X(z) }{\de z}$; \hfill \Svojstvo
+    \item \emph{Конволуција} $\ZT{x[n]  \ast y[n]} = X(z) \cdot Y(z)$;  \hfill \Svojstvo
+\end{itemize} 
