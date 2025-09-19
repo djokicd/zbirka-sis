@@ -306,7 +306,7 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     {\tabulinesep=1.2mm
     \begin{tabu}{|c|c|c|} 
     \hline
-    рбр & $x[n]$ & $X(\jj\Omega) = \FT{x[n]}$ \\
+    рбр & $x[n]$ & Период $X(\jj\Omega) = \FT{x[n]}$, $|\Omega| < \uppi$ \\
     \hline \hline
     %(1) 
     \redTablice &
@@ -319,14 +319,15 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     %(4)
     \redTablice &
     $
-    \sum\limits_{p=-\infty}^{+\infty} \updelta[n-p\, N]$ & $\dfrac{2\uppi}{N} \, 
-    \operatorname{rep}_{\frac{2\uppi}{N}} 
-    \updelta\left(\Omega\right)$ \\
+    \sum\limits_{p=-\infty}^{+\infty} \updelta[n-p\, N]$ & 
+    $
+    {\frac{2\uppi}{N}} 
+    \sum_{k =-\infty}^{\infty}
+    \updelta\left(\Omega - \dfrac{2k\uppi}{N}\right)$ \\
     \hline
     %(5)
     \redTablice \label{T:DTFT:const}  &
     $1$& $2\uppi 
-    \operatorname{rep}_{2\uppi}
     \updelta(\Omega)$ \\
     \hline
     % (6)
@@ -335,15 +336,14 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     \hline
     %(7)
     \redTablice &
-    $\ee^{\jj\Omega_0 n}$ & $2\uppi 
-    \operatorname{rep}_{2\uppi}
+    $\ee^{\jj\Omega_0 n}$ & $
+    2\uppi 
     \updelta(\Omega - \Omega_0)$ \\
     \hline
     % (8)
     \redTablice \label{T:DTFT:cos} &
     $\cos(\Omega_0 n + \uptheta)$ & 
-    $\footnotesize \uppi
-    \operatorname{rep}_{2\uppi}
+    $\uppi
     \bigl(
     \, {\rm e}^{\jj\uptheta}  \updelta(\Omega - \Omega_0 ) 
     + \, {\rm e}^{-\jj\uptheta}  \updelta(\Omega + \Omega_0 )
@@ -352,8 +352,7 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     %(9)
     \redTablice &
     $\sin(\Omega_0 n + \uptheta)$ & 
-    $\dfrac{\uppi}{\jj} \, 
-    \operatorname{rep}_{2\uppi}
+    $-\jj{\uppi} \, 
     \bigl( \, {\rm e}^{\jj\uptheta} \updelta(\Omega - \Omega_0) -
     \, {\rm e}^{-\jj\uptheta} \updelta(\Omega + \Omega_0)
     \bigr)$ \\
@@ -361,7 +360,7 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     %(10)
     \redTablice &
     $\mathrm{u}[n]$ & $\dfrac{1}{1 - \ee^{-\jj\Omega}} + \uppi \, 
-    \operatorname{rep}_{2\uppi} \updelta(\Omega)$ \\
+    \updelta(\Omega)$ \\
     \hline 
     % (11)
     \redTablice &
@@ -383,9 +382,9 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     %(15)
     \redTablice &
     $\dfrac{\sin(\Omega_0 n)}{\uppi n}$ & $
-    \operatorname{rep}_{4\uppi\Omega_0}
+    \sum_{k = -\infty}^{\infty}
     \mathrm{rect}\left(\dfrac{\Omega}{2
-    \Omega_0} \right)$ \\
+    \Omega_0} - 2k\uppi \right)$ \\
     & $0 < \Omega_0 < \uppi$ & \\
     \hline
     \redTablice &
@@ -405,12 +404,6 @@ $x[n] \ast y[n] = \sum_{m = -\infty}^{\infty} x[m] y[n-m]$.
     \end{tabu} 
     }
 \end{center}
-где је $\operatorname{rep}_\upalpha 
-X(\jj\Omega) = 
-\sum_{\mathclap{m = -\infty}}^{\infty}
-X(\jj(\Omega + m\upalpha))$, периодично 
-продужење функције $X(\Omega)$.
-
 
 \section{$\mathcal{Z}$ трансформација}
 
