@@ -103,8 +103,8 @@ P_x = \dfrac{1}{T} \int_{0}^{T} |x^2(t)|\,\de t = \sum_{k=-\infty}^{\infty} |X[k
 $X[k] = \FS{x(t)}$ (и $Y[k] = \FS{y(t)}$),
 задовољавају наредне значајне особине: 
 \begin{itemize}\itemsep0pt
-    \item \emph{Линеарност:}  $\FS{ax(t) + by(t)} = a \FS{x(t)} + b \FS{y(t)}$, $a,b = \const$; \hfill \Svojstvo
-    \item \emph{Померај у времену:} $ \FS{x(t-\uptau)} = \FS{x(t)} \ee^{-\jj k \upomega_{\rm 0} \uptau}$, $\uptau = \const$; \hfill \Svojstvo
+    \item \emph{Линеарност:}  $\FS{ax(t) + by(t)} = a \FS{x(t)} + b \FS{y(t)}$, $a,b = \const$; \hfill \Svojstvo \label{s:ctfs:lin}
+    \item \emph{Померај у времену:} $ \FS{x(t-\uptau)} = \FS{x(t)} \ee^{-\jj k \upomega_{\rm 0} \uptau}$, $\uptau = \const$; \hfill \Svojstvo \label{s:ctfs:delay}
     \item \emph{Инверзија временске осе:} $\FS{x(t)} = X[k] \Rightarrow \FS{x(-t)} = X[-k] $; \hfill \Svojstvo
     \item \emph{Кружна конволуција\footnote{Односи се на конволуцију, само на заједничком периоду $T_0$ за оба сигнала.}} 
     $
@@ -112,11 +112,21 @@ $X[k] = \FS{x(t)}$ (и $Y[k] = \FS{y(t)}$),
     $ \hfill \Svojstvo
     \item \emph{Производ\footnote{Односи се на конволуцију, само на заједничком периоду $T_0$ за оба сигнала.}}
     $
-    \FS{x(t) \cdot y(t)} = X[k] \ast Y[k];
-    $ \hfill \Svojstvo
+    \FS{x(t) \cdot y(t)} = X[k] \ast Y[k]; 
+    $ \hfill \Svojstvo \label{s:ctfs:conv}
     \item \emph{Дејство на извод} $\FS{ \dfrac{\de x(t)}{\de t} } = \jj k \upomega_0 X[k]$; \hfill \Svojstvo
     \item \emph{Дејство на интеграл} $\FS{ \int_{\uptau = -\infty}^t x(\uptau) \, \de \uptau } = \dfrac{1}{\jj k \upomega_0} X[k]$; \hfill \Svojstvo
+    \item \emph{Развој сигнала на умношку основног периода}
+    Развој сигнала на умношку основног периода $T_{\rm F} = m T_0$ производи спектар са $m-1$ уметнутих нула између сваке 
+    две вредности у спектру развијеном на основном периоду. Односно,
+    \begin{equation}
+        \FT{x(t); \;T_{\rm F} = nT_0}[k] = \begin{cases}
+            \FT{x(t); \; T_{\rm F} = T_0 }[k/m] ,& m \mid k \\
+            0, & m \nmid k.
+        \end{cases} \label{s:ctfs:mT0}
+    \end{equation} 
 \end{itemize}
+
 
 \section*{Фуријеови редови дискретних сигнала}
 
