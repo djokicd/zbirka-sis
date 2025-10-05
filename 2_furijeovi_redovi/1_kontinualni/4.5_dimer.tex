@@ -69,48 +69,6 @@ V_{\rm I}[k] = {V_{\rm m}}
 -1 }{\uppi(4k^2 - 1)}
 \end{equation}
 
-%  \begin{eqnarray}
-%      V{\rm I}[k] &=& 
-%      = \dfrac{1}{\uppi} \int_{\mathclap{\upphi = 0}}^{\mathclap{D\uppi}} V_{\rm m} \sin(\upphi) \ee^{-\jj k 2 \upphi} \de\upphi
-%      = \dfrac{V_{\rm m} }{\uppi} \int_{\mathclap{\upphi = 0}}^{\mathclap{D\uppi}} \dfrac{\ee^{\jj \upphi} - \ee^{-\jj\upphi}}{\jj 2}\ee^{-\jj k 2 \upphi} \de\upphi
-%      \\
-%  \end{eqnarray}
-
-     %     &=& \dfrac{V_{\rm m} }{\jj2\uppi}
-%     \left(
-%         \int_{{\upphi = 0}}^{\mathclap{D\uppi}} \ee^{\jj (1 - 2k) \upphi} \de\upphi
-%         -
-%         \int_{\mathclap{\upphi = 0}}^{\mathclap{D\uppi}} \ee^{-\jj (1 + 2k) \upphi} \de\upphi
-%     \right)
-%     \\
-%     &=&
-%     \dfrac{V_{\rm m}}{\jj 2 \uppi} 
-%     \left(
-%         \dfrac{1}{1 - 2k} \ee^{\jj (1 - 2k) \upphi} \bigg|_{\upphi = 0}^{D\uppi}
-%         +
-%         \dfrac{1}{1 + 2k} \ee^{-\jj (1 + 2k) \upphi} \bigg|_{\upphi = 0}^{D\uppi}
-%     \right)
-%     \\
-%     &=&
-%     \dfrac{V_{\rm m}}{\jj 2 \uppi} 
-%     \left(
-%         \dfrac{ \ee^{\jj (1 - 2k) D \uppi} - 1 }{1 - 2k} 
-%         +
-%         \dfrac{ \ee^{-\jj (1 + 2k) D \uppi} - 1 }{1 + 2k} 
-%     \right)
-%     \\
-%     &=&
-%     \dfrac{V_{\rm m}}{\jj 2 \uppi} 
-%         \dfrac{ (1 + 2k)\left(\ee^{\jj (1 - 2k) D \uppi} - 1\right) + (1-2k)\left(\ee^{-\jj (1 + 2k) D \uppi} - 1\right) }{1 - 4k^2} 
-%     \\
-%     &=&
-%     \dfrac{V_{\rm m}}{\jj 2 \uppi} 
-%         \dfrac{ (1 + 2k)\left(\ee^{\jj (1 - 2k) D \uppi} - 1\right) + (1-2k)\left(\ee^{-\jj (1 + 2k) D \uppi} - 1\right) }{1 - 4k^2} 
-%     \\
-%     % Mnogo oranje...
-% \end{eqnarray}
-
-
 
 (в) Средња снага сигнала може се израчунати усредњавањем по времену
 $P = \dfrac{1}{T} \int_0^T v_{\rm R}^2(t) \, \de t$, односно еквивалентно, 
@@ -126,24 +84,3 @@ $P = \dfrac{1}{\uppi} \int_{\mathclap{\upomega t = 0}}^{D\uppi} V_{\rm m}^2 \sin
     = \dfrac{10 V_{\rm m}^2}{9\uppi^2}.
 \end{equation}
 Одакле се налази да је $\rm THD \approx 55\%$.
-
-Ради комплетности, нагласимо да се истим поступком, са сложенијим рачунањем (које је обављено рачунарским алатом), 
-може се доћи до општег израза за THD у функцији фактора испуне $D$, у облику израза
-\small
-\begin{equation}
-    {\rm THD} = 
-    {{8\left(\left({{2\sin (\uppi D)\sin \left(2\uppi
- D\right)}\over{3}}+{{\cos (\uppi D)\cos \left(2\uppi D
- \right)}\over{3}}-{{1}\over{3}}\right)^2+{{\left(2\sin \left(\uppi
- D\right)\cos \left(2\uppi D\right)-\cos (\uppi D)
- \sin \left(2\uppi D\right)\right)^2}\over{9}}\right)}\over{\uppi
- \left(\sin \left(2\uppi D\right)-2\uppi D\right)}}+1.
-\end{equation}\normalsize
-Дијаграм дате мере у функцији фактора испуне приказан је на слици \ref{\ID.comm}.
-
-\begin{figure}
-    \centering
-    \includegraphics{fig/THD_plot.pdf}
-    \caption{Уз коментар решења.}
-    \label{\ID.comm}
-\end{figure}
