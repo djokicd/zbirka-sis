@@ -1,0 +1,112 @@
+\mnDifficult
+\begin{slikaDesno}{fig/zD.pdf}
+\PID У колу са слике приказан је појачавач струје 
+фотодиоде која се моделује паралелном везом 
+струјног извора $i_{\rm D} = i_{\rm D}(t)$, 
+који одговара 
+фотоструји диоде, и њене капацитивности 
+$C_{\rm D} = 1\unit{pF}$. Употребљени напонски појачавач 
+је идеалан, са функцијом преноса напонског 
+појачања датом у облику 
+$A(s) = -\dfrac{\upomega_{\rm 0}}{s}$, где је 
+$\upomega_{\rm 0} = 1\unit{\dfrac{Mrad}{s}}$. 
+Позната је и отпорност $R = 100\unit{k\Omega}$. 
+Одзив 
+система је излазни напон, $v_{\rm I} = v_{\rm I}(t)$.
+Функција преноса система има димензију импедансе, 
+у облику $H(s) = \dfrac{V_{\rm I}(s)}{I_{\rm D}(s)}$. 
+\end{slikaDesno}
+\begin{enumerate}[label=(\alph*)] 
+    \itemsep0pt
+    \item 
+    Ако се функција преноса датог система може представити
+    у облику
+    $$H(s) = \dfrac{R_0 \, \upomega_{\rm N}^2 }{
+    s^2 + \dfrac{\upomega_{\rm N}}{Q}s + \upomega_{\rm N}^2
+    },$$
+    израчунати природну учестаност $\upomega_{\rm N}$,
+     и $Q$-фактор $Q$, датог система. 
+    \item  
+    Израчунати резонантну учестаност 
+    датог система $\upomega_{\rm r}$, ако се при тој учестаности
+    остварује максимална вредност амплитудске фреквенцијске 
+    карактеристике система, $\upomega_{\rm r} = 
+    \arg\max |H(\jj\upomega)|$, и ту максималну вредност
+    $|H(\jj\upomega_{\rm r})|$.
+\end{enumerate}
+
+\RESENJE 
+
+Слично као у задатку \ref{z:lpq_q_ampl}, напон на улазу напонског појачавача је  $V_I(s)/A(s)$ па се писањем 
+једначине по методу потенцијала чворова за тај чвор има 
+\begin{equation}
+    \dfrac{V_{\rm I}(s)}{A(s)} \left( sC_{\rm D} + \dfrac{1}{R} \right) = I_{\rm D}(s) + \dfrac{V_{\rm I}}{R}. 
+\end{equation}
+Сређивањем таквог израза, па затим заменом датог облика напонског појачања
+$A(s) = -\dfrac{\upomega_{\rm 0}}{s}$ добија тражена функција предноса у траженом облику
+\begin{eqnarray}
+    \hspace*{-10mm}
+    H(s)  &=&
+    \dfrac{V_{\rm I}}{I_{\rm D}} =  -\dfrac{A(s) R}{RC_{\rm D} s - A(s) + 1 }
+    =
+    -\dfrac{-\dfrac{\upomega_0}{s} R}{RC_{\rm D} s + \dfrac{\upomega_0}{s} + 1 }
+    =
+    \dfrac{ \upomega_0 R}{RC_{\rm D} s^2 + s + \upomega_0 }
+    {\color{gray}
+    \cdot
+    \dfrac{\tfrac{1}{R C_{\rm D}}}{\tfrac{1}{R C_{\rm D}}}
+    }
+    \\
+    &=&
+    \dfrac{ \dfrac{\upomega_0}{C_{\rm D}} }{s^2 + 
+    \underbrace{\dfrac{1}{R C_{\rm D}}}_{\upomega_{\rm N}/Q} s + 
+    \underbrace{\dfrac{\upomega_{\rm 0}}{{R C_{D}}}}_{\upomega_{\rm N}^2}}.
+\end{eqnarray}
+Идентификацијом из датог израза, имају се 
+\begin{eqnarray}
+    \upomega_{\rm N}^2 = \dfrac{\upomega_{\rm 0}}{{R C_{D}}} 
+    \Rightarrow
+    \upomega_{\rm N} = \sqrt{ \dfrac{\upomega_{\rm 0}}{{R C_{D}}} } = \sqrt{10} \unit{\dfrac{Mrad}{s}}
+    \approx
+    3,16\unit{\dfrac{Mrad}{s}}, \\
+\end{eqnarray}
+па се онда за $Q$-фактор има 
+\begin{equation}
+    \dfrac{\upomega_{\rm N}}{Q} = \dfrac{1}{R C_{\rm D}} \Rightarrow
+    Q = \upomega_{\rm N} R C_{\rm D} = \sqrt{\upomega_{\rm 0} R C_{\rm D}} 
+    = \dfrac{\sqrt{10}}{10} \approx 0,31 
+\end{equation}
+
+(б) Амплитудска фреквенцијска карактеристика датог филтра одређује се за $s = \jj\upomega$, па је онда 
+\begin{equation}
+    |H(\jj\upomega)| 
+    = 
+    \dfrac{R_0 \upomega_{\rm N}}{ \sqrt{ (\upomega_{\rm N}^2 - \upomega^2 )^2 +   
+    \left(\dfrac{\upomega\upomega_{\rm N}}{Q}\right)^2
+    }}
+\end{equation}
+Будући да је само именилац добијеног израза променљив (зависи од $\upomega$), тражени услов се остварује када 
+је он минималан. Пошто је корен монотона функција, тражење минималне вредности може се обавити ослобођено од 
+корена 
+\begin{equation}
+    \upomega_{\rm r} = 
+    \arg \min \left( 
+        (\upomega_{\rm N}^2 - \upomega^2 )^2 + \left(\dfrac{\upomega\upomega_{\rm N}}{Q}\right)^2 
+    \right)
+\end{equation}
+Карактер добијене функције може се потражити потраживањем првог извода. Максимална вредност се одређује 
+у нули првог извода, према чему је
+\begin{equation}
+    \dfrac{\de |H(\jj\upomega_{\rm r})|}{\de \upomega} = 0 \Rightarrow
+    \cancel{2} (\upomega_{\rm N}^2 - \upomega_{\rm r}^2) \cdot (-2 \cancel{\upomega_{\rm r}})
+    + \cancel{2}\left( \dfrac{\cancel{\upomega_{\rm r}} \upomega_{\rm N}}{Q} \right)
+    \dfrac{\upomega_{\rm N}}{Q} \Rightarrow \upomega_{\rm r} 
+    = \pm \upomega_{\rm N} \sqrt{   
+        1 - \dfrac{1}{2 Q^2}
+    }.
+\end{equation}
+Пошто је у конкретном добијеном случају, $ 1 - \dfrac{1}{2 Q^2} < 0$, то значи да испитивана функција преноса 
+нема стационарних тачака, односно, амплитудска фреквенцијка карактеристика је \textit{монотона}. Коначно,  
+максимална вредност амплитудске фреквенције карактеирстике постиже се за $\upomega_{\rm r} = 0$, а 
+максимална вредност амплитудске фреквенције карактерситике је $|H(\jj\upomega_{\rm r})| =
+R = 100\unit{k\Omega}$.  
